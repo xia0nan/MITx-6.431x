@@ -15,3 +15,6 @@ MIT OCW Scholar Version
 Google Hangout Group: https://plus.google.com/communities/106443662577632315869/stream/f0f7eeab-312a-427f-bfcd-eef87742a85d
 
 MicroMaster FAQ: https://micromasters.mit.edu/ds/faq/
+
+
+Just keep trying it until you succeed. If your probability of success is p, it will likely take 1/p tries.
