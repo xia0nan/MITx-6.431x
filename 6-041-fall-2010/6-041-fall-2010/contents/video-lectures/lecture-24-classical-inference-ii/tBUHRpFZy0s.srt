@@ -1,0 +1,4157 @@
+1
+00:00:00,040 --> 00:00:02,460
+The following content is
+provided under a Creative
+
+2
+00:00:02,460 --> 00:00:03,870
+Commons license.
+
+3
+00:00:03,870 --> 00:00:06,910
+Your support will help MIT
+OpenCourseWare continue to
+
+4
+00:00:06,910 --> 00:00:10,560
+offer high quality educational
+resources for free.
+
+5
+00:00:10,560 --> 00:00:13,460
+To make a donation or view
+additional materials from
+
+6
+00:00:13,460 --> 00:00:19,290
+hundreds of MIT courses, visit
+MIT OpenCourseWare at
+
+7
+00:00:19,290 --> 00:00:21,732
+ocw.mit.edu.
+
+8
+00:00:21,732 --> 00:00:24,170
+JOHN TSITSIKLIS: And we're going
+to continue today with
+
+9
+00:00:24,170 --> 00:00:26,820
+our discussion of classical
+statistics.
+
+10
+00:00:26,820 --> 00:00:29,290
+We'll start with a quick review
+of what we discussed
+
+11
+00:00:29,290 --> 00:00:34,680
+last time, and then talk about
+two topics that cover a lot of
+
+12
+00:00:34,680 --> 00:00:37,740
+statistics that are happening
+in the real world.
+
+13
+00:00:37,740 --> 00:00:39,510
+So two basic methods.
+
+14
+00:00:39,510 --> 00:00:43,730
+One is the method of linear
+regression, and the other one
+
+15
+00:00:43,730 --> 00:00:46,500
+is the basic methods and
+tools for how to
+
+16
+00:00:46,500 --> 00:00:49,540
+do hypothesis testing.
+
+17
+00:00:49,540 --> 00:00:53,970
+OK, so these two are topics
+that any scientifically
+
+18
+00:00:53,970 --> 00:00:57,170
+literate person should
+know something about.
+
+19
+00:00:57,170 --> 00:00:59,570
+So we're going to introduce
+the basic ideas
+
+20
+00:00:59,570 --> 00:01:01,860
+and concepts involved.
+
+21
+00:01:01,860 --> 00:01:07,580
+So in classical statistics we
+basically have essentially a
+
+22
+00:01:07,580 --> 00:01:11,250
+family of possible models
+about the world.
+
+23
+00:01:11,250 --> 00:01:15,190
+So the world is the random
+variable that we observe, and
+
+24
+00:01:15,190 --> 00:01:19,370
+we have a model for it, but
+actually not just one model,
+
+25
+00:01:19,370 --> 00:01:20,960
+several candidate models.
+
+26
+00:01:20,960 --> 00:01:24,380
+And each candidate model
+corresponds to a different
+
+27
+00:01:24,380 --> 00:01:28,070
+value of a parameter theta
+that we do not know.
+
+28
+00:01:28,070 --> 00:01:32,275
+So in contrast to Bayesian
+statistics, this theta is
+
+29
+00:01:32,275 --> 00:01:35,540
+assumed to be a constant
+that we do not know.
+
+30
+00:01:35,540 --> 00:01:38,190
+It is not modeled as a random
+variable, there's no
+
+31
+00:01:38,190 --> 00:01:40,480
+probabilities associated
+with theta.
+
+32
+00:01:40,480 --> 00:01:43,380
+We only have probabilities
+about the X's.
+
+33
+00:01:43,380 --> 00:01:47,320
+So in this context what is a
+reasonable way of choosing a
+
+34
+00:01:47,320 --> 00:01:49,350
+value for the parameter?
+
+35
+00:01:49,350 --> 00:01:53,470
+One general approach is the
+maximum likelihood approach,
+
+36
+00:01:53,470 --> 00:01:56,090
+which chooses the
+theta for which
+
+37
+00:01:56,090 --> 00:01:58,630
+this quantity is largest.
+
+38
+00:01:58,630 --> 00:02:00,690
+So what does that mean
+intuitively?
+
+39
+00:02:00,690 --> 00:02:04,550
+I'm trying to find the value of
+theta under which the data
+
+40
+00:02:04,550 --> 00:02:08,970
+that I observe are most likely
+to have occurred.
+
+41
+00:02:08,970 --> 00:02:11,470
+So is the thinking is
+essentially as follows.
+
+42
+00:02:11,470 --> 00:02:13,970
+Let's say I have to choose
+between two choices of theta.
+
+43
+00:02:13,970 --> 00:02:16,520
+Under this theta the
+X that I observed
+
+44
+00:02:16,520 --> 00:02:17,940
+would be very unlikely.
+
+45
+00:02:17,940 --> 00:02:21,350
+Under that theta the X that I
+observed would have a decent
+
+46
+00:02:21,350 --> 00:02:22,830
+probability of occurring.
+
+47
+00:02:22,830 --> 00:02:28,340
+So I chose the latter as
+my estimate of theta.
+
+48
+00:02:28,340 --> 00:02:31,200
+It's interesting to do the
+comparison with the Bayesian
+
+49
+00:02:31,200 --> 00:02:34,110
+approach which we did discuss
+last time, in the Bayesian
+
+50
+00:02:34,110 --> 00:02:38,430
+approach we also maximize over
+theta, but we maximize a
+
+51
+00:02:38,430 --> 00:02:43,220
+quantity in which the relation
+between X's and thetas run the
+
+52
+00:02:43,220 --> 00:02:44,520
+opposite way.
+
+53
+00:02:44,520 --> 00:02:47,500
+Here in the Bayesian world,
+Theta is a random variable.
+
+54
+00:02:47,500 --> 00:02:48,980
+So it has a distribution.
+
+55
+00:02:48,980 --> 00:02:53,030
+Once we observe the data, it has
+a posterior distribution,
+
+56
+00:02:53,030 --> 00:02:56,480
+and we find the value of Theta,
+which is most likely
+
+57
+00:02:56,480 --> 00:02:59,250
+under the posterior
+distribution.
+
+58
+00:02:59,250 --> 00:03:03,090
+As we discussed last time when
+you do this maximization now
+
+59
+00:03:03,090 --> 00:03:05,750
+the posterior distribution is
+given by this expression.
+
+60
+00:03:05,750 --> 00:03:09,760
+The denominator doesn't matter,
+and if you were to
+
+61
+00:03:09,760 --> 00:03:12,790
+take a prior, which is flat--
+
+62
+00:03:12,790 --> 00:03:16,210
+that is a constant independent
+of Theta, then that
+
+63
+00:03:16,210 --> 00:03:17,640
+term would go away.
+
+64
+00:03:17,640 --> 00:03:19,360
+And syntactically,
+at least, the two
+
+65
+00:03:19,360 --> 00:03:21,970
+approaches look the same.
+
+66
+00:03:21,970 --> 00:03:28,170
+So syntactically, or formally,
+maximum likelihood estimation
+
+67
+00:03:28,170 --> 00:03:32,225
+is the same as Bayesian
+estimation in which you assume
+
+68
+00:03:32,225 --> 00:03:36,090
+a prior which is flat, so that
+all possible values of Theta
+
+69
+00:03:36,090 --> 00:03:37,570
+are equally likely.
+
+70
+00:03:37,570 --> 00:03:40,790
+Philosophically, however,
+they're very different things.
+
+71
+00:03:40,790 --> 00:03:44,150
+Here I'm picking the most
+likely value of Theta.
+
+72
+00:03:44,150 --> 00:03:47,140
+Here I'm picking the value of
+Theta under which the observed
+
+73
+00:03:47,140 --> 00:03:51,050
+data would have been more
+likely to occur.
+
+74
+00:03:51,050 --> 00:03:53,590
+So maximum likelihood estimation
+is a general
+
+75
+00:03:53,590 --> 00:03:57,820
+purpose method, so it's applied
+all over the place in
+
+76
+00:03:57,820 --> 00:04:02,220
+many, many different types
+of estimation problems.
+
+77
+00:04:02,220 --> 00:04:05,100
+There is a special kind of
+estimation problem in which
+
+78
+00:04:05,100 --> 00:04:08,040
+you may forget about maximum
+likelihood estimation, and
+
+79
+00:04:08,040 --> 00:04:12,700
+come up with an estimate in
+a straightforward way.
+
+80
+00:04:12,700 --> 00:04:15,680
+And this is the case where
+you're trying to estimate the
+
+81
+00:04:15,680 --> 00:04:22,390
+mean of the distribution of X,
+where X is a random variable.
+
+82
+00:04:22,390 --> 00:04:25,140
+You observe several independent
+identically
+
+83
+00:04:25,140 --> 00:04:30,020
+distributed random variables
+X1 up to Xn.
+
+84
+00:04:30,020 --> 00:04:32,880
+All of them have the same
+distribution as this X.
+
+85
+00:04:32,880 --> 00:04:34,600
+So they have a common mean.
+
+86
+00:04:34,600 --> 00:04:37,020
+We do not know the mean we
+want to estimate it.
+
+87
+00:04:37,020 --> 00:04:40,560
+What is more natural than just
+taking the average of the
+
+88
+00:04:40,560 --> 00:04:42,470
+values that we have observed?
+
+89
+00:04:42,470 --> 00:04:46,150
+So you generate lots of X's,
+take the average of them, and
+
+90
+00:04:46,150 --> 00:04:50,560
+you expect that this is going to
+be a reasonable estimate of
+
+91
+00:04:50,560 --> 00:04:53,420
+the true mean of that
+random variable.
+
+92
+00:04:53,420 --> 00:04:56,290
+And indeed we know from the weak
+law of large numbers that
+
+93
+00:04:56,290 --> 00:05:00,790
+this estimate converges in
+probability to the true mean
+
+94
+00:05:00,790 --> 00:05:02,680
+of the random variable.
+
+95
+00:05:02,680 --> 00:05:04,870
+The other thing that we talked
+about last time is that
+
+96
+00:05:04,870 --> 00:05:07,770
+besides giving a point estimate
+we may want to also
+
+97
+00:05:07,770 --> 00:05:13,530
+give an interval that tells us
+something about where we might
+
+98
+00:05:13,530 --> 00:05:16,170
+believe theta to lie.
+
+99
+00:05:16,170 --> 00:05:21,950
+And 1-alpha confidence interval
+is in interval
+
+100
+00:05:21,950 --> 00:05:24,200
+generated based on the data.
+
+101
+00:05:24,200 --> 00:05:26,860
+So it's an interval from this
+value to that value.
+
+102
+00:05:26,860 --> 00:05:30,120
+These values are written with
+capital letters because
+
+103
+00:05:30,120 --> 00:05:32,390
+they're random, because they
+depend on the data
+
+104
+00:05:32,390 --> 00:05:33,870
+that we have seen.
+
+105
+00:05:33,870 --> 00:05:36,740
+And this gives us an interval,
+and we would like this
+
+106
+00:05:36,740 --> 00:05:40,600
+interval to have the property
+that theta is inside that
+
+107
+00:05:40,600 --> 00:05:42,830
+interval with high
+probability.
+
+108
+00:05:42,830 --> 00:05:46,805
+So typically we would take
+1-alpha to be a quantity such
+
+109
+00:05:46,805 --> 00:05:49,780
+as 95% for example.
+
+110
+00:05:49,780 --> 00:05:54,340
+In which case we have a 95%
+confidence interval.
+
+111
+00:05:54,340 --> 00:05:56,980
+As we discussed last time it's
+important to have the right
+
+112
+00:05:56,980 --> 00:06:00,730
+interpretation of what's
+95% means.
+
+113
+00:06:00,730 --> 00:06:04,640
+What it does not mean
+is the following--
+
+114
+00:06:04,640 --> 00:06:09,800
+the unknown value has 95%
+percent probability of being
+
+115
+00:06:09,800 --> 00:06:12,450
+in the interval that
+we have generated.
+
+116
+00:06:12,450 --> 00:06:14,550
+That's because the unknown
+value is not a random
+
+117
+00:06:14,550 --> 00:06:15,910
+variable, it's a constant.
+
+118
+00:06:15,910 --> 00:06:18,930
+Once we generate the interval
+either it's inside or it's
+
+119
+00:06:18,930 --> 00:06:22,500
+outside, but there's no
+probabilities involved.
+
+120
+00:06:22,500 --> 00:06:26,415
+Rather the probabilities are
+to be interpreted over the
+
+121
+00:06:26,415 --> 00:06:28,590
+random interval itself.
+
+122
+00:06:28,590 --> 00:06:31,730
+What a statement like this
+says is that if I have a
+
+123
+00:06:31,730 --> 00:06:37,060
+procedure for generating 95%
+confidence intervals, then
+
+124
+00:06:37,060 --> 00:06:40,800
+whenever I use that procedure
+I'm going to get a random
+
+125
+00:06:40,800 --> 00:06:44,260
+interval, and it's going to
+have 95% probability of
+
+126
+00:06:44,260 --> 00:06:48,270
+capturing the true
+value of theta.
+
+127
+00:06:48,270 --> 00:06:53,010
+So most of the time when I use
+this particular procedure for
+
+128
+00:06:53,010 --> 00:06:56,170
+generating confidence intervals
+the true theta will
+
+129
+00:06:56,170 --> 00:06:59,440
+happen to lie inside that
+confidence interval with
+
+130
+00:06:59,440 --> 00:07:01,190
+probability 95%.
+
+131
+00:07:01,190 --> 00:07:04,230
+So the randomness in this
+statement is with respect to
+
+132
+00:07:04,230 --> 00:07:09,190
+my confidence interval, it's
+not with respect to theta,
+
+133
+00:07:09,190 --> 00:07:11,880
+because theta is not random.
+
+134
+00:07:11,880 --> 00:07:14,710
+How does one construct
+confidence intervals?
+
+135
+00:07:14,710 --> 00:07:17,500
+There's various ways of going
+about it, but in the case
+
+136
+00:07:17,500 --> 00:07:20,330
+where we're dealing with the
+estimation of the mean of a
+
+137
+00:07:20,330 --> 00:07:23,790
+random variable doing this is
+straightforward using the
+
+138
+00:07:23,790 --> 00:07:25,680
+central limit theorem.
+
+139
+00:07:25,680 --> 00:07:31,440
+Basically we take our estimated
+mean, that's the
+
+140
+00:07:31,440 --> 00:07:35,910
+sample mean, and we take a
+symmetric interval to the left
+
+141
+00:07:35,910 --> 00:07:38,220
+and to the right of
+the sample mean.
+
+142
+00:07:38,220 --> 00:07:42,340
+And we choose the width of that
+interval by looking at
+
+143
+00:07:42,340 --> 00:07:43,680
+the normal tables.
+
+144
+00:07:43,680 --> 00:07:50,180
+So if this quantity, 1-alpha is
+95% percent, we're going to
+
+145
+00:07:50,180 --> 00:07:55,790
+look at the 97.5 percentile of
+the normal distribution.
+
+146
+00:07:55,790 --> 00:07:59,910
+Find the constant number that
+corresponds to that value from
+
+147
+00:07:59,910 --> 00:08:02,790
+the normal tables, and construct
+the confidence
+
+148
+00:08:02,790 --> 00:08:07,350
+intervals according
+to this formula.
+
+149
+00:08:07,350 --> 00:08:10,810
+So that gives you a pretty
+mechanical way of going about
+
+150
+00:08:10,810 --> 00:08:13,250
+constructing confidence
+intervals when you're
+
+151
+00:08:13,250 --> 00:08:15,270
+estimating the sample mean.
+
+152
+00:08:15,270 --> 00:08:18,650
+So constructing confidence
+intervals in this way involves
+
+153
+00:08:18,650 --> 00:08:19,630
+an approximation.
+
+154
+00:08:19,630 --> 00:08:22,230
+The approximation is the
+central limit theorem.
+
+155
+00:08:22,230 --> 00:08:24,490
+We are pretending that
+the sample mean is a
+
+156
+00:08:24,490 --> 00:08:26,400
+normal random variable.
+
+157
+00:08:26,400 --> 00:08:30,110
+Which is, more or less,
+right when n is large.
+
+158
+00:08:30,110 --> 00:08:32,780
+That's what the central limit
+theorem tells us.
+
+159
+00:08:32,780 --> 00:08:36,429
+And sometimes we may need to
+do some extra approximation
+
+160
+00:08:36,429 --> 00:08:39,480
+work, because quite often
+we do not know the
+
+161
+00:08:39,480 --> 00:08:41,030
+true value of sigma.
+
+162
+00:08:41,030 --> 00:08:43,559
+So we need to do some work
+either to estimate
+
+163
+00:08:43,559 --> 00:08:45,360
+sigma from the data.
+
+164
+00:08:45,360 --> 00:08:48,520
+So sigma is, of course, the
+standard deviation of the X's.
+
+165
+00:08:48,520 --> 00:08:51,410
+We may want to estimate it from
+the data, or we may have
+
+166
+00:08:51,410 --> 00:08:54,450
+an upper bound on sigma, and we
+just use that upper bound.
+
+167
+00:08:57,430 --> 00:09:02,520
+So now let's move on
+to a new topic.
+
+168
+00:09:02,520 --> 00:09:09,420
+A lot of statistics in the
+real world are of the
+
+169
+00:09:09,420 --> 00:09:12,540
+following flavor.
+
+170
+00:09:12,540 --> 00:09:16,820
+So suppose that X is the SAT
+score of a student in high
+
+171
+00:09:16,820 --> 00:09:23,620
+school, and Y is the MIT GPA
+of that same student.
+
+172
+00:09:23,620 --> 00:09:27,570
+So you expect that there is a
+relation between these two.
+
+173
+00:09:27,570 --> 00:09:31,240
+So you go and collect data for
+different students, and you
+
+174
+00:09:31,240 --> 00:09:35,470
+record for a typical student
+this would be their SAT score,
+
+175
+00:09:35,470 --> 00:09:37,700
+that could be their MIT GPA.
+
+176
+00:09:37,700 --> 00:09:43,720
+And you plot all this data
+on an (X,Y) diagram.
+
+177
+00:09:43,720 --> 00:09:48,240
+Now it's reasonable to believe
+that there is some systematic
+
+178
+00:09:48,240 --> 00:09:49,940
+relation between the two.
+
+179
+00:09:49,940 --> 00:09:54,650
+So people who had higher SAT
+scores in high school may have
+
+180
+00:09:54,650 --> 00:09:57,110
+higher GPA in college.
+
+181
+00:09:57,110 --> 00:10:00,310
+Well that may or may
+not be true.
+
+182
+00:10:00,310 --> 00:10:05,270
+You want to construct a model of
+this kind, and see to what
+
+183
+00:10:05,270 --> 00:10:08,330
+extent a relation of
+this type is true.
+
+184
+00:10:08,330 --> 00:10:15,560
+So you might hypothesize that
+the real world is described by
+
+185
+00:10:15,560 --> 00:10:17,390
+a model of this kind.
+
+186
+00:10:17,390 --> 00:10:22,730
+That there is a linear relation
+between the SAT
+
+187
+00:10:22,730 --> 00:10:27,710
+score, and the college GPA.
+
+188
+00:10:27,710 --> 00:10:30,560
+So it's a linear relation with
+some parameters, theta0 and
+
+189
+00:10:30,560 --> 00:10:33,060
+theta1 that we do not know.
+
+190
+00:10:33,060 --> 00:10:37,460
+So we assume a linear relation
+for the data, and depending on
+
+191
+00:10:37,460 --> 00:10:41,690
+the choices of theta0 and theta1
+it could be a different
+
+192
+00:10:41,690 --> 00:10:43,530
+line through those data.
+
+193
+00:10:43,530 --> 00:10:47,670
+Now we would like to find the
+best model of this kind to
+
+194
+00:10:47,670 --> 00:10:49,230
+explain the data.
+
+195
+00:10:49,230 --> 00:10:52,260
+Of course there's going
+to be some randomness.
+
+196
+00:10:52,260 --> 00:10:55,370
+So in general it's going to be
+impossible to find a line that
+
+197
+00:10:55,370 --> 00:10:57,780
+goes through all of
+the data points.
+
+198
+00:10:57,780 --> 00:11:04,020
+So let's try to find the best
+line that comes closest to
+
+199
+00:11:04,020 --> 00:11:05,810
+explaining those data.
+
+200
+00:11:05,810 --> 00:11:08,520
+And here's how we go about it.
+
+201
+00:11:08,520 --> 00:11:13,100
+Suppose we try some particular
+values of theta0 and theta1.
+
+202
+00:11:13,100 --> 00:11:15,750
+These give us a certain line.
+
+203
+00:11:15,750 --> 00:11:20,760
+Given that line, we can
+make predictions.
+
+204
+00:11:20,760 --> 00:11:24,470
+For a student who had this x,
+the model that we have would
+
+205
+00:11:24,470 --> 00:11:27,580
+predict that y would
+be this value.
+
+206
+00:11:27,580 --> 00:11:32,150
+The actual y is something else,
+and so this quantity is
+
+207
+00:11:32,150 --> 00:11:37,660
+the error that our model would
+make in predicting the y of
+
+208
+00:11:37,660 --> 00:11:39,580
+that particular student.
+
+209
+00:11:39,580 --> 00:11:43,350
+We would like to choose a line
+for which the predictions are
+
+210
+00:11:43,350 --> 00:11:45,110
+as good as possible.
+
+211
+00:11:45,110 --> 00:11:47,790
+And what do we mean by
+as good as possible?
+
+212
+00:11:47,790 --> 00:11:51,150
+As our criteria we're going
+to take the following.
+
+213
+00:11:51,150 --> 00:11:54,070
+We are going to look at the
+prediction error that our
+
+214
+00:11:54,070 --> 00:11:56,310
+model makes for each
+particular student.
+
+215
+00:11:56,310 --> 00:12:01,050
+Take the square of that, and
+then add them up over all of
+
+216
+00:12:01,050 --> 00:12:02,580
+our data points.
+
+217
+00:12:02,580 --> 00:12:06,140
+So what we're looking at is
+the sum of this quantity
+
+218
+00:12:06,140 --> 00:12:08,270
+squared, that quantity squared,
+that quantity
+
+219
+00:12:08,270 --> 00:12:09,570
+squared, and so on.
+
+220
+00:12:09,570 --> 00:12:13,220
+We add all of these squares, and
+we would like to find the
+
+221
+00:12:13,220 --> 00:12:17,500
+line for which the sum of
+these squared prediction
+
+222
+00:12:17,500 --> 00:12:20,910
+errors are as small
+as possible.
+
+223
+00:12:20,910 --> 00:12:23,950
+So that's the procedure.
+
+224
+00:12:23,950 --> 00:12:27,100
+We have our data, the
+X's and the Y's.
+
+225
+00:12:27,100 --> 00:12:31,340
+And we're going to find theta's
+the best model of this
+
+226
+00:12:31,340 --> 00:12:35,580
+type, the best possible model,
+by minimizing this sum of
+
+227
+00:12:35,580 --> 00:12:38,010
+squared errors.
+
+228
+00:12:38,010 --> 00:12:41,020
+So that's a method that one
+could pull out of the hat and
+
+229
+00:12:41,020 --> 00:12:44,120
+say OK, that's how I'm going
+to build my model.
+
+230
+00:12:44,120 --> 00:12:46,730
+And it sounds pretty
+reasonable.
+
+231
+00:12:46,730 --> 00:12:49,530
+And it sounds pretty reasonable
+even if you don't
+
+232
+00:12:49,530 --> 00:12:51,660
+know anything about
+probability.
+
+233
+00:12:51,660 --> 00:12:55,340
+But does it have some
+probabilistic justification?
+
+234
+00:12:55,340 --> 00:12:59,280
+It turns out that yes, you can
+motivate this method with
+
+235
+00:12:59,280 --> 00:13:03,100
+probabilistic considerations
+under certain assumptions.
+
+236
+00:13:03,100 --> 00:13:07,360
+So let's make a probabilistic
+model that's going to lead us
+
+237
+00:13:07,360 --> 00:13:10,600
+to these particular way of
+estimating the parameters.
+
+238
+00:13:10,600 --> 00:13:12,920
+So here's a probabilistic
+model.
+
+239
+00:13:12,920 --> 00:13:18,090
+I pick a student who had
+a specific SAT score.
+
+240
+00:13:18,090 --> 00:13:21,190
+And that could be done at
+random, but also could be done
+
+241
+00:13:21,190 --> 00:13:22,330
+in a systematic way.
+
+242
+00:13:22,330 --> 00:13:25,240
+That is, I pick a student who
+had an SAT of 600, a student
+
+243
+00:13:25,240 --> 00:13:33,170
+of 610 all the way to 1,400
+or 1,600, whatever the
+
+244
+00:13:33,170 --> 00:13:34,670
+right number is.
+
+245
+00:13:34,670 --> 00:13:36,320
+I pick all those students.
+
+246
+00:13:36,320 --> 00:13:40,370
+And I assume that for a student
+of this kind there's a
+
+247
+00:13:40,370 --> 00:13:44,500
+true model that tells me that
+their GPA is going to be a
+
+248
+00:13:44,500 --> 00:13:48,580
+random variable, which is
+something predicted by their
+
+249
+00:13:48,580 --> 00:13:52,690
+SAT score plus some randomness,
+some random noise.
+
+250
+00:13:52,690 --> 00:13:56,400
+And I model that random noise
+by independent normal random
+
+251
+00:13:56,400 --> 00:14:00,710
+variables with 0 mean and
+a certain variance.
+
+252
+00:14:00,710 --> 00:14:04,470
+So this is a specific
+probabilistic model, and now I
+
+253
+00:14:04,470 --> 00:14:09,010
+can think about doing maximum
+likelihood estimation for this
+
+254
+00:14:09,010 --> 00:14:10,980
+particular model.
+
+255
+00:14:10,980 --> 00:14:14,490
+So to do maximum likelihood
+estimation here I need to
+
+256
+00:14:14,490 --> 00:14:19,830
+write down the likelihood of the
+y's that I have observed.
+
+257
+00:14:19,830 --> 00:14:23,380
+What's the likelihood of the
+y's that I have observed?
+
+258
+00:14:23,380 --> 00:14:28,425
+Well, a particular w has a
+likelihood of the form e to
+
+259
+00:14:28,425 --> 00:14:33,030
+the minus w squared over
+(2 sigma-squared).
+
+260
+00:14:33,030 --> 00:14:37,070
+That's the likelihood
+of a particular w.
+
+261
+00:14:37,070 --> 00:14:40,310
+The probability, or the
+likelihood of observing a
+
+262
+00:14:40,310 --> 00:14:43,990
+particular value of y, that's
+the same as the likelihood
+
+263
+00:14:43,990 --> 00:14:49,020
+that w takes a value of y
+minus this, minus that.
+
+264
+00:14:49,020 --> 00:14:52,850
+So the likelihood of the
+y's is of this form.
+
+265
+00:14:52,850 --> 00:14:57,360
+Think of this as just being
+the w_i-squared.
+
+266
+00:14:57,360 --> 00:15:01,370
+So this is the density --
+
+267
+00:15:01,370 --> 00:15:06,060
+and if we have multiple data you
+multiply the likelihoods
+
+268
+00:15:06,060 --> 00:15:07,660
+of the different y's.
+
+269
+00:15:07,660 --> 00:15:12,090
+So you have to write something
+like this.
+
+270
+00:15:12,090 --> 00:15:16,390
+Since the w's are independent
+that means that the y's are
+
+271
+00:15:16,390 --> 00:15:17,910
+also independent.
+
+272
+00:15:17,910 --> 00:15:21,410
+The likelihood of a y vector
+is the product of the
+
+273
+00:15:21,410 --> 00:15:24,240
+likelihoods of the
+individual y's.
+
+274
+00:15:24,240 --> 00:15:27,800
+The likelihood of every
+individual y is of this form.
+
+275
+00:15:27,800 --> 00:15:33,050
+Where w is y_i minus these
+two quantities.
+
+276
+00:15:33,050 --> 00:15:36,000
+So this is the form that the
+likelihood function is going
+
+277
+00:15:36,000 --> 00:15:38,880
+to take under this
+particular model.
+
+278
+00:15:38,880 --> 00:15:42,260
+And under the maximum likelihood
+methodology we want
+
+279
+00:15:42,260 --> 00:15:49,170
+to maximize this quantity with
+respect to theta0 and theta1.
+
+280
+00:15:49,170 --> 00:15:56,930
+Now to do this maximization you
+might as well consider the
+
+281
+00:15:56,930 --> 00:16:00,990
+logarithm and maximize the
+logarithm, which is just the
+
+282
+00:16:00,990 --> 00:16:02,730
+exponent up here.
+
+283
+00:16:02,730 --> 00:16:05,750
+Maximizing this exponent because
+we have a minus sign
+
+284
+00:16:05,750 --> 00:16:08,900
+is the same as minimizing
+the exponent
+
+285
+00:16:08,900 --> 00:16:10,840
+without the minus sign.
+
+286
+00:16:10,840 --> 00:16:12,840
+Sigma squared is a constant.
+
+287
+00:16:12,840 --> 00:16:17,970
+So what you end up doing is
+minimizing this quantity here,
+
+288
+00:16:17,970 --> 00:16:20,120
+which is the same as
+what we had in our
+
+289
+00:16:20,120 --> 00:16:23,640
+linear regression methods.
+
+290
+00:16:23,640 --> 00:16:29,400
+So in conclusion you might
+choose to do linear regression
+
+291
+00:16:29,400 --> 00:16:34,490
+in this particular way,
+just because it looks
+
+292
+00:16:34,490 --> 00:16:36,210
+reasonable or plausible.
+
+293
+00:16:36,210 --> 00:16:41,050
+Or you might interpret what
+you're doing as maximum
+
+294
+00:16:41,050 --> 00:16:45,220
+likelihood estimation, in which
+you assume a model of
+
+295
+00:16:45,220 --> 00:16:49,520
+this kind where the noise
+terms are normal random
+
+296
+00:16:49,520 --> 00:16:51,970
+variables with the same
+distribution --
+
+297
+00:16:51,970 --> 00:16:54,540
+independent identically
+distributed.
+
+298
+00:16:54,540 --> 00:17:01,320
+So linear regression implicitly
+makes an assumption
+
+299
+00:17:01,320 --> 00:17:02,840
+of this kind.
+
+300
+00:17:02,840 --> 00:17:07,380
+It's doing maximum likelihood
+estimation as if the world was
+
+301
+00:17:07,380 --> 00:17:11,000
+really described by a model of
+this form, and with the W's
+
+302
+00:17:11,000 --> 00:17:12,560
+being random variables.
+
+303
+00:17:12,560 --> 00:17:17,920
+So this gives us at least some
+justification that this
+
+304
+00:17:17,920 --> 00:17:21,800
+particular approach to fitting
+lines to data is not so
+
+305
+00:17:21,800 --> 00:17:25,579
+arbitrary, but it has
+a sound footing.
+
+306
+00:17:25,579 --> 00:17:30,530
+OK so then once you accept this
+formulation as being a
+
+307
+00:17:30,530 --> 00:17:32,920
+reasonable one what's
+the next step?
+
+308
+00:17:32,920 --> 00:17:37,760
+The next step is to see how to
+carry out this minimization.
+
+309
+00:17:37,760 --> 00:17:42,220
+This is not a very difficult
+minimization to do.
+
+310
+00:17:42,220 --> 00:17:48,260
+The way it's done is by setting
+the derivatives of
+
+311
+00:17:48,260 --> 00:17:50,930
+this expression to 0.
+
+312
+00:17:50,930 --> 00:17:54,500
+Now because this is a quadratic
+function of theta0
+
+313
+00:17:54,500 --> 00:17:55,410
+and theta1--
+
+314
+00:17:55,410 --> 00:17:57,270
+when you take the derivatives
+with respect
+
+315
+00:17:57,270 --> 00:17:58,940
+to theta0 and theta1--
+
+316
+00:17:58,940 --> 00:18:03,250
+you get linear functions
+of theta0 and theta1.
+
+317
+00:18:03,250 --> 00:18:08,010
+And you end up solving a system
+of linear equations in
+
+318
+00:18:08,010 --> 00:18:09,630
+theta0 and theta1.
+
+319
+00:18:09,630 --> 00:18:15,660
+And it turns out that there's
+very nice and simple formulas
+
+320
+00:18:15,660 --> 00:18:18,950
+for the optimal estimates
+of the parameters in
+
+321
+00:18:18,950 --> 00:18:20,510
+terms of the data.
+
+322
+00:18:20,510 --> 00:18:23,910
+And the formulas
+are these ones.
+
+323
+00:18:23,910 --> 00:18:28,130
+I said that these are nice
+and simple formulas.
+
+324
+00:18:28,130 --> 00:18:29,800
+Let's see why.
+
+325
+00:18:29,800 --> 00:18:31,270
+How can we interpret them?
+
+326
+00:18:34,050 --> 00:18:42,250
+So suppose that the world is
+described by a model of this
+
+327
+00:18:42,250 --> 00:18:48,990
+kind, where the X's and Y's
+are random variables.
+
+328
+00:18:48,990 --> 00:18:53,920
+And where W is a noise term
+that's independent of X. So
+
+329
+00:18:53,920 --> 00:18:57,750
+we're assuming that a linear
+model is indeed true, but not
+
+330
+00:18:57,750 --> 00:18:58,530
+exactly true.
+
+331
+00:18:58,530 --> 00:19:01,790
+There's always some noise
+associated with any particular
+
+332
+00:19:01,790 --> 00:19:04,980
+data point that we obtain.
+
+333
+00:19:04,980 --> 00:19:10,880
+So if a model of this kind is
+true, and the W's have 0 mean
+
+334
+00:19:10,880 --> 00:19:15,370
+then we have that the expected
+value of Y would be theta0
+
+335
+00:19:15,370 --> 00:19:23,570
+plus theta1 expected value of
+X. And because W has 0 mean
+
+336
+00:19:23,570 --> 00:19:26,200
+there's no extra term.
+
+337
+00:19:26,200 --> 00:19:31,660
+So in particular, theta0 would
+be equal to expected value of
+
+338
+00:19:31,660 --> 00:19:37,380
+Y minus theta1 expected
+value of X.
+
+339
+00:19:37,380 --> 00:19:40,660
+So let's use this equation
+to try to come up with a
+
+340
+00:19:40,660 --> 00:19:44,060
+reasonable estimate of theta0.
+
+341
+00:19:44,060 --> 00:19:47,220
+I do not know the expected
+value of Y, but I
+
+342
+00:19:47,220 --> 00:19:48,430
+can estimate it.
+
+343
+00:19:48,430 --> 00:19:49,820
+How do I estimate it?
+
+344
+00:19:49,820 --> 00:19:53,460
+I look at the average of all the
+y's that I have obtained.
+
+345
+00:19:53,460 --> 00:19:57,320
+so I replace this, I estimate
+it with the average of the
+
+346
+00:19:57,320 --> 00:19:59,940
+data I have seen.
+
+347
+00:19:59,940 --> 00:20:02,430
+Here, similarly with the X's.
+
+348
+00:20:02,430 --> 00:20:06,820
+I might not know the expected
+value of X's, but I have data
+
+349
+00:20:06,820 --> 00:20:08,520
+points for the x's.
+
+350
+00:20:08,520 --> 00:20:13,070
+I look at the average of all my
+data points, I come up with
+
+351
+00:20:13,070 --> 00:20:16,380
+an estimate of this
+expectation.
+
+352
+00:20:16,380 --> 00:20:21,390
+Now I don't know what theta1 is,
+but my procedure is going
+
+353
+00:20:21,390 --> 00:20:25,320
+to generate an estimate of
+theta1 called theta1 hat.
+
+354
+00:20:25,320 --> 00:20:29,230
+And once I have this estimate,
+then a reasonable person would
+
+355
+00:20:29,230 --> 00:20:33,400
+estimate theta0 in this
+particular way.
+
+356
+00:20:33,400 --> 00:20:37,320
+So that's how my estimate
+of theta0 is going to be
+
+357
+00:20:37,320 --> 00:20:38,490
+constructed.
+
+358
+00:20:38,490 --> 00:20:41,420
+It's this formula here.
+
+359
+00:20:41,420 --> 00:20:44,700
+We have not yet addressed the
+harder question, which is how
+
+360
+00:20:44,700 --> 00:20:47,490
+to estimate theta1 in
+the first place.
+
+361
+00:20:47,490 --> 00:20:50,830
+So to estimate theta0 I assumed
+that I already had an
+
+362
+00:20:50,830 --> 00:20:52,180
+estimate for a theta1.
+
+363
+00:20:55,090 --> 00:21:02,060
+OK, the right formula for the
+estimate of theta1 happens to
+
+364
+00:21:02,060 --> 00:21:03,140
+be this one.
+
+365
+00:21:03,140 --> 00:21:08,632
+It looks messy, but let's
+try to interpret it.
+
+366
+00:21:08,632 --> 00:21:12,970
+What I'm going to do is I'm
+going to take this model for
+
+367
+00:21:12,970 --> 00:21:18,340
+simplicity let's assume that
+they're the random variables
+
+368
+00:21:18,340 --> 00:21:19,590
+have 0 means.
+
+369
+00:21:22,940 --> 00:21:28,800
+And see how we might estimate
+how we might
+
+370
+00:21:28,800 --> 00:21:30,960
+try to estimate theta1.
+
+371
+00:21:30,960 --> 00:21:36,270
+Let's multiply both sides of
+this equation by X. So we get
+
+372
+00:21:36,270 --> 00:21:48,470
+Y times X equals theta0 plus
+theta0 times X plus theta1
+
+373
+00:21:48,470 --> 00:21:54,530
+times X-squared, plus X times
+W. And now take expectations
+
+374
+00:21:54,530 --> 00:21:56,420
+of both sides.
+
+375
+00:21:56,420 --> 00:22:00,160
+If I have 0 mean random
+variables the expected value
+
+376
+00:22:00,160 --> 00:22:07,210
+of Y times X is just the
+covariance of X with Y.
+
+377
+00:22:07,210 --> 00:22:10,640
+I have assumed that my random
+variables have 0 means, so the
+
+378
+00:22:10,640 --> 00:22:13,680
+expectation of this is 0.
+
+379
+00:22:13,680 --> 00:22:17,970
+This one is going to be the
+variance of X, so I have
+
+380
+00:22:17,970 --> 00:22:23,260
+theta1 times variance of X. And
+since I'm assuming that my
+
+381
+00:22:23,260 --> 00:22:26,990
+random variables have 0 mean,
+and I'm also assuming that W
+
+382
+00:22:26,990 --> 00:22:32,250
+is independent of X this last
+term also has 0 mean.
+
+383
+00:22:32,250 --> 00:22:39,280
+So under such a probabilistic
+model this equation is true.
+
+384
+00:22:39,280 --> 00:22:43,620
+If we knew the variance and the
+covariance then we would
+
+385
+00:22:43,620 --> 00:22:45,930
+know the value of theta1.
+
+386
+00:22:45,930 --> 00:22:49,080
+But we only have data, we do
+not necessarily know the
+
+387
+00:22:49,080 --> 00:22:53,070
+variance and the covariance,
+but we can estimate it.
+
+388
+00:22:53,070 --> 00:22:55,885
+What's a reasonable estimate
+of the variance?
+
+389
+00:22:55,885 --> 00:22:59,390
+The reasonable estimate of the
+variance is this quantity here
+
+390
+00:22:59,390 --> 00:23:03,195
+divided by n, and the reasonable
+estimate of the
+
+391
+00:23:03,195 --> 00:23:06,730
+covariance is that numerator
+divided by n.
+
+392
+00:23:09,410 --> 00:23:11,510
+So this is my estimate
+of the mean.
+
+393
+00:23:11,510 --> 00:23:15,390
+I'm looking at the squared
+distances from the mean, and I
+
+394
+00:23:15,390 --> 00:23:18,740
+average them over lots
+and lots of data.
+
+395
+00:23:18,740 --> 00:23:23,990
+This is the most reasonable way
+of estimating the variance
+
+396
+00:23:23,990 --> 00:23:26,070
+of our distribution.
+
+397
+00:23:26,070 --> 00:23:31,400
+And similarly the expected value
+of this quantity is the
+
+398
+00:23:31,400 --> 00:23:35,020
+covariance of X with Y, and then
+we have lots and lots of
+
+399
+00:23:35,020 --> 00:23:35,830
+data points.
+
+400
+00:23:35,830 --> 00:23:38,895
+This quantity here is going to
+be a very good estimate of the
+
+401
+00:23:38,895 --> 00:23:40,140
+covariance.
+
+402
+00:23:40,140 --> 00:23:44,820
+So basically what this
+formula does is--
+
+403
+00:23:44,820 --> 00:23:46,520
+one way of thinking about it--
+
+404
+00:23:46,520 --> 00:23:50,870
+is that it starts from this
+relation which is true
+
+405
+00:23:50,870 --> 00:23:57,230
+exactly, but estimates the
+covariance and the variance on
+
+406
+00:23:57,230 --> 00:24:00,820
+the basis of the data, and then
+using these estimates to
+
+407
+00:24:00,820 --> 00:24:05,770
+come up with an estimate
+of theta1.
+
+408
+00:24:05,770 --> 00:24:09,890
+So this gives us a probabilistic
+interpretation
+
+409
+00:24:09,890 --> 00:24:13,620
+of the formulas that we have for
+the way that the estimates
+
+410
+00:24:13,620 --> 00:24:14,990
+are constructed.
+
+411
+00:24:14,990 --> 00:24:19,560
+If you're willing to assume that
+this is the true model of
+
+412
+00:24:19,560 --> 00:24:22,640
+the world, the structure of the
+true model of the world,
+
+413
+00:24:22,640 --> 00:24:24,460
+except that you do not
+know means and
+
+414
+00:24:24,460 --> 00:24:27,590
+covariances, and variances.
+
+415
+00:24:27,590 --> 00:24:33,010
+Then this is a natural way of
+estimating those unknown
+
+416
+00:24:33,010 --> 00:24:34,260
+parameters.
+
+417
+00:24:36,770 --> 00:24:39,800
+All right, so we have a
+closed-form formula, we can
+
+418
+00:24:39,800 --> 00:24:43,620
+apply it whenever
+we have data.
+
+419
+00:24:43,620 --> 00:24:47,810
+Now linear regression is a
+subject on which there are
+
+420
+00:24:47,810 --> 00:24:51,520
+whole courses, and whole
+books that are given.
+
+421
+00:24:51,520 --> 00:24:54,560
+And the reason for that is that
+there's a lot more that
+
+422
+00:24:54,560 --> 00:24:58,840
+you can bring into the topic,
+and many ways that you can
+
+423
+00:24:58,840 --> 00:25:02,350
+elaborate on the simple solution
+that we got for the
+
+424
+00:25:02,350 --> 00:25:05,880
+case of two parameters and only
+two random variables.
+
+425
+00:25:05,880 --> 00:25:09,550
+So let me give you a little bit
+of flavor of what are the
+
+426
+00:25:09,550 --> 00:25:12,950
+topics that come up when you
+start looking into linear
+
+427
+00:25:12,950 --> 00:25:14,200
+regression in more depth.
+
+428
+00:25:16,840 --> 00:25:24,390
+So in our discussions so far
+we made the linear model in
+
+429
+00:25:24,390 --> 00:25:28,370
+which we're trying to explain
+the values of one variable in
+
+430
+00:25:28,370 --> 00:25:30,860
+terms of the values of
+another variable.
+
+431
+00:25:30,860 --> 00:25:35,010
+We're trying to explain GPAs
+in terms of SAT scores, or
+
+432
+00:25:35,010 --> 00:25:39,640
+we're trying to predict GPAs
+in terms of SAT scores.
+
+433
+00:25:39,640 --> 00:25:47,910
+But maybe your GPA is affected
+by several factors.
+
+434
+00:25:47,910 --> 00:25:56,380
+For example maybe your GPA is
+affected by your SAT score,
+
+435
+00:25:56,380 --> 00:26:01,820
+also the income of your family,
+the years of education
+
+436
+00:26:01,820 --> 00:26:06,720
+of your grandmother, and many
+other factors like that.
+
+437
+00:26:06,720 --> 00:26:11,970
+So you might write down a model
+in which I believe that
+
+438
+00:26:11,970 --> 00:26:17,820
+GPA has a relation, which is a
+linear function of all these
+
+439
+00:26:17,820 --> 00:26:20,520
+other variables that
+I mentioned.
+
+440
+00:26:20,520 --> 00:26:24,350
+So perhaps you have a theory of
+what determines performance
+
+441
+00:26:24,350 --> 00:26:29,540
+at college, and you want to
+build a model of that type.
+
+442
+00:26:29,540 --> 00:26:31,460
+How do we go about
+in this case?
+
+443
+00:26:31,460 --> 00:26:33,830
+Well, again we collect
+the data points.
+
+444
+00:26:33,830 --> 00:26:37,980
+We look at the i-th student,
+who has a college GPA.
+
+445
+00:26:37,980 --> 00:26:42,090
+We record their SAT score,
+their family income, and
+
+446
+00:26:42,090 --> 00:26:45,010
+grandmother's years
+of education.
+
+447
+00:26:45,010 --> 00:26:50,390
+So this is one data point that
+is for one particular student.
+
+448
+00:26:50,390 --> 00:26:52,580
+We postulate the model
+of this form.
+
+449
+00:26:52,580 --> 00:26:56,160
+For the i-th student this would
+be the mistake that our
+
+450
+00:26:56,160 --> 00:26:59,940
+model makes if we have chosen
+specific values for those
+
+451
+00:26:59,940 --> 00:27:01,070
+parameters.
+
+452
+00:27:01,070 --> 00:27:05,450
+And then we go and choose the
+parameters that are going to
+
+453
+00:27:05,450 --> 00:27:07,950
+give us, again, the
+smallest possible
+
+454
+00:27:07,950 --> 00:27:10,000
+sum of squared errors.
+
+455
+00:27:10,000 --> 00:27:12,360
+So philosophically it's exactly
+the same as what we
+
+456
+00:27:12,360 --> 00:27:15,700
+were discussing before, except
+that now we're including
+
+457
+00:27:15,700 --> 00:27:19,560
+multiple explanatory variables
+in our model instead of a
+
+458
+00:27:19,560 --> 00:27:22,600
+single explanatory variable.
+
+459
+00:27:22,600 --> 00:27:24,070
+So that's the formulation.
+
+460
+00:27:24,070 --> 00:27:26,070
+What do you do next?
+
+461
+00:27:26,070 --> 00:27:29,420
+Well, to do this minimization
+you're going to take
+
+462
+00:27:29,420 --> 00:27:32,750
+derivatives once you have your
+data, you have a function of
+
+463
+00:27:32,750 --> 00:27:34,310
+these three parameters.
+
+464
+00:27:34,310 --> 00:27:37,190
+You take the derivative with
+respect to the parameter, set
+
+465
+00:27:37,190 --> 00:27:39,170
+the derivative equal
+to 0, you get the
+
+466
+00:27:39,170 --> 00:27:41,060
+system of linear equations.
+
+467
+00:27:41,060 --> 00:27:43,450
+You throw that system of
+linear equations to the
+
+468
+00:27:43,450 --> 00:27:46,260
+computer, and you get numerical
+values for the
+
+469
+00:27:46,260 --> 00:27:48,060
+optimal parameters.
+
+470
+00:27:48,060 --> 00:27:52,130
+There are no nice closed-form
+formulas of the type that we
+
+471
+00:27:52,130 --> 00:27:54,510
+had in the previous slide
+when you're dealing
+
+472
+00:27:54,510 --> 00:27:56,230
+with multiple variables.
+
+473
+00:27:56,230 --> 00:28:02,240
+Unless you're willing to go
+into matrix notation.
+
+474
+00:28:02,240 --> 00:28:04,760
+In that case you can again
+write down closed-form
+
+475
+00:28:04,760 --> 00:28:07,290
+formulas, but they will be a
+little less intuitive than
+
+476
+00:28:07,290 --> 00:28:09,210
+what we had before.
+
+477
+00:28:09,210 --> 00:28:13,550
+But the moral of the story is
+that numerically this is a
+
+478
+00:28:13,550 --> 00:28:16,480
+procedure that's very easy.
+
+479
+00:28:16,480 --> 00:28:18,780
+It's a problem, an optimization
+problem that the
+
+480
+00:28:18,780 --> 00:28:20,680
+computer can solve for you.
+
+481
+00:28:20,680 --> 00:28:23,290
+And it can solve it for
+you very quickly.
+
+482
+00:28:23,290 --> 00:28:25,470
+Because all that it involves
+is solving a
+
+483
+00:28:25,470 --> 00:28:26,720
+system of linear equations.
+
+484
+00:28:29,590 --> 00:28:34,270
+Now when you choose your
+explanatory variables you may
+
+485
+00:28:34,270 --> 00:28:37,940
+have some choices.
+
+486
+00:28:37,940 --> 00:28:43,550
+One person may think that your
+GPA a has something to do with
+
+487
+00:28:43,550 --> 00:28:45,340
+your SAT score.
+
+488
+00:28:45,340 --> 00:28:48,480
+Some other person may think that
+your GPA has something to
+
+489
+00:28:48,480 --> 00:28:51,800
+do with the square of
+your SAT score.
+
+490
+00:28:51,800 --> 00:28:55,380
+And that other person may
+want to try to build a
+
+491
+00:28:55,380 --> 00:28:58,840
+model of this kind.
+
+492
+00:28:58,840 --> 00:29:01,550
+Now when would you want
+to do this? ?
+
+493
+00:29:01,550 --> 00:29:07,830
+Suppose that the data that
+you have looks like this.
+
+494
+00:29:12,177 --> 00:29:15,740
+If the data looks like this then
+you might be tempted to
+
+495
+00:29:15,740 --> 00:29:20,710
+say well a linear model does
+not look right, but maybe a
+
+496
+00:29:20,710 --> 00:29:25,650
+quadratic model will give me
+a better fit for the data.
+
+497
+00:29:25,650 --> 00:29:30,690
+So if you want to fit a
+quadratic model to the data
+
+498
+00:29:30,690 --> 00:29:35,550
+then what you do is you take
+X-squared as your explanatory
+
+499
+00:29:35,550 --> 00:29:42,520
+variable instead of X, and you
+build a model of this kind.
+
+500
+00:29:42,520 --> 00:29:45,910
+There's nothing really different
+in models of this
+
+501
+00:29:45,910 --> 00:29:48,830
+kind compared to models
+of that kind.
+
+502
+00:29:48,830 --> 00:29:54,700
+They are still linear models
+because we have theta's
+
+503
+00:29:54,700 --> 00:29:57,630
+showing up in a linear
+fashion.
+
+504
+00:29:57,630 --> 00:30:00,460
+What you take as your
+explanatory variables, whether
+
+505
+00:30:00,460 --> 00:30:02,870
+it's X, whether it's X-squared,
+or whether it's
+
+506
+00:30:02,870 --> 00:30:05,390
+some other function
+that you chose.
+
+507
+00:30:05,390 --> 00:30:09,590
+Some general function h of X,
+doesn't make a difference.
+
+508
+00:30:09,590 --> 00:30:14,470
+So think of you h of X as being
+your new X. So you can
+
+509
+00:30:14,470 --> 00:30:17,620
+formulate the problem exactly
+the same way, except that
+
+510
+00:30:17,620 --> 00:30:21,035
+instead of using X's you
+choose h of X's.
+
+511
+00:30:23,610 --> 00:30:26,540
+So it's basically a question
+do I want to build a model
+
+512
+00:30:26,540 --> 00:30:31,390
+that explains Y's based on the
+values of X, or do I want to
+
+513
+00:30:31,390 --> 00:30:35,190
+build a model that explains Y's
+on the basis of the values
+
+514
+00:30:35,190 --> 00:30:38,970
+of h of X. Which is the
+right value to use?
+
+515
+00:30:38,970 --> 00:30:42,160
+And with this picture here,
+we see that it can make a
+
+516
+00:30:42,160 --> 00:30:43,160
+difference.
+
+517
+00:30:43,160 --> 00:30:47,070
+A linear model in X might be
+a poor fit, but a quadratic
+
+518
+00:30:47,070 --> 00:30:49,660
+model might give us
+a better fit.
+
+519
+00:30:49,660 --> 00:30:55,450
+So this brings to the topic of
+how to choose your functions h
+
+520
+00:30:55,450 --> 00:30:59,480
+of X if you're dealing with
+a real world problem.
+
+521
+00:30:59,480 --> 00:31:03,080
+So in a real world problem
+you're just given X's and Y's.
+
+522
+00:31:03,080 --> 00:31:05,990
+And you have the freedom
+of building models of
+
+523
+00:31:05,990 --> 00:31:07,120
+any kind you want.
+
+524
+00:31:07,120 --> 00:31:11,330
+You have the freedom of choosing
+a function h of X of
+
+525
+00:31:11,330 --> 00:31:13,130
+any type that you want.
+
+526
+00:31:13,130 --> 00:31:14,980
+So this turns out to be a quite
+
+527
+00:31:14,980 --> 00:31:18,800
+difficult and tricky topic.
+
+528
+00:31:18,800 --> 00:31:22,630
+Because you may be tempted
+to overdo it.
+
+529
+00:31:22,630 --> 00:31:28,450
+For example, I got my 10 data
+points, and I could say OK,
+
+530
+00:31:28,450 --> 00:31:35,660
+I'm going to choose an h of X.
+I'm going to choose h of X and
+
+531
+00:31:35,660 --> 00:31:40,300
+actually multiple h's of X
+to do a multiple linear
+
+532
+00:31:40,300 --> 00:31:45,030
+regression in which I'm going to
+build a model that's uses a
+
+533
+00:31:45,030 --> 00:31:47,600
+10th degree polynomial.
+
+534
+00:31:47,600 --> 00:31:51,160
+If I choose to fit my data with
+a 10th degree polynomial
+
+535
+00:31:51,160 --> 00:31:54,680
+I'm going to fit my data
+perfectly, but I may obtain a
+
+536
+00:31:54,680 --> 00:31:58,530
+model is does something like
+this, and goes through all my
+
+537
+00:31:58,530 --> 00:31:59,930
+data points.
+
+538
+00:31:59,930 --> 00:32:03,830
+So I can make my prediction
+errors extremely small if I
+
+539
+00:32:03,830 --> 00:32:08,820
+use lots of parameters, and
+if I choose my h functions
+
+540
+00:32:08,820 --> 00:32:09,930
+appropriately.
+
+541
+00:32:09,930 --> 00:32:11,800
+But clearly this would
+be garbage.
+
+542
+00:32:11,800 --> 00:32:15,270
+If you get those data points,
+and you say here's my model
+
+543
+00:32:15,270 --> 00:32:16,420
+that explains them.
+
+544
+00:32:16,420 --> 00:32:21,320
+That has a polynomial going up
+and down, then you're probably
+
+545
+00:32:21,320 --> 00:32:22,900
+doing something wrong.
+
+546
+00:32:22,900 --> 00:32:26,180
+So choosing how complicated
+those functions,
+
+547
+00:32:26,180 --> 00:32:27,900
+the h's, should be.
+
+548
+00:32:27,900 --> 00:32:32,020
+And how many explanatory
+variables to use is a very
+
+549
+00:32:32,020 --> 00:32:36,560
+delicate and deep topic on which
+there's deep theory that
+
+550
+00:32:36,560 --> 00:32:39,910
+tells you what you should do,
+and what you shouldn't do.
+
+551
+00:32:39,910 --> 00:32:43,830
+But the main thing that one
+should avoid doing is having
+
+552
+00:32:43,830 --> 00:32:46,620
+too many parameters in
+your model when you
+
+553
+00:32:46,620 --> 00:32:48,900
+have too few data.
+
+554
+00:32:48,900 --> 00:32:52,350
+So if you only have 10 data
+points, you shouldn't have 10
+
+555
+00:32:52,350 --> 00:32:53,350
+free parameters.
+
+556
+00:32:53,350 --> 00:32:56,150
+With 10 free parameters you will
+be able to fit your data
+
+557
+00:32:56,150 --> 00:33:00,760
+perfectly, but you wouldn't be
+able to really rely on the
+
+558
+00:33:00,760 --> 00:33:02,010
+results that you are seeing.
+
+559
+00:33:06,050 --> 00:33:12,630
+OK, now in practice, when people
+run linear regressions
+
+560
+00:33:12,630 --> 00:33:15,410
+they do not just give
+point estimates for
+
+561
+00:33:15,410 --> 00:33:17,370
+the parameters theta.
+
+562
+00:33:17,370 --> 00:33:20,300
+But similar to what we did for
+the case of estimating the
+
+563
+00:33:20,300 --> 00:33:23,790
+mean of a random variable you
+might want to give confidence
+
+564
+00:33:23,790 --> 00:33:27,200
+intervals that sort of tell you
+how much randomness there
+
+565
+00:33:27,200 --> 00:33:30,730
+is when you estimate each one of
+the particular parameters.
+
+566
+00:33:30,730 --> 00:33:33,960
+There are formulas for building
+confidence intervals
+
+567
+00:33:33,960 --> 00:33:36,230
+for the estimates
+of the theta's.
+
+568
+00:33:36,230 --> 00:33:38,520
+We're not going to look
+at them, it would
+
+569
+00:33:38,520 --> 00:33:39,990
+take too much time.
+
+570
+00:33:39,990 --> 00:33:44,600
+Also you might want to estimate
+the variance in the
+
+571
+00:33:44,600 --> 00:33:47,400
+noise that you have
+in your model.
+
+572
+00:33:47,400 --> 00:33:52,540
+That is if you are pretending
+that your true model is of the
+
+573
+00:33:52,540 --> 00:33:57,026
+kind we were discussing before,
+namely Y equals theta1
+
+574
+00:33:57,026 --> 00:34:02,190
+times X plus W, and W has a
+variance sigma squared.
+
+575
+00:34:02,190 --> 00:34:05,170
+You might want to estimate this,
+because it tells you
+
+576
+00:34:05,170 --> 00:34:09,199
+something about the model, and
+this is called standard error.
+
+577
+00:34:09,199 --> 00:34:11,929
+It puts a limit on how
+good predictions
+
+578
+00:34:11,929 --> 00:34:14,730
+your model can make.
+
+579
+00:34:14,730 --> 00:34:18,170
+Even if you have the correct
+theta0 and theta1, and
+
+580
+00:34:18,170 --> 00:34:22,179
+somebody tells you X you can
+make a prediction about Y, but
+
+581
+00:34:22,179 --> 00:34:24,710
+that prediction will
+not be accurate.
+
+582
+00:34:24,710 --> 00:34:26,739
+Because there's this additional
+randomness.
+
+583
+00:34:26,739 --> 00:34:29,699
+And if that additional
+randomness is big, then your
+
+584
+00:34:29,699 --> 00:34:33,810
+predictions will also have a
+substantial error in them.
+
+585
+00:34:33,810 --> 00:34:38,300
+There's another quantity that
+gets reported usually.
+
+586
+00:34:38,300 --> 00:34:41,400
+This is part of the computer
+output that you get when you
+
+587
+00:34:41,400 --> 00:34:45,500
+use a statistical package which
+is called R-square.
+
+588
+00:34:45,500 --> 00:34:49,920
+And its a measure of the
+explanatory power of the model
+
+589
+00:34:49,920 --> 00:34:52,469
+that you have built
+linear regression.
+
+590
+00:34:52,469 --> 00:34:55,650
+Using linear regression.
+
+591
+00:34:55,650 --> 00:35:01,030
+Instead of defining R-square
+exactly, let me give you a
+
+592
+00:35:01,030 --> 00:35:05,170
+sort of analogous quantity
+that's involved.
+
+593
+00:35:05,170 --> 00:35:08,030
+After you do your linear
+regression you can look at the
+
+594
+00:35:08,030 --> 00:35:10,600
+following quantity.
+
+595
+00:35:10,600 --> 00:35:15,720
+You look at the variance of Y,
+which is something that you
+
+596
+00:35:15,720 --> 00:35:17,400
+can estimate from data.
+
+597
+00:35:17,400 --> 00:35:23,370
+This is how much randomness
+there is in Y. And compare it
+
+598
+00:35:23,370 --> 00:35:28,090
+with the randomness that you
+have in Y, but conditioned on
+
+599
+00:35:28,090 --> 00:35:35,840
+X. So this quantity tells
+me if I knew X how much
+
+600
+00:35:35,840 --> 00:35:39,820
+randomness would there
+still be in my Y?
+
+601
+00:35:39,820 --> 00:35:43,650
+So if I know X, I have more
+information, so Y is more
+
+602
+00:35:43,650 --> 00:35:44,390
+constrained.
+
+603
+00:35:44,390 --> 00:35:48,640
+There's less randomness in Y.
+This is the randomness in Y if
+
+604
+00:35:48,640 --> 00:35:50,790
+I don't know anything about X.
+
+605
+00:35:50,790 --> 00:35:54,855
+So naturally this quantity would
+be less than 1, and if
+
+606
+00:35:54,855 --> 00:35:58,830
+this quantity is small it would
+mean that whenever I
+
+607
+00:35:58,830 --> 00:36:03,320
+know X then Y is very
+well known.
+
+608
+00:36:03,320 --> 00:36:07,440
+Which essentially tells me that
+knowing x allows me to
+
+609
+00:36:07,440 --> 00:36:12,370
+make very good predictions about
+Y. Knowing X means that
+
+610
+00:36:12,370 --> 00:36:17,390
+I'm explaining away most
+of the randomness in Y.
+
+611
+00:36:17,390 --> 00:36:22,590
+So if you read a statistical
+study that uses linear
+
+612
+00:36:22,590 --> 00:36:29,730
+regression you might encounter
+statements of the form 60% of
+
+613
+00:36:29,730 --> 00:36:36,140
+a student's GPA is explained
+by the family income.
+
+614
+00:36:36,140 --> 00:36:40,600
+If you read the statements of
+this kind it's really refers
+
+615
+00:36:40,600 --> 00:36:43,160
+to quantities of this kind.
+
+616
+00:36:43,160 --> 00:36:47,820
+Out of the total variance in Y,
+how much variance is left
+
+617
+00:36:47,820 --> 00:36:50,060
+after we build our model?
+
+618
+00:36:50,060 --> 00:36:56,490
+So if only 40% of the variance
+of Y is left after we build
+
+619
+00:36:56,490 --> 00:37:00,700
+our model, that means that
+X explains 60% of the
+
+620
+00:37:00,700 --> 00:37:02,510
+variations in Y's.
+
+621
+00:37:02,510 --> 00:37:06,570
+So the idea is that
+randomness in Y is
+
+622
+00:37:06,570 --> 00:37:09,560
+caused by multiple sources.
+
+623
+00:37:09,560 --> 00:37:12,025
+Our explanatory variable
+and random noise.
+
+624
+00:37:12,025 --> 00:37:15,610
+And we ask the question what
+percentage of the total
+
+625
+00:37:15,610 --> 00:37:19,940
+randomness in Y is explained by
+
+626
+00:37:19,940 --> 00:37:23,030
+variations in the X parameter?
+
+627
+00:37:23,030 --> 00:37:26,860
+And how much of the total
+randomness in Y is attributed
+
+628
+00:37:26,860 --> 00:37:30,390
+just to random effects?
+
+629
+00:37:30,390 --> 00:37:34,050
+So if you have a model that
+explains most of the variation
+
+630
+00:37:34,050 --> 00:37:37,710
+in Y then you can think that
+you have a good model that
+
+631
+00:37:37,710 --> 00:37:42,550
+tells you something useful
+about the real world.
+
+632
+00:37:42,550 --> 00:37:45,990
+Now there's lots of things that
+can go wrong when you use
+
+633
+00:37:45,990 --> 00:37:50,670
+linear regression, and there's
+many pitfalls.
+
+634
+00:37:50,670 --> 00:37:56,440
+One pitfall happens when you
+have this situation that's
+
+635
+00:37:56,440 --> 00:37:58,300
+called heteroskedacisity.
+
+636
+00:37:58,300 --> 00:38:01,020
+So suppose your data
+are of this kind.
+
+637
+00:38:06,550 --> 00:38:09,330
+So what's happening here?
+
+638
+00:38:09,330 --> 00:38:17,640
+You seem to have a linear model,
+but when X is small you
+
+639
+00:38:17,640 --> 00:38:19,200
+have a very good model.
+
+640
+00:38:19,200 --> 00:38:23,830
+So this means that W has a small
+variance when X is here.
+
+641
+00:38:23,830 --> 00:38:26,760
+On the other hand, when X is
+there you have a lot of
+
+642
+00:38:26,760 --> 00:38:27,970
+randomness.
+
+643
+00:38:27,970 --> 00:38:32,080
+This would be a situation
+in which the W's are not
+
+644
+00:38:32,080 --> 00:38:35,840
+identically distributed, but
+the variance of the W's, of
+
+645
+00:38:35,840 --> 00:38:40,360
+the noise, has something
+to do with the X's.
+
+646
+00:38:40,360 --> 00:38:43,720
+So with different regions of our
+x-space we have different
+
+647
+00:38:43,720 --> 00:38:45,260
+amounts of noise.
+
+648
+00:38:45,260 --> 00:38:47,615
+What will go wrong in
+this situation?
+
+649
+00:38:47,615 --> 00:38:51,290
+Since we're trying to minimize
+sum of squared errors, we're
+
+650
+00:38:51,290 --> 00:38:54,080
+really paying attention
+to the biggest errors.
+
+651
+00:38:54,080 --> 00:38:57,010
+Which will mean that we are
+going to pay attention to
+
+652
+00:38:57,010 --> 00:38:59,690
+these data points, because
+that's where the big errors
+
+653
+00:38:59,690 --> 00:39:01,130
+are going to be.
+
+654
+00:39:01,130 --> 00:39:04,250
+So the linear regression
+formulas will end up building
+
+655
+00:39:04,250 --> 00:39:09,110
+a model based on these data,
+which are the most noisy ones.
+
+656
+00:39:09,110 --> 00:39:14,810
+Instead of those data that are
+nicely stacked in order.
+
+657
+00:39:14,810 --> 00:39:17,410
+Clearly that's not to the
+right thing to do.
+
+658
+00:39:17,410 --> 00:39:21,500
+So you need to change something,
+and use the fact
+
+659
+00:39:21,500 --> 00:39:25,800
+that the variance of W changes
+with the X's, and there are
+
+660
+00:39:25,800 --> 00:39:27,770
+ways of dealing with it.
+
+661
+00:39:27,770 --> 00:39:31,280
+It's something that one needs
+to be careful about.
+
+662
+00:39:31,280 --> 00:39:34,580
+Another possibility of getting
+into trouble is if you're
+
+663
+00:39:34,580 --> 00:39:38,550
+using multiple explanatory
+variables that are very
+
+664
+00:39:38,550 --> 00:39:41,330
+closely related to each other.
+
+665
+00:39:41,330 --> 00:39:47,500
+So for example, suppose that I
+tried to predict your GPA by
+
+666
+00:39:47,500 --> 00:39:54,100
+looking at your SAT the first
+time that you took it plus
+
+667
+00:39:54,100 --> 00:39:58,290
+your SAT the second time that
+you took your SATs.
+
+668
+00:39:58,290 --> 00:40:00,470
+I'm assuming that almost
+everyone takes the
+
+669
+00:40:00,470 --> 00:40:02,450
+SAT more than once.
+
+670
+00:40:02,450 --> 00:40:05,630
+So suppose that you had
+a model of this kind.
+
+671
+00:40:05,630 --> 00:40:09,380
+Well, SAT on your first try and
+SAT on your second try are
+
+672
+00:40:09,380 --> 00:40:12,480
+very likely to be
+fairly close.
+
+673
+00:40:12,480 --> 00:40:17,570
+And you could think of coming
+up with estimates in which
+
+674
+00:40:17,570 --> 00:40:19,390
+this is ignored.
+
+675
+00:40:19,390 --> 00:40:22,780
+And you build a model based on
+this, or an alternative model
+
+676
+00:40:22,780 --> 00:40:25,810
+in which this term is ignored,
+and you make predictions based
+
+677
+00:40:25,810 --> 00:40:27,430
+on the second SAT.
+
+678
+00:40:27,430 --> 00:40:31,840
+And both models are likely to be
+essentially as good as the
+
+679
+00:40:31,840 --> 00:40:34,430
+other one, because these
+two quantities are
+
+680
+00:40:34,430 --> 00:40:36,630
+essentially the same.
+
+681
+00:40:36,630 --> 00:40:41,440
+So in that case, your theta's
+that you estimate are going to
+
+682
+00:40:41,440 --> 00:40:44,880
+be very sensitive to little
+details of the data.
+
+683
+00:40:44,880 --> 00:40:48,560
+You change your data, you have
+your data, and your data tell
+
+684
+00:40:48,560 --> 00:40:52,170
+you that this coefficient
+is big and that
+
+685
+00:40:52,170 --> 00:40:52,760
+coefficient is small.
+
+686
+00:40:52,760 --> 00:40:56,060
+You change your data just a
+tiny bit, and your theta's
+
+687
+00:40:56,060 --> 00:40:57,720
+would drastically change.
+
+688
+00:40:57,720 --> 00:41:00,750
+So this is a case in which you
+have multiple explanatory
+
+689
+00:41:00,750 --> 00:41:04,110
+variables, but they're redundant
+in the sense that
+
+690
+00:41:04,110 --> 00:41:07,300
+they're very closely related
+to each other, and perhaps
+
+691
+00:41:07,300 --> 00:41:08,830
+with a linear relation.
+
+692
+00:41:08,830 --> 00:41:11,980
+So one must be careful about the
+situation, and do special
+
+693
+00:41:11,980 --> 00:41:15,940
+tests to make sure that
+this doesn't happen.
+
+694
+00:41:15,940 --> 00:41:20,900
+Finally the biggest and most
+common blunder is that you run
+
+695
+00:41:20,900 --> 00:41:24,910
+your linear regression, you
+get your linear model, and
+
+696
+00:41:24,910 --> 00:41:26,760
+then you say oh, OK.
+
+697
+00:41:26,760 --> 00:41:33,340
+Y is caused by X according to
+this particular formula.
+
+698
+00:41:33,340 --> 00:41:36,940
+Well, all that we did was to
+identify a linear relation
+
+699
+00:41:36,940 --> 00:41:40,120
+between X and Y. This doesn't
+tell us anything.
+
+700
+00:41:40,120 --> 00:41:44,130
+Whether it's Y that causes X, or
+whether it's X that causes
+
+701
+00:41:44,130 --> 00:41:48,850
+Y, or maybe both X and Y are
+caused by some other variable
+
+702
+00:41:48,850 --> 00:41:51,110
+that we didn't think about.
+
+703
+00:41:51,110 --> 00:41:56,800
+So building a good linear model
+that has small errors
+
+704
+00:41:56,800 --> 00:42:00,980
+does not tell us anything about
+causal relations between
+
+705
+00:42:00,980 --> 00:42:02,320
+the two variables.
+
+706
+00:42:02,320 --> 00:42:05,210
+It only tells us that there's
+a close association between
+
+707
+00:42:05,210 --> 00:42:06,010
+the two variables.
+
+708
+00:42:06,010 --> 00:42:10,370
+If you know one you can make
+predictions about the other.
+
+709
+00:42:10,370 --> 00:42:13,370
+But it doesn't tell you anything
+about the underlying
+
+710
+00:42:13,370 --> 00:42:18,120
+physics, that there's some
+physical mechanism that
+
+711
+00:42:18,120 --> 00:42:22,310
+introduces the relation between
+those variables.
+
+712
+00:42:22,310 --> 00:42:26,430
+OK, that's it about
+linear regression.
+
+713
+00:42:26,430 --> 00:42:30,510
+Let us start the next topic,
+which is hypothesis testing.
+
+714
+00:42:30,510 --> 00:42:35,140
+And we're going to continue
+with it next time.
+
+715
+00:42:35,140 --> 00:42:37,780
+So here, instead of trying
+to estimate continuous
+
+716
+00:42:37,780 --> 00:42:41,920
+parameters, we have two
+alternative hypotheses about
+
+717
+00:42:41,920 --> 00:42:46,550
+the distribution of the
+X random variable.
+
+718
+00:42:46,550 --> 00:42:53,620
+So for example our random
+variable could be either
+
+719
+00:42:53,620 --> 00:42:58,480
+distributed according to this
+distribution, under H0, or it
+
+720
+00:42:58,480 --> 00:43:02,930
+might be distributed according
+to this distribution under H1.
+
+721
+00:43:02,930 --> 00:43:06,230
+And we want to make a decision
+which distribution is the
+
+722
+00:43:06,230 --> 00:43:07,990
+correct one?
+
+723
+00:43:07,990 --> 00:43:10,850
+So we're given those two
+distributions, and some common
+
+724
+00:43:10,850 --> 00:43:14,290
+terminologies that one of them
+is the null hypothesis--
+
+725
+00:43:14,290 --> 00:43:16,600
+sort of the default hypothesis,
+and we have some
+
+726
+00:43:16,600 --> 00:43:18,290
+alternative hypotheses--
+
+727
+00:43:18,290 --> 00:43:20,560
+and we want to check whether
+this one is true,
+
+728
+00:43:20,560 --> 00:43:21,950
+or that one is true.
+
+729
+00:43:21,950 --> 00:43:24,500
+So you obtain a data
+point, and you
+
+730
+00:43:24,500 --> 00:43:26,060
+want to make a decision.
+
+731
+00:43:26,060 --> 00:43:28,820
+In this picture what would
+a reasonable person
+
+732
+00:43:28,820 --> 00:43:30,650
+do to make a decision?
+
+733
+00:43:30,650 --> 00:43:35,500
+They would probably choose a
+certain threshold, Xi, and
+
+734
+00:43:35,500 --> 00:43:43,540
+decide that H1 is true if your
+data falls in this interval.
+
+735
+00:43:43,540 --> 00:43:49,590
+And decide that H0 is true
+if you fall on the side.
+
+736
+00:43:49,590 --> 00:43:51,660
+So that would be a
+reasonable way of
+
+737
+00:43:51,660 --> 00:43:54,100
+approaching the problem.
+
+738
+00:43:54,100 --> 00:43:59,160
+More generally you take the set
+of all possible X's, and
+
+739
+00:43:59,160 --> 00:44:03,050
+you divide the set of possible
+X's into two regions.
+
+740
+00:44:03,050 --> 00:44:11,110
+One is the rejection region,
+in which you decide H1,
+
+741
+00:44:11,110 --> 00:44:13,170
+or you reject H0.
+
+742
+00:44:15,760 --> 00:44:21,640
+And the complement of that
+region is where you decide H0.
+
+743
+00:44:21,640 --> 00:44:25,210
+So this is the x-space
+of your data.
+
+744
+00:44:25,210 --> 00:44:28,350
+In this example here, x
+was one-dimensional.
+
+745
+00:44:28,350 --> 00:44:31,770
+But in general X is going to
+be a vector, where all the
+
+746
+00:44:31,770 --> 00:44:34,790
+possible data vectors that
+you can get, they're
+
+747
+00:44:34,790 --> 00:44:36,600
+divided into two types.
+
+748
+00:44:36,600 --> 00:44:40,400
+If it falls in this set you'd
+make one decision.
+
+749
+00:44:40,400 --> 00:44:43,770
+If it falls in that set, you
+make the other decision.
+
+750
+00:44:43,770 --> 00:44:47,380
+OK, so how would you
+characterize the performance
+
+751
+00:44:47,380 --> 00:44:49,690
+of the particular way of
+making a decision?
+
+752
+00:44:49,690 --> 00:44:53,000
+Suppose I chose my threshold.
+
+753
+00:44:53,000 --> 00:44:57,960
+I may make mistakes of
+two possible types.
+
+754
+00:44:57,960 --> 00:45:03,360
+Perhaps H0 is true, but my data
+happens to fall here.
+
+755
+00:45:03,360 --> 00:45:07,560
+In which case I make a mistake,
+and this would be a
+
+756
+00:45:07,560 --> 00:45:10,730
+false rejection of H0.
+
+757
+00:45:10,730 --> 00:45:15,070
+If my data falls here
+I reject H0.
+
+758
+00:45:15,070 --> 00:45:16,890
+I decide H1.
+
+759
+00:45:16,890 --> 00:45:19,510
+Whereas H0 was true.
+
+760
+00:45:19,510 --> 00:45:21,690
+The probability of
+this happening?
+
+761
+00:45:21,690 --> 00:45:24,890
+Let's call it alpha.
+
+762
+00:45:24,890 --> 00:45:28,040
+But there's another kind of
+error that can be made.
+
+763
+00:45:28,040 --> 00:45:32,810
+Suppose that H1 was true, but by
+accident my data happens to
+
+764
+00:45:32,810 --> 00:45:34,250
+falls on that side.
+
+765
+00:45:34,250 --> 00:45:36,610
+Then I'm going to make
+an error again.
+
+766
+00:45:36,610 --> 00:45:40,540
+I'm going to decide H0 even
+though H1 was true.
+
+767
+00:45:40,540 --> 00:45:42,570
+How likely is this to occur?
+
+768
+00:45:42,570 --> 00:45:46,420
+This would be the area under
+this curve here.
+
+769
+00:45:46,420 --> 00:45:50,600
+And that's the other type of
+error than can be made, and
+
+770
+00:45:50,600 --> 00:45:55,400
+beta is the probability of this
+particular type of error.
+
+771
+00:45:55,400 --> 00:45:57,550
+Both of these are errors.
+
+772
+00:45:57,550 --> 00:45:59,640
+Alpha is the probability
+of error of one kind.
+
+773
+00:45:59,640 --> 00:46:02,110
+Beta is the probability of an
+error of the other kind.
+
+774
+00:46:02,110 --> 00:46:03,510
+You would like the
+probabilities
+
+775
+00:46:03,510 --> 00:46:05,050
+of error to be small.
+
+776
+00:46:05,050 --> 00:46:07,550
+So you would like to
+make both alpha and
+
+777
+00:46:07,550 --> 00:46:09,780
+beta as small as possible.
+
+778
+00:46:09,780 --> 00:46:13,300
+Unfortunately that's not
+possible, there's a trade-off.
+
+779
+00:46:13,300 --> 00:46:17,540
+If I go to my threshold it this
+way, then alpha become
+
+780
+00:46:17,540 --> 00:46:20,760
+smaller, but beta
+becomes bigger.
+
+781
+00:46:20,760 --> 00:46:22,770
+So there's a trade-off.
+
+782
+00:46:22,770 --> 00:46:29,350
+If I make my rejection region
+smaller one kind of error is
+
+783
+00:46:29,350 --> 00:46:31,880
+less likely, but the
+other kind of error
+
+784
+00:46:31,880 --> 00:46:34,670
+becomes more likely.
+
+785
+00:46:34,670 --> 00:46:38,050
+So we got this trade-off.
+
+786
+00:46:38,050 --> 00:46:39,620
+So what do we do about it?
+
+787
+00:46:39,620 --> 00:46:41,570
+How do we move systematically?
+
+788
+00:46:41,570 --> 00:46:45,680
+How do we come up with
+rejection regions?
+
+789
+00:46:45,680 --> 00:46:48,900
+Well, what the theory basically
+tells you is it
+
+790
+00:46:48,900 --> 00:46:53,200
+tells you how you should
+create those regions.
+
+791
+00:46:53,200 --> 00:46:57,860
+But it doesn't tell
+you exactly how.
+
+792
+00:46:57,860 --> 00:47:00,970
+It tells you the general
+shape of those regions.
+
+793
+00:47:00,970 --> 00:47:05,120
+For example here, the theory
+who tells us that the right
+
+794
+00:47:05,120 --> 00:47:07,430
+thing to do would be to put
+the threshold and make
+
+795
+00:47:07,430 --> 00:47:10,910
+decisions one way to the right,
+one way to the left.
+
+796
+00:47:10,910 --> 00:47:12,830
+But it might not necessarily
+tell us
+
+797
+00:47:12,830 --> 00:47:15,020
+where to put the threshold.
+
+798
+00:47:15,020 --> 00:47:18,890
+Still, it's useful enough to
+know that the way to make a
+
+799
+00:47:18,890 --> 00:47:20,960
+good decision would
+be in terms of
+
+800
+00:47:20,960 --> 00:47:22,400
+a particular threshold.
+
+801
+00:47:22,400 --> 00:47:24,770
+Let me make this
+more specific.
+
+802
+00:47:24,770 --> 00:47:27,380
+We can take our inspiration
+from the solution of the
+
+803
+00:47:27,380 --> 00:47:29,820
+hypothesis testing problem
+that we had in
+
+804
+00:47:29,820 --> 00:47:31,370
+the Bayesian case.
+
+805
+00:47:31,370 --> 00:47:34,130
+In the Bayesian case we just
+pick the hypothesis which is
+
+806
+00:47:34,130 --> 00:47:37,480
+more likely given the data.
+
+807
+00:47:37,480 --> 00:47:40,080
+The produced posterior
+probabilities using Bayesian
+
+808
+00:47:40,080 --> 00:47:42,770
+rule, they're written
+this way.
+
+809
+00:47:42,770 --> 00:47:45,240
+And this term is the
+same as that term.
+
+810
+00:47:45,240 --> 00:47:49,500
+They cancel out, then let me
+collect terms here and there.
+
+811
+00:47:52,370 --> 00:47:54,030
+I get an expression here.
+
+812
+00:47:54,030 --> 00:47:56,090
+I think the version you
+have in your handout
+
+813
+00:47:56,090 --> 00:47:57,340
+is the correct one.
+
+814
+00:47:59,810 --> 00:48:02,082
+The one on the slide was
+not the correct one, so
+
+815
+00:48:02,082 --> 00:48:03,730
+I'm fixing it here.
+
+816
+00:48:03,730 --> 00:48:06,920
+OK, so this is the form of how
+you make decisions in the
+
+817
+00:48:06,920 --> 00:48:08,720
+Bayesian case.
+
+818
+00:48:08,720 --> 00:48:10,620
+What you do in the Bayesian
+case, you
+
+819
+00:48:10,620 --> 00:48:13,270
+calculate this ratio.
+
+820
+00:48:13,270 --> 00:48:17,110
+Let's call it the likelihood
+ratio.
+
+821
+00:48:17,110 --> 00:48:20,770
+And compare that ratio
+to a threshold.
+
+822
+00:48:20,770 --> 00:48:22,916
+And the threshold that you
+should be using in the
+
+823
+00:48:22,916 --> 00:48:25,240
+Bayesian case has something
+to do with the prior
+
+824
+00:48:25,240 --> 00:48:28,000
+probabilities of the
+two hypotheses.
+
+825
+00:48:28,000 --> 00:48:31,840
+In the non-Bayesian case we do
+not have prior probabilities,
+
+826
+00:48:31,840 --> 00:48:34,690
+so we do not know how to
+set this threshold.
+
+827
+00:48:34,690 --> 00:48:38,350
+But we're going to do is we're
+going to keep this particular
+
+828
+00:48:38,350 --> 00:48:42,690
+structure anyway, and maybe use
+some other considerations
+
+829
+00:48:42,690 --> 00:48:44,480
+to pick the threshold.
+
+830
+00:48:44,480 --> 00:48:51,030
+So we're going to use a
+likelihood ratio test, that's
+
+831
+00:48:51,030 --> 00:48:54,260
+how it's called in which we
+calculate a quantity of this
+
+832
+00:48:54,260 --> 00:48:56,830
+kind that we call the
+likelihood, and compare it
+
+833
+00:48:56,830 --> 00:48:58,480
+with a threshold.
+
+834
+00:48:58,480 --> 00:49:00,530
+So what's the interpretation
+of this likelihood?
+
+835
+00:49:03,140 --> 00:49:04,290
+We ask--
+
+836
+00:49:04,290 --> 00:49:08,570
+the X's that I have observed,
+how likely were they to occur
+
+837
+00:49:08,570 --> 00:49:10,460
+if H1 was true?
+
+838
+00:49:10,460 --> 00:49:14,590
+And how likely were they to
+occur if H0 was true?
+
+839
+00:49:14,590 --> 00:49:20,560
+This ratio could be big if my
+data are plausible they might
+
+840
+00:49:20,560 --> 00:49:22,400
+occur under H1.
+
+841
+00:49:22,400 --> 00:49:25,400
+But they're very implausible,
+extremely unlikely
+
+842
+00:49:25,400 --> 00:49:27,380
+to occur under H0.
+
+843
+00:49:27,380 --> 00:49:30,060
+Then my thinking would be well
+the data that I saw are
+
+844
+00:49:30,060 --> 00:49:33,300
+extremely unlikely to have
+occurred under H0.
+
+845
+00:49:33,300 --> 00:49:36,780
+So H0 is probably not true.
+
+846
+00:49:36,780 --> 00:49:39,820
+I'm going to go for
+H1 and choose H1.
+
+847
+00:49:39,820 --> 00:49:43,920
+So when this ratio is big it
+tells us that the data that
+
+848
+00:49:43,920 --> 00:49:47,720
+we're seeing are better
+explained if we assume H1 to
+
+849
+00:49:47,720 --> 00:49:50,620
+be true rather than
+H0 to be true.
+
+850
+00:49:50,620 --> 00:49:53,970
+So I calculate this quantity,
+compare it with a threshold,
+
+851
+00:49:53,970 --> 00:49:56,200
+and that's how I make
+my decision.
+
+852
+00:49:56,200 --> 00:49:59,360
+So in this particular picture,
+for example the way it would
+
+853
+00:49:59,360 --> 00:50:02,930
+go would be the likelihood ratio
+in this picture goes
+
+854
+00:50:02,930 --> 00:50:07,230
+monotonically with my X. So
+comparing the likelihood ratio
+
+855
+00:50:07,230 --> 00:50:10,150
+to the threshold would be the
+same as comparing my x to the
+
+856
+00:50:10,150 --> 00:50:12,890
+threshold, and we've got
+the question of how
+
+857
+00:50:12,890 --> 00:50:13,920
+to choose the threshold.
+
+858
+00:50:13,920 --> 00:50:17,880
+The way that the threshold is
+chosen is usually done by
+
+859
+00:50:17,880 --> 00:50:21,560
+fixing one of the two
+probabilities of error.
+
+860
+00:50:21,560 --> 00:50:26,710
+That is, I say, that I want my
+error of one particular type
+
+861
+00:50:26,710 --> 00:50:30,160
+to be a given number,
+so I fix this alpha.
+
+862
+00:50:30,160 --> 00:50:33,160
+And then I try to find where
+my threshold should be.
+
+863
+00:50:33,160 --> 00:50:36,095
+So that this probability theta,
+probability out there,
+
+864
+00:50:36,095 --> 00:50:39,190
+is just equal to alpha.
+
+865
+00:50:39,190 --> 00:50:42,050
+And then the other probability
+of error, beta, will be
+
+866
+00:50:42,050 --> 00:50:44,190
+whatever it turns out to be.
+
+867
+00:50:44,190 --> 00:50:48,140
+So somebody picks alpha
+ahead of time.
+
+868
+00:50:48,140 --> 00:50:52,210
+Based on the probability of
+a false rejection based on
+
+869
+00:50:52,210 --> 00:50:55,890
+alpha, I find where my threshold
+is going to be.
+
+870
+00:50:55,890 --> 00:50:59,890
+I choose my threshold, and that
+determines subsequently
+
+871
+00:50:59,890 --> 00:51:01,270
+the value of beta.
+
+872
+00:51:01,270 --> 00:51:07,340
+So we're going to continue with
+this story next time, and
+
+873
+00:51:07,340 --> 00:51:08,590
+we'll stop here.

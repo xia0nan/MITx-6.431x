@@ -1,0 +1,4663 @@
+1
+00:00:00,040 --> 00:00:02,460
+The following content is
+provided under a Creative
+
+2
+00:00:02,460 --> 00:00:03,870
+Commons license.
+
+3
+00:00:03,870 --> 00:00:06,910
+Your support will help MIT
+OpenCourseWare continue to
+
+4
+00:00:06,910 --> 00:00:10,560
+offer high quality educational
+resources for free.
+
+5
+00:00:10,560 --> 00:00:13,460
+To make a donation or view
+additional materials from
+
+6
+00:00:13,460 --> 00:00:17,390
+hundreds of MIT courses, visit
+MIT OpenCourseWare at
+
+7
+00:00:17,390 --> 00:00:18,640
+ocw.mit.edu.
+
+8
+00:00:22,440 --> 00:00:29,250
+PROFESSOR: OK, so welcome to
+6.041/6.431, the class on
+
+9
+00:00:29,250 --> 00:00:31,750
+probability models
+and the like.
+
+10
+00:00:31,750 --> 00:00:32,740
+I'm John Tsitsiklis.
+
+11
+00:00:32,740 --> 00:00:36,340
+I will be teaching this class,
+and I'm looking forward to
+
+12
+00:00:36,340 --> 00:00:41,060
+this being an enjoyable and
+also useful experience.
+
+13
+00:00:41,060 --> 00:00:44,500
+We have a fair amount of staff
+involved in this course, your
+
+14
+00:00:44,500 --> 00:00:48,040
+recitation instructors and also
+a bunch of TAs, but I
+
+15
+00:00:48,040 --> 00:00:52,860
+want to single out our head
+TA, Uzoma, who is the key
+
+16
+00:00:52,860 --> 00:00:54,450
+person in this class.
+
+17
+00:00:54,450 --> 00:00:56,550
+Everything has to
+go through him.
+
+18
+00:00:56,550 --> 00:00:59,640
+If he doesn't know in which
+recitation section you are,
+
+19
+00:00:59,640 --> 00:01:03,700
+then simply you do not exist,
+so keep that in mind.
+
+20
+00:01:03,700 --> 00:01:04,099
+All right.
+
+21
+00:01:04,099 --> 00:01:08,360
+So we want to jump right into
+the subject, but I'm going to
+
+22
+00:01:08,360 --> 00:01:11,210
+take just a few minutes
+to talk about a few
+
+23
+00:01:11,210 --> 00:01:14,580
+administrative details and
+how the course is run.
+
+24
+00:01:14,580 --> 00:01:17,990
+So we're going to have lectures
+twice a week and I'm
+
+25
+00:01:17,990 --> 00:01:20,300
+going to use old fashioned
+transparencies.
+
+26
+00:01:20,300 --> 00:01:23,270
+Now, you get copies of these
+slides with plenty of space
+
+27
+00:01:23,270 --> 00:01:25,760
+for you to keep notes on them.
+
+28
+00:01:25,760 --> 00:01:31,190
+A useful way of making good use
+of the slides is to use
+
+29
+00:01:31,190 --> 00:01:33,670
+them as a sort of mnemonic
+summary of
+
+30
+00:01:33,670 --> 00:01:35,720
+what happens in lecture.
+
+31
+00:01:35,720 --> 00:01:38,460
+Not everything that I'm going
+to say is, of course, on the
+
+32
+00:01:38,460 --> 00:01:41,700
+slides, but by looking them you
+get the sense of what's
+
+33
+00:01:41,700 --> 00:01:42,760
+happening right now.
+
+34
+00:01:42,760 --> 00:01:45,940
+And it may be a good idea to
+review them before you go to
+
+35
+00:01:45,940 --> 00:01:47,240
+recitation.
+
+36
+00:01:47,240 --> 00:01:48,310
+So what happens in recitation?
+
+37
+00:01:48,310 --> 00:01:52,040
+In recitation, your recitation
+instructor is going to maybe
+
+38
+00:01:52,040 --> 00:01:55,140
+review some of the theory
+and then solve some
+
+39
+00:01:55,140 --> 00:01:57,150
+problems for you.
+
+40
+00:01:57,150 --> 00:02:00,520
+And then you have tutorials
+where you meet in very small
+
+41
+00:02:00,520 --> 00:02:02,750
+groups together with your TA.
+
+42
+00:02:02,750 --> 00:02:05,740
+And what happens in tutorials
+is that you actually do the
+
+43
+00:02:05,740 --> 00:02:09,020
+problem solving with the help
+of your TA and the help of
+
+44
+00:02:09,020 --> 00:02:12,290
+your classmates in your
+tutorial section.
+
+45
+00:02:12,290 --> 00:02:14,340
+Now probability is
+a tricky subject.
+
+46
+00:02:14,340 --> 00:02:16,750
+You may be reading the text,
+listening to lectures,
+
+47
+00:02:16,750 --> 00:02:20,660
+everything makes perfect sense,
+and so on, but until
+
+48
+00:02:20,660 --> 00:02:23,510
+you actually sit down and try
+to solve problems, you don't
+
+49
+00:02:23,510 --> 00:02:25,600
+quite appreciate the
+subtleties and the
+
+50
+00:02:25,600 --> 00:02:27,310
+difficulties that
+are involved.
+
+51
+00:02:27,310 --> 00:02:30,550
+So problem solving is a key
+part of this class.
+
+52
+00:02:30,550 --> 00:02:34,010
+And tutorials are extremely
+useful just for this reason
+
+53
+00:02:34,010 --> 00:02:36,710
+because that's where you
+actually get the practice of
+
+54
+00:02:36,710 --> 00:02:39,620
+solving problems on your own,
+as opposed to seeing someone
+
+55
+00:02:39,620 --> 00:02:43,510
+else who's solving
+them for you.
+
+56
+00:02:43,510 --> 00:02:46,840
+OK but, mechanics, a key part
+of what's going to happen
+
+57
+00:02:46,840 --> 00:02:51,890
+today is that you will turn in
+your schedule forms that are
+
+58
+00:02:51,890 --> 00:02:55,350
+at the end of the handout that
+you have in your hands.
+
+59
+00:02:55,350 --> 00:02:59,820
+Then, the TAs will be working
+frantically through the night,
+
+60
+00:02:59,820 --> 00:03:04,000
+and they're going to be
+producing a list of who goes
+
+61
+00:03:04,000 --> 00:03:05,700
+into what section.
+
+62
+00:03:05,700 --> 00:03:09,640
+And when that happens, any
+person in this class, with
+
+63
+00:03:09,640 --> 00:03:13,350
+probability 90%, is going to be
+happy with their assignment
+
+64
+00:03:13,350 --> 00:03:17,670
+and, with probability 10%,
+they're going to be unhappy.
+
+65
+00:03:17,670 --> 00:03:20,860
+Now, unhappy people have
+an option, though.
+
+66
+00:03:20,860 --> 00:03:23,820
+You can resubmit your form
+together with your full
+
+67
+00:03:23,820 --> 00:03:27,470
+schedule and constraints, give
+it back to the head TA, who
+
+68
+00:03:27,470 --> 00:03:32,160
+will then do some further
+juggling and reassign people,
+
+69
+00:03:32,160 --> 00:03:36,270
+and after that happens, 90% of
+those unhappy people will
+
+70
+00:03:36,270 --> 00:03:37,570
+become happy.
+
+71
+00:03:37,570 --> 00:03:42,270
+And 10% of them will
+be less unhappy.
+
+72
+00:03:42,270 --> 00:03:42,840
+OK.
+
+73
+00:03:42,840 --> 00:03:46,930
+So what's the probability that a
+random person is going to be
+
+74
+00:03:46,930 --> 00:03:49,800
+unhappy at the end
+of this process?
+
+75
+00:03:49,800 --> 00:03:50,780
+It's 1%.
+
+76
+00:03:50,780 --> 00:03:51,330
+Excellent.
+
+77
+00:03:51,330 --> 00:03:51,490
+Good.
+
+78
+00:03:51,490 --> 00:03:53,200
+Maybe you don't need
+this class.
+
+79
+00:03:53,200 --> 00:03:54,340
+OK, so 1%.
+
+80
+00:03:54,340 --> 00:03:57,370
+We have about 100 people in this
+class, so there's going
+
+81
+00:03:57,370 --> 00:03:59,590
+to be about one unhappy
+person.
+
+82
+00:03:59,590 --> 00:04:03,020
+I mean, anywhere you look in
+life, in any group you look
+
+83
+00:04:03,020 --> 00:04:05,370
+at, there's always one unhappy
+person, right?
+
+84
+00:04:05,370 --> 00:04:09,060
+So, what can we do about it?
+
+85
+00:04:09,060 --> 00:04:09,660
+All right.
+
+86
+00:04:09,660 --> 00:04:12,710
+Another important part about
+mechanics is to read carefully
+
+87
+00:04:12,710 --> 00:04:15,540
+the statement that we have about
+collaboration, academic
+
+88
+00:04:15,540 --> 00:04:17,019
+honesty, and all that.
+
+89
+00:04:17,019 --> 00:04:19,149
+You're encouraged, it's
+a very good idea to
+
+90
+00:04:19,149 --> 00:04:21,140
+work with other students.
+
+91
+00:04:21,140 --> 00:04:24,690
+You can consult sources that
+are out there, but when you
+
+92
+00:04:24,690 --> 00:04:28,140
+sit down and write your
+solutions you have to do that
+
+93
+00:04:28,140 --> 00:04:32,050
+by setting things aside and just
+write them on your own.
+
+94
+00:04:32,050 --> 00:04:34,360
+You cannot copy something
+that somebody else
+
+95
+00:04:34,360 --> 00:04:37,040
+has given to you.
+
+96
+00:04:37,040 --> 00:04:41,390
+One reason is that we're not
+going to like it when it
+
+97
+00:04:41,390 --> 00:04:44,280
+happens, and then another reason
+is that you're not
+
+98
+00:04:44,280 --> 00:04:46,270
+going to do yourself
+any favor.
+
+99
+00:04:46,270 --> 00:04:48,830
+Really the only way to do well
+in this class is to get a lot
+
+100
+00:04:48,830 --> 00:04:51,620
+of practice by solving
+problems yourselves.
+
+101
+00:04:51,620 --> 00:04:55,160
+So if you don't do that on your
+own, then when quiz and
+
+102
+00:04:55,160 --> 00:04:59,070
+exam time comes, things are
+going to be difficult.
+
+103
+00:04:59,070 --> 00:05:02,590
+So, as I mentioned here, we're
+going to have recitation
+
+104
+00:05:02,590 --> 00:05:06,540
+sections, that some of them are
+for 6.041 students, some
+
+105
+00:05:06,540 --> 00:05:10,270
+are for 6.431 students, the
+graduate section of the class.
+
+106
+00:05:10,270 --> 00:05:12,950
+Now undergraduates
+can sit in the
+
+107
+00:05:12,950 --> 00:05:14,690
+graduate recitation sections.
+
+108
+00:05:14,690 --> 00:05:17,650
+What's going to happen there is
+that things may be just a
+
+109
+00:05:17,650 --> 00:05:21,260
+little faster and you may be
+covering a problem that's a
+
+110
+00:05:21,260 --> 00:05:23,300
+little more advanced and
+is not covered in
+
+111
+00:05:23,300 --> 00:05:24,670
+the undergrad sections.
+
+112
+00:05:24,670 --> 00:05:28,190
+But if you sit in the graduate
+section, and you're an
+
+113
+00:05:28,190 --> 00:05:31,140
+undergraduate, you're still
+just responsible for the
+
+114
+00:05:31,140 --> 00:05:33,130
+undergraduate material.
+
+115
+00:05:33,130 --> 00:05:35,760
+That is, you can just do the
+undergraduate work in the
+
+116
+00:05:35,760 --> 00:05:38,470
+class, but maybe be exposed
+at the different section.
+
+117
+00:05:41,070 --> 00:05:43,036
+OK.
+
+118
+00:05:43,036 --> 00:05:46,220
+A few words about the
+style of this class.
+
+119
+00:05:46,220 --> 00:05:50,760
+We want to focus on basic
+ideas and concepts.
+
+120
+00:05:50,760 --> 00:05:53,860
+There's going to be lots of
+formulas, but what we try to
+
+121
+00:05:53,860 --> 00:05:56,530
+do in this class is to actually
+have you understand
+
+122
+00:05:56,530 --> 00:05:58,190
+what those formulas mean.
+
+123
+00:05:58,190 --> 00:06:01,260
+And, in a year from now when
+almost all of the formulas
+
+124
+00:06:01,260 --> 00:06:04,660
+have been wiped out from your
+memory, you still have the
+
+125
+00:06:04,660 --> 00:06:05,610
+basic concepts.
+
+126
+00:06:05,610 --> 00:06:08,690
+You can understand them, so when
+you look things up again,
+
+127
+00:06:08,690 --> 00:06:12,820
+they will still make sense.
+
+128
+00:06:12,820 --> 00:06:16,880
+It's not the plug and chug kind
+of class where you're
+
+129
+00:06:16,880 --> 00:06:19,430
+given a list of formulas, you're
+given numbers, and you
+
+130
+00:06:19,430 --> 00:06:21,470
+plug in and you get answers.
+
+131
+00:06:21,470 --> 00:06:24,950
+The really hard part is usually
+to choose which
+
+132
+00:06:24,950 --> 00:06:26,280
+formulas you're going to use.
+
+133
+00:06:26,280 --> 00:06:28,900
+You need judgment, you
+need intuition.
+
+134
+00:06:28,900 --> 00:06:32,400
+Lots of probability problems, at
+least the interesting ones,
+
+135
+00:06:32,400 --> 00:06:34,450
+often have lots of different
+solutions.
+
+136
+00:06:34,450 --> 00:06:37,440
+Some are extremely long, some
+are extremely short.
+
+137
+00:06:37,440 --> 00:06:40,550
+The extremely short ones usually
+involve some kind of
+
+138
+00:06:40,550 --> 00:06:44,320
+deeper understanding of what's
+going on so that you can pick
+
+139
+00:06:44,320 --> 00:06:46,350
+a shortcut and use it.
+
+140
+00:06:46,350 --> 00:06:48,300
+And hopefully you are going
+to develop this
+
+141
+00:06:48,300 --> 00:06:51,630
+skill during this class.
+
+142
+00:06:51,630 --> 00:06:56,360
+Now, I could spend a lot of time
+in this lecture talking
+
+143
+00:06:56,360 --> 00:06:58,570
+about why the subject
+is important.
+
+144
+00:06:58,570 --> 00:07:02,270
+I'll keep it short because I
+think it's almost obvious.
+
+145
+00:07:02,270 --> 00:07:05,650
+Anything that happens in
+life is uncertain.
+
+146
+00:07:05,650 --> 00:07:09,080
+There's uncertainty anywhere, so
+whatever you try to do, you
+
+147
+00:07:09,080 --> 00:07:12,550
+need to have some way of dealing
+or thinking about this
+
+148
+00:07:12,550 --> 00:07:13,930
+uncertainty.
+
+149
+00:07:13,930 --> 00:07:17,110
+And the way to do that in a
+systematic way is by using the
+
+150
+00:07:17,110 --> 00:07:20,110
+models that are given to us
+by probability theory.
+
+151
+00:07:20,110 --> 00:07:22,330
+So if you're an engineer and
+you're dealing with a
+
+152
+00:07:22,330 --> 00:07:25,470
+communication system or signal
+processing, basically you're
+
+153
+00:07:25,470 --> 00:07:28,440
+facing a fight against noise.
+
+154
+00:07:28,440 --> 00:07:30,380
+Noise is random, is uncertain.
+
+155
+00:07:30,380 --> 00:07:31,450
+How do you model it?
+
+156
+00:07:31,450 --> 00:07:33,120
+How do you deal with it?
+
+157
+00:07:33,120 --> 00:07:36,400
+If you're a manager, I guess
+you're dealing with customer
+
+158
+00:07:36,400 --> 00:07:38,410
+demand, which is, of
+course, random.
+
+159
+00:07:38,410 --> 00:07:41,590
+Or you're dealing with the
+stock market, which is
+
+160
+00:07:41,590 --> 00:07:42,820
+definitely random.
+
+161
+00:07:42,820 --> 00:07:48,190
+Or you play the casino, which
+is, again, random, and so on.
+
+162
+00:07:48,190 --> 00:07:51,100
+And the same goes for pretty
+much any other field that you
+
+163
+00:07:51,100 --> 00:07:52,880
+can think of.
+
+164
+00:07:52,880 --> 00:07:57,320
+But, independent of which field
+you're coming from, the
+
+165
+00:07:57,320 --> 00:08:00,630
+basic concepts and tools are
+really all the same.
+
+166
+00:08:00,630 --> 00:08:04,080
+So you may see in bookstores
+that there are books,
+
+167
+00:08:04,080 --> 00:08:07,010
+probability for scientists,
+probability for engineers,
+
+168
+00:08:07,010 --> 00:08:09,900
+probability for social
+scientists, probability for
+
+169
+00:08:09,900 --> 00:08:11,440
+astrologists.
+
+170
+00:08:11,440 --> 00:08:14,880
+Well, what all those books have
+inside them is exactly
+
+171
+00:08:14,880 --> 00:08:18,040
+the same models, the same
+equations, the same problems.
+
+172
+00:08:18,040 --> 00:08:21,510
+They just make them somewhat
+different word problems.
+
+173
+00:08:21,510 --> 00:08:26,000
+The basic concepts are just one
+and the same, and we'll
+
+174
+00:08:26,000 --> 00:08:30,420
+take this as an excuse for not
+going too much into specific
+
+175
+00:08:30,420 --> 00:08:31,960
+domain applications.
+
+176
+00:08:31,960 --> 00:08:35,260
+We will have problems and
+examples that are motivated,
+
+177
+00:08:35,260 --> 00:08:38,140
+in some loose sense, from
+real world situations.
+
+178
+00:08:38,140 --> 00:08:42,030
+But we're not really trying in
+this class to develop the
+
+179
+00:08:42,030 --> 00:08:46,220
+skills for domain-specific
+problems.
+
+180
+00:08:46,220 --> 00:08:49,660
+Rather, we're going to try to
+stick to general understanding
+
+181
+00:08:49,660 --> 00:08:52,390
+of the subject.
+
+182
+00:08:52,390 --> 00:08:52,760
+OK.
+
+183
+00:08:52,760 --> 00:08:57,280
+So the next slide, of which you
+do have in your handout,
+
+184
+00:08:57,280 --> 00:09:01,080
+gives you a few more details
+about the class.
+
+185
+00:09:01,080 --> 00:09:04,540
+Maybe one thing to comment here
+is that you do need to
+
+186
+00:09:04,540 --> 00:09:06,370
+read the text.
+
+187
+00:09:06,370 --> 00:09:09,420
+And with calculus books, perhaps
+you can live with a
+
+188
+00:09:09,420 --> 00:09:12,640
+just a two page summary of all
+of the interesting formulas in
+
+189
+00:09:12,640 --> 00:09:18,050
+calculus, and you can get by
+just with those formulas.
+
+190
+00:09:18,050 --> 00:09:20,430
+But here, because we want
+to develop concepts and
+
+191
+00:09:20,430 --> 00:09:24,260
+intuition, actually reading
+words, as opposed to just
+
+192
+00:09:24,260 --> 00:09:27,430
+browsing through equations,
+does make a difference.
+
+193
+00:09:27,430 --> 00:09:30,250
+In the beginning, the class
+is kind of easy.
+
+194
+00:09:30,250 --> 00:09:32,820
+When we deal with discrete
+probability, that's the
+
+195
+00:09:32,820 --> 00:09:37,320
+material until our first quiz,
+and some of you may get by
+
+196
+00:09:37,320 --> 00:09:40,710
+without being too systematic
+about following the material.
+
+197
+00:09:40,710 --> 00:09:43,970
+But it does get substantially
+harder afterwards.
+
+198
+00:09:43,970 --> 00:09:48,110
+And I would keep restating that
+you do have to read the
+
+199
+00:09:48,110 --> 00:09:52,460
+text to really understand
+the material.
+
+200
+00:09:52,460 --> 00:09:52,980
+OK.
+
+201
+00:09:52,980 --> 00:09:57,850
+So now we can start with the
+real part of the lecture.
+
+202
+00:09:57,850 --> 00:10:01,670
+Let us set the goals
+for today.
+
+203
+00:10:01,670 --> 00:10:05,890
+So probability, or probability
+theory, is a framework for
+
+204
+00:10:05,890 --> 00:10:09,870
+dealing with uncertainty, for
+dealing with situations in
+
+205
+00:10:09,870 --> 00:10:12,200
+which we have some kind
+of randomness.
+
+206
+00:10:12,200 --> 00:10:16,300
+So what we want to do is, by the
+end of today's lecture, to
+
+207
+00:10:16,300 --> 00:10:21,910
+give you anything that you need
+to know how to set up
+
+208
+00:10:21,910 --> 00:10:23,970
+what does it take to set up
+a probabilistic model.
+
+209
+00:10:23,970 --> 00:10:28,390
+And what are the basic rules of
+the game for dealing with
+
+210
+00:10:28,390 --> 00:10:30,520
+probabilistic models?
+
+211
+00:10:30,520 --> 00:10:32,780
+So, by the end of this lecture,
+you will have
+
+212
+00:10:32,780 --> 00:10:34,750
+essentially recovered
+half of this
+
+213
+00:10:34,750 --> 00:10:36,860
+semester's tuition, right?
+
+214
+00:10:36,860 --> 00:10:39,040
+So we're going to talk
+about probabilistic
+
+215
+00:10:39,040 --> 00:10:40,820
+models in more detail--
+
+216
+00:10:40,820 --> 00:10:43,920
+the sample space, which is
+basically a description of all
+
+217
+00:10:43,920 --> 00:10:47,410
+the things that may happen
+during a random experiment,
+
+218
+00:10:47,410 --> 00:10:50,940
+and the probability law, which
+describes our beliefs about
+
+219
+00:10:50,940 --> 00:10:53,710
+which outcomes are more
+likely to occur
+
+220
+00:10:53,710 --> 00:10:56,080
+compared to other outcomes.
+
+221
+00:10:56,080 --> 00:10:59,130
+Probability laws have to obey
+certain properties that we
+
+222
+00:10:59,130 --> 00:11:00,640
+call the axioms of
+probability.
+
+223
+00:11:00,640 --> 00:11:04,640
+So the main part of today's
+lecture is to describe those
+
+224
+00:11:04,640 --> 00:11:09,350
+axioms, which are the rules of
+the game, and consider a few
+
+225
+00:11:09,350 --> 00:11:12,770
+really trivial examples.
+
+226
+00:11:12,770 --> 00:11:15,370
+OK, so let's start
+with our agenda.
+
+227
+00:11:15,370 --> 00:11:18,080
+The first piece in a
+probabilistic model is a
+
+228
+00:11:18,080 --> 00:11:21,850
+description of the sample
+space of an experiment.
+
+229
+00:11:21,850 --> 00:11:27,470
+So we do an experiment, and by
+experiment we just mean that
+
+230
+00:11:27,470 --> 00:11:30,270
+just something happens
+out there.
+
+231
+00:11:30,270 --> 00:11:33,300
+And that something that happens,
+it could be flipping
+
+232
+00:11:33,300 --> 00:11:39,320
+a coin, or it could be rolling
+a dice, or it could be doing
+
+233
+00:11:39,320 --> 00:11:41,550
+something in a card game.
+
+234
+00:11:41,550 --> 00:11:44,190
+So we fix a particular
+experiment.
+
+235
+00:11:44,190 --> 00:11:48,780
+And we come up with a list of
+all the possible things that
+
+236
+00:11:48,780 --> 00:11:51,090
+may happen during
+this experiment.
+
+237
+00:11:51,090 --> 00:11:54,880
+So we write down a list of all
+the possible outcomes.
+
+238
+00:11:54,880 --> 00:11:57,830
+So here's a list of all the
+possible outcomes of the
+
+239
+00:11:57,830 --> 00:11:59,050
+experiment.
+
+240
+00:11:59,050 --> 00:12:02,730
+I use the word "list," but, if
+you want to be a little more
+
+241
+00:12:02,730 --> 00:12:06,730
+formal, it's better to think
+of that list as a set.
+
+242
+00:12:06,730 --> 00:12:08,630
+So we have a set.
+
+243
+00:12:08,630 --> 00:12:11,000
+That set is our sample space.
+
+244
+00:12:11,000 --> 00:12:14,840
+And it's a set whose elements
+are the possible outcomes of
+
+245
+00:12:14,840 --> 00:12:15,920
+the experiment.
+
+246
+00:12:15,920 --> 00:12:18,530
+So, for example, if you're
+dealing with flipping a coin,
+
+247
+00:12:18,530 --> 00:12:22,380
+your sample space would be
+heads, this is one outcome,
+
+248
+00:12:22,380 --> 00:12:24,450
+tails is one outcome.
+
+249
+00:12:24,450 --> 00:12:27,540
+And this set, which has two
+elements, is the sample space
+
+250
+00:12:27,540 --> 00:12:29,260
+of the experiment.
+
+251
+00:12:29,260 --> 00:12:29,670
+OK.
+
+252
+00:12:29,670 --> 00:12:33,260
+What do we need to think about
+when we're setting up the
+
+253
+00:12:33,260 --> 00:12:34,430
+sample space?
+
+254
+00:12:34,430 --> 00:12:36,690
+First, the list should be
+mutually exclusive,
+
+255
+00:12:36,690 --> 00:12:37,830
+collectively exhaustive.
+
+256
+00:12:37,830 --> 00:12:39,150
+What does that mean?
+
+257
+00:12:39,150 --> 00:12:42,490
+Collectively exhaustive means
+that, no matter what happens
+
+258
+00:12:42,490 --> 00:12:45,730
+in the experiment, you're
+going to get one of the
+
+259
+00:12:45,730 --> 00:12:47,700
+outcomes inside here.
+
+260
+00:12:47,700 --> 00:12:51,010
+So you have not forgotten any
+of the possibilities of what
+
+261
+00:12:51,010 --> 00:12:53,020
+may happen in the experiment.
+
+262
+00:12:53,020 --> 00:12:57,720
+Mutually exclusive means that
+if this happens, then that
+
+263
+00:12:57,720 --> 00:12:58,870
+cannot happen.
+
+264
+00:12:58,870 --> 00:13:01,580
+So at the end of the experiment,
+you should be able
+
+265
+00:13:01,580 --> 00:13:06,570
+to point out to me just one,
+exactly one, of these outcomes
+
+266
+00:13:06,570 --> 00:13:10,660
+and say, this is the outcome
+that happened.
+
+267
+00:13:10,660 --> 00:13:11,040
+OK.
+
+268
+00:13:11,040 --> 00:13:13,690
+So these are sort of
+basic requirements.
+
+269
+00:13:13,690 --> 00:13:16,540
+There's another requirement
+which is a little more loose.
+
+270
+00:13:16,540 --> 00:13:19,150
+When you set up your sample
+space, sometimes you do have
+
+271
+00:13:19,150 --> 00:13:23,530
+some freedom about the details
+of how you're going to
+
+272
+00:13:23,530 --> 00:13:24,900
+describe it.
+
+273
+00:13:24,900 --> 00:13:27,160
+And the question is,
+how much detail are
+
+274
+00:13:27,160 --> 00:13:28,730
+you going to include?
+
+275
+00:13:28,730 --> 00:13:31,880
+So let's take this coin flipping
+experiment and think
+
+276
+00:13:31,880 --> 00:13:34,070
+of the following sample space.
+
+277
+00:13:34,070 --> 00:13:37,825
+One possible outcome is heads,
+a second possible outcome is
+
+278
+00:13:37,825 --> 00:13:44,000
+tails and it's raining, and the
+third possible outcome is
+
+279
+00:13:44,000 --> 00:13:45,500
+tails and it's not raining.
+
+280
+00:13:49,180 --> 00:13:52,760
+So this is another possible
+sample space for the
+
+281
+00:13:52,760 --> 00:13:56,910
+experiment where I flip
+a coin just once.
+
+282
+00:13:56,910 --> 00:13:58,330
+It's a legitimate one.
+
+283
+00:13:58,330 --> 00:14:01,600
+These three possibilities are
+mutually exclusive and
+
+284
+00:14:01,600 --> 00:14:03,470
+collectively exhaustive.
+
+285
+00:14:03,470 --> 00:14:05,410
+Which one is the right
+sample space?
+
+286
+00:14:05,410 --> 00:14:08,440
+Is it this one or that one?
+
+287
+00:14:08,440 --> 00:14:12,020
+Well, if you think that my coin
+flipping inside this room
+
+288
+00:14:12,020 --> 00:14:15,690
+is completely unrelated to the
+weather outside, then you're
+
+289
+00:14:15,690 --> 00:14:18,470
+going to stick with
+this sample space.
+
+290
+00:14:18,470 --> 00:14:22,080
+If, on the other hand, you have
+some superstitious belief
+
+291
+00:14:22,080 --> 00:14:27,180
+that maybe rain has an effect
+on my coins, you might work
+
+292
+00:14:27,180 --> 00:14:29,520
+with the sample space
+of this kind.
+
+293
+00:14:29,520 --> 00:14:33,190
+So you probably wouldn't do
+that, but it's a legitimate
+
+294
+00:14:33,190 --> 00:14:35,370
+option, strictly speaking.
+
+295
+00:14:35,370 --> 00:14:38,900
+Now this example is a little bit
+on the frivolous side, but
+
+296
+00:14:38,900 --> 00:14:42,600
+the issue that comes up here is
+a basic one that shows up
+
+297
+00:14:42,600 --> 00:14:44,700
+anywhere in science
+and engineering.
+
+298
+00:14:44,700 --> 00:14:48,150
+Whenever you're dealing with a
+model or with a situation,
+
+299
+00:14:48,150 --> 00:14:50,645
+there are zillions of details
+in that situation.
+
+300
+00:14:50,645 --> 00:14:54,350
+And when you come up with a
+model, you choose some of
+
+301
+00:14:54,350 --> 00:14:58,220
+those details that you keep in
+your model, and some that you
+
+302
+00:14:58,220 --> 00:15:00,060
+say, well, these
+are irrelevant.
+
+303
+00:15:00,060 --> 00:15:03,780
+Or maybe there are small
+effects, I can neglect them,
+
+304
+00:15:03,780 --> 00:15:05,970
+and you keep them outside
+your model.
+
+305
+00:15:05,970 --> 00:15:09,420
+So when you go to the real
+world, there's definitely an
+
+306
+00:15:09,420 --> 00:15:12,950
+element of art and some judgment
+that you need to do
+
+307
+00:15:12,950 --> 00:15:15,930
+in order to set up an
+appropriate sample space.
+
+308
+00:15:20,270 --> 00:15:23,310
+So, an easy example now.
+
+309
+00:15:23,310 --> 00:15:26,000
+So of course, the elementary
+examples are
+
+310
+00:15:26,000 --> 00:15:29,420
+coins, cards, and dice.
+
+311
+00:15:29,420 --> 00:15:30,840
+So let's deal with dice.
+
+312
+00:15:30,840 --> 00:15:34,550
+But to keep the diagram small,
+instead of a six-sided die,
+
+313
+00:15:34,550 --> 00:15:38,270
+we're going to think about the
+die that only has four faces.
+
+314
+00:15:38,270 --> 00:15:40,220
+So you can do that with
+a tetrahedron,
+
+315
+00:15:40,220 --> 00:15:41,150
+doesn't really matter.
+
+316
+00:15:41,150 --> 00:15:44,110
+Basically, it's a die that when
+you roll it, you get a
+
+317
+00:15:44,110 --> 00:15:47,360
+result which is one,
+two, three or four.
+
+318
+00:15:47,360 --> 00:15:50,860
+However, the experiment that I'm
+going to think about will
+
+319
+00:15:50,860 --> 00:15:55,770
+consist of two rolls
+of a dice.
+
+320
+00:15:55,770 --> 00:15:57,600
+A crucial point here--
+
+321
+00:15:57,600 --> 00:16:01,580
+I'm rolling the die twice, but
+I'm thinking of this as just
+
+322
+00:16:01,580 --> 00:16:06,370
+one experiment, not two
+different experiments, not a
+
+323
+00:16:06,370 --> 00:16:10,110
+repetition twice of the
+same experiment.
+
+324
+00:16:10,110 --> 00:16:12,040
+So it's one big experiment.
+
+325
+00:16:12,040 --> 00:16:15,190
+During that big experiment
+various things could happen,
+
+326
+00:16:15,190 --> 00:16:17,910
+such as I'm rolling the
+die once, and then I'm
+
+327
+00:16:17,910 --> 00:16:20,384
+rolling the die twice.
+
+328
+00:16:20,384 --> 00:16:22,450
+OK.
+
+329
+00:16:22,450 --> 00:16:25,280
+So what's the sample space
+for that experiment?
+
+330
+00:16:25,280 --> 00:16:27,020
+Well, the sample space
+consists of
+
+331
+00:16:27,020 --> 00:16:28,700
+the possible outcomes.
+
+332
+00:16:28,700 --> 00:16:33,220
+One possible outcome is that
+your first roll resulted in
+
+333
+00:16:33,220 --> 00:16:36,670
+two and the second roll
+resulted in three.
+
+334
+00:16:36,670 --> 00:16:40,950
+In which case, the outcome that
+you get is this one, a
+
+335
+00:16:40,950 --> 00:16:42,840
+two followed by three.
+
+336
+00:16:42,840 --> 00:16:45,840
+This is one possible outcome.
+
+337
+00:16:45,840 --> 00:16:49,750
+The way I'm describing things,
+this outcome is to be
+
+338
+00:16:49,750 --> 00:16:54,130
+distinguished from this outcome
+here, where a three is
+
+339
+00:16:54,130 --> 00:16:56,656
+followed by two.
+
+340
+00:16:56,656 --> 00:17:00,500
+If you're playing backgammon, it
+doesn't matter which one of
+
+341
+00:17:00,500 --> 00:17:02,250
+the two happened.
+
+342
+00:17:02,250 --> 00:17:05,819
+But if you're dealing with a
+probabilistic model that you
+
+343
+00:17:05,819 --> 00:17:08,530
+want to keep track of everything
+that happens in
+
+344
+00:17:08,530 --> 00:17:12,829
+this composite experiment, there
+are good reasons for
+
+345
+00:17:12,829 --> 00:17:15,859
+distinguishing between
+these two outcomes.
+
+346
+00:17:15,859 --> 00:17:18,609
+I mean, when this happens,
+it's definitely something
+
+347
+00:17:18,609 --> 00:17:20,220
+different from that happening.
+
+348
+00:17:20,220 --> 00:17:22,900
+A two followed by a three is
+different from a three
+
+349
+00:17:22,900 --> 00:17:24,349
+followed by a two.
+
+350
+00:17:24,349 --> 00:17:27,700
+So this is the correct sample
+space for this experiment
+
+351
+00:17:27,700 --> 00:17:29,890
+where we roll the die twice.
+
+352
+00:17:29,890 --> 00:17:32,980
+It has a total of 16 elements
+and it's, of
+
+353
+00:17:32,980 --> 00:17:35,840
+course, a finite set.
+
+354
+00:17:35,840 --> 00:17:39,960
+Sometimes, instead of describing
+sample spaces in
+
+355
+00:17:39,960 --> 00:17:44,250
+terms of lists, or sets, or
+diagrams of this kind, it's
+
+356
+00:17:44,250 --> 00:17:46,930
+useful to describe
+the experiment in
+
+357
+00:17:46,930 --> 00:17:48,660
+some sequential way.
+
+358
+00:17:48,660 --> 00:17:50,950
+Whenever you have an experiment
+that consists of
+
+359
+00:17:50,950 --> 00:17:55,790
+multiple stages, it might be
+useful, at least visually, to
+
+360
+00:17:55,790 --> 00:17:59,940
+give a diagram that shows you
+how those stages evolve.
+
+361
+00:17:59,940 --> 00:18:04,080
+And that's what we do by using
+a sequential description or a
+
+362
+00:18:04,080 --> 00:18:08,390
+tree-based description by
+drawing a tree of the possible
+
+363
+00:18:08,390 --> 00:18:11,250
+evolutions during
+our experiment.
+
+364
+00:18:11,250 --> 00:18:14,890
+So in this tree, I'm thinking
+of a first stage in which I
+
+365
+00:18:14,890 --> 00:18:18,600
+roll the first die, and there
+are four possible results,
+
+366
+00:18:18,600 --> 00:18:20,520
+one, two, three and
+four.and 4.
+
+367
+00:18:20,520 --> 00:18:24,310
+And, given what happened, let's
+say in the first roll,
+
+368
+00:18:24,310 --> 00:18:26,050
+suppose I got a one.
+
+369
+00:18:26,050 --> 00:18:28,980
+Then I'm rolling the second
+dice, and there are four
+
+370
+00:18:28,980 --> 00:18:32,060
+possibilities for what may
+happen to the second die.
+
+371
+00:18:32,060 --> 00:18:33,570
+And the possible results
+are one, tow,
+
+372
+00:18:33,570 --> 00:18:36,010
+three and four again.
+
+373
+00:18:36,010 --> 00:18:38,860
+So what's the relation between
+the two diagrams?
+
+374
+00:18:38,860 --> 00:18:42,910
+Well, for example, the outcome
+two followed by three
+
+375
+00:18:42,910 --> 00:18:46,940
+corresponds to this
+path on the tree.
+
+376
+00:18:46,940 --> 00:18:50,550
+So this path corresponds to
+two followed by a three.
+
+377
+00:18:50,550 --> 00:18:54,200
+Any path is associated to a
+particular outcome, any
+
+378
+00:18:54,200 --> 00:18:57,360
+outcome is associated to
+a particular path.
+
+379
+00:18:57,360 --> 00:19:00,370
+And, instead of paths, you may
+want to think in terms of the
+
+380
+00:19:00,370 --> 00:19:01,990
+leaves of this diagram.
+
+381
+00:19:01,990 --> 00:19:05,740
+Same thing, think of each one
+of the leaves as being one
+
+382
+00:19:05,740 --> 00:19:07,980
+possible outcome.
+
+383
+00:19:07,980 --> 00:19:11,160
+And of course we have 16
+outcomes here, we have 16
+
+384
+00:19:11,160 --> 00:19:12,790
+outcomes here.
+
+385
+00:19:12,790 --> 00:19:15,920
+Maybe you noticed the subtlety
+that I used in my language.
+
+386
+00:19:15,920 --> 00:19:18,810
+I said I rolled the first
+dice and the result
+
+387
+00:19:18,810 --> 00:19:20,580
+that I get is a two.
+
+388
+00:19:20,580 --> 00:19:23,700
+I didn't use the word "outcome."
+I want to reserve
+
+389
+00:19:23,700 --> 00:19:28,960
+the word "outcome" to mean the
+overall outcome at the end of
+
+390
+00:19:28,960 --> 00:19:30,570
+the overall experiment.
+
+391
+00:19:30,570 --> 00:19:36,300
+So "2, 3" is the outcome
+of the experiment.
+
+392
+00:19:36,300 --> 00:19:38,910
+The experiment consisted
+of stages.
+
+393
+00:19:38,910 --> 00:19:41,620
+Two was the result in the first
+stage, three was the
+
+394
+00:19:41,620 --> 00:19:43,370
+result in the second stage.
+
+395
+00:19:43,370 --> 00:19:45,720
+You put all those results
+together, and
+
+396
+00:19:45,720 --> 00:19:47,520
+you get your outcome.
+
+397
+00:19:47,520 --> 00:19:53,550
+OK, perhaps we are splitting
+hairs here, but it's useful to
+
+398
+00:19:53,550 --> 00:19:56,470
+keep the concepts right.
+
+399
+00:19:56,470 --> 00:19:59,780
+What's special about this
+example is that, besides being
+
+400
+00:19:59,780 --> 00:20:03,230
+trivial, it has a sample
+space which is finite.
+
+401
+00:20:03,230 --> 00:20:06,000
+There's 16 possible
+total outcomes.
+
+402
+00:20:06,000 --> 00:20:09,210
+Not every experiment has
+a finite sample space.
+
+403
+00:20:09,210 --> 00:20:12,840
+Here's an experiment in which
+the sample space is infinite.
+
+404
+00:20:12,840 --> 00:20:17,690
+So you are playing darts and
+the target is this square.
+
+405
+00:20:17,690 --> 00:20:21,740
+And you're perfect at that game,
+so you're sure that your
+
+406
+00:20:21,740 --> 00:20:26,010
+darts will always fall
+inside the square.
+
+407
+00:20:26,010 --> 00:20:29,130
+So, but where exactly your dart
+would fall inside that
+
+408
+00:20:29,130 --> 00:20:31,180
+square, that itself is random.
+
+409
+00:20:31,180 --> 00:20:32,880
+We don't know what
+it's going to be.
+
+410
+00:20:32,880 --> 00:20:34,300
+It's uncertain.
+
+411
+00:20:34,300 --> 00:20:38,090
+So all the possible points
+inside the square are possible
+
+412
+00:20:38,090 --> 00:20:39,710
+outcomes of the experiment.
+
+413
+00:20:39,710 --> 00:20:43,060
+So a typical outcome of the
+experiment is going to a pair
+
+414
+00:20:43,060 --> 00:20:46,490
+of numbers, x,y, where x
+and y are real numbers
+
+415
+00:20:46,490 --> 00:20:48,280
+between zero and one.
+
+416
+00:20:48,280 --> 00:20:51,390
+Now there's infinitely many
+real numbers, there's
+
+417
+00:20:51,390 --> 00:20:55,270
+infinitely many points in the
+square, so this is an example
+
+418
+00:20:55,270 --> 00:20:58,740
+in which our sample space
+is an infinite set.
+
+419
+00:21:01,670 --> 00:21:06,910
+OK, so we're going to revisit
+this example a little later.
+
+420
+00:21:06,910 --> 00:21:11,790
+So these are two examples of
+what the sample space might be
+
+421
+00:21:11,790 --> 00:21:13,730
+in simple experiments.
+
+422
+00:21:13,730 --> 00:21:18,240
+Now, the more important order of
+business is now to look at
+
+423
+00:21:18,240 --> 00:21:21,800
+those possible outcomes and to
+make some statements about
+
+424
+00:21:21,800 --> 00:21:23,910
+their relative likelihoods.
+
+425
+00:21:23,910 --> 00:21:26,780
+Which outcome is more
+likely to occur
+
+426
+00:21:26,780 --> 00:21:29,060
+compared to the others?
+
+427
+00:21:29,060 --> 00:21:32,510
+And the way we do this
+is by assigning
+
+428
+00:21:32,510 --> 00:21:36,210
+probabilities to the outcomes.
+
+429
+00:21:36,210 --> 00:21:38,590
+Well, not exactly.
+
+430
+00:21:38,590 --> 00:21:42,440
+Suppose that all you were to do
+was to assign probabilities
+
+431
+00:21:42,440 --> 00:21:44,320
+to individual outcomes.
+
+432
+00:21:44,320 --> 00:21:49,200
+If you go back to this example,
+and you consider one
+
+433
+00:21:49,200 --> 00:21:52,250
+particular outcome-- let's
+say this point--
+
+434
+00:21:52,250 --> 00:21:55,620
+what would be the probability
+that you hit exactly this
+
+435
+00:21:55,620 --> 00:21:58,640
+point to infinite precision?
+
+436
+00:21:58,640 --> 00:22:01,070
+Intuitively, that probability
+would be zero.
+
+437
+00:22:01,070 --> 00:22:05,630
+So any individual point in this
+diagram in any reasonable
+
+438
+00:22:05,630 --> 00:22:08,520
+model should have zero
+probability.
+
+439
+00:22:08,520 --> 00:22:11,870
+So if you just tell me that
+any individual outcome has
+
+440
+00:22:11,870 --> 00:22:14,440
+zero probability, you're
+not really telling me
+
+441
+00:22:14,440 --> 00:22:17,030
+much to work with.
+
+442
+00:22:17,030 --> 00:22:20,910
+For that reason, what instead
+we're going to do is to assign
+
+443
+00:22:20,910 --> 00:22:25,150
+probabilities to subsets of the
+sample space, as opposed
+
+444
+00:22:25,150 --> 00:22:29,170
+to assigning probabilities
+to individual outcomes.
+
+445
+00:22:29,170 --> 00:22:32,410
+So here's the picture.
+
+446
+00:22:32,410 --> 00:22:36,890
+We have our sample space,
+which is omega, and we
+
+447
+00:22:36,890 --> 00:22:39,690
+consider some subset of
+the sample space.
+
+448
+00:22:39,690 --> 00:22:45,820
+Call it A. And I want to assign
+a number, a numerical
+
+449
+00:22:45,820 --> 00:22:50,720
+probability, to this particular
+subset which
+
+450
+00:22:50,720 --> 00:22:56,950
+represents my belief about how
+likely this set is to occur.
+
+451
+00:22:56,950 --> 00:22:57,340
+OK.
+
+452
+00:22:57,340 --> 00:23:01,250
+What do we mean "to occur?"
+And I'm introducing here a
+
+453
+00:23:01,250 --> 00:23:03,770
+language that's being used
+in probability theory.
+
+454
+00:23:03,770 --> 00:23:07,410
+When we talk about subsets of
+the sample space, we usually
+
+455
+00:23:07,410 --> 00:23:10,470
+call them events, as
+opposed to subsets.
+
+456
+00:23:10,470 --> 00:23:14,480
+And the reason is because it
+works nicely with the language
+
+457
+00:23:14,480 --> 00:23:16,710
+that describes what's
+going on.
+
+458
+00:23:16,710 --> 00:23:19,010
+So the outcome is a point.
+
+459
+00:23:19,010 --> 00:23:20,540
+The outcome is random.
+
+460
+00:23:20,540 --> 00:23:26,800
+The outcome may be inside this
+set, in which case we say that
+
+461
+00:23:26,800 --> 00:23:31,270
+event A occurred, if we get
+an outcome inside here.
+
+462
+00:23:31,270 --> 00:23:35,120
+Or the outcome may fall outside
+the set, in which case
+
+463
+00:23:35,120 --> 00:23:38,530
+we say that event
+A did not occur.
+
+464
+00:23:38,530 --> 00:23:42,310
+So we're going to assign
+probabilities to events.
+
+465
+00:23:42,310 --> 00:23:45,630
+And now, how should we
+do this assignment?
+
+466
+00:23:45,630 --> 00:23:49,180
+Well, probabilities are meant to
+describe your beliefs about
+
+467
+00:23:49,180 --> 00:23:52,880
+which sets are more likely to
+occur versus other sets.
+
+468
+00:23:52,880 --> 00:23:55,050
+So there's many ways that
+you can assign those
+
+469
+00:23:55,050 --> 00:23:56,080
+probabilities.
+
+470
+00:23:56,080 --> 00:23:59,290
+But there are some ground
+rules for this game.
+
+471
+00:23:59,290 --> 00:24:02,990
+First, we want probabilities to
+be numbers between zero and
+
+472
+00:24:02,990 --> 00:24:06,740
+one because that's the
+usual convention.
+
+473
+00:24:06,740 --> 00:24:09,840
+So a probability of zero means
+we're certain that something
+
+474
+00:24:09,840 --> 00:24:10,820
+is not going to happen.
+
+475
+00:24:10,820 --> 00:24:13,570
+Probability of one means that
+we're essentially certain that
+
+476
+00:24:13,570 --> 00:24:14,870
+something's going to happen.
+
+477
+00:24:14,870 --> 00:24:17,450
+So we want numbers between
+zero and one.
+
+478
+00:24:17,450 --> 00:24:19,740
+We also want a few
+other things.
+
+479
+00:24:19,740 --> 00:24:23,200
+And those few other things are
+going to be encapsulated in a
+
+480
+00:24:23,200 --> 00:24:25,060
+set of axioms.
+
+481
+00:24:25,060 --> 00:24:29,030
+What "axioms" means in this
+context, it's the ground rules
+
+482
+00:24:29,030 --> 00:24:31,300
+that any legitimate
+probabilistic
+
+483
+00:24:31,300 --> 00:24:33,410
+model should obey.
+
+484
+00:24:33,410 --> 00:24:37,080
+You have a choice of what kind
+of probabilities you use.
+
+485
+00:24:37,080 --> 00:24:40,900
+But, no matter what you use,
+they should obey certain
+
+486
+00:24:40,900 --> 00:24:44,740
+consistency properties because
+if they obey those properties,
+
+487
+00:24:44,740 --> 00:24:47,640
+then you can go ahead and do
+useful calculations and do
+
+488
+00:24:47,640 --> 00:24:49,360
+some useful reasoning.
+
+489
+00:24:49,360 --> 00:24:51,010
+So what are these properties?
+
+490
+00:24:51,010 --> 00:24:55,060
+First, probabilities should
+be non-negative.
+
+491
+00:24:55,060 --> 00:24:56,590
+OK?
+
+492
+00:24:56,590 --> 00:24:57,530
+That's our convention.
+
+493
+00:24:57,530 --> 00:25:00,350
+We want probabilities to be
+numbers between zero and one.
+
+494
+00:25:00,350 --> 00:25:02,130
+So they should certainly
+be non-negative.
+
+495
+00:25:02,130 --> 00:25:04,600
+The probability that event
+A occurs should be a
+
+496
+00:25:04,600 --> 00:25:06,135
+non-negative number.
+
+497
+00:25:06,135 --> 00:25:08,110
+What's the second axiom?
+
+498
+00:25:08,110 --> 00:25:13,760
+The probability of the entire
+sample space is equal to one.
+
+499
+00:25:13,760 --> 00:25:15,590
+Why does this make sense?
+
+500
+00:25:15,590 --> 00:25:20,120
+Well, the outcome is certain to
+be an element of the sample
+
+501
+00:25:20,120 --> 00:25:23,140
+space because we set up a
+sample space, which is
+
+502
+00:25:23,140 --> 00:25:24,660
+collectively exhaustive.
+
+503
+00:25:24,660 --> 00:25:28,590
+No matter what the outcome is,
+it's going to be an element of
+
+504
+00:25:28,590 --> 00:25:29,350
+the sample space.
+
+505
+00:25:29,350 --> 00:25:33,710
+We're certain that event omega
+is going to occur.
+
+506
+00:25:33,710 --> 00:25:37,470
+Therefore, we represent this
+certainty by saying that the
+
+507
+00:25:37,470 --> 00:25:41,520
+probability of omega
+is equal to one.
+
+508
+00:25:41,520 --> 00:25:47,180
+Pretty straightforward so far.
+
+509
+00:25:47,180 --> 00:25:52,240
+The more interesting axiom
+is the third rule.
+
+510
+00:25:52,240 --> 00:25:55,580
+Before getting into it,
+just a quick reminder.
+
+511
+00:25:55,580 --> 00:26:01,950
+If you have two sets, A and B,
+the intersection of A and B
+
+512
+00:26:01,950 --> 00:26:07,220
+consists of those elements that
+belong both to A and B.
+
+513
+00:26:07,220 --> 00:26:09,580
+And we denote it this way.
+
+514
+00:26:09,580 --> 00:26:11,510
+When you think
+probabilistically, the way to
+
+515
+00:26:11,510 --> 00:26:15,530
+think of intersection is by
+using the word "and." This
+
+516
+00:26:15,530 --> 00:26:21,040
+event, this intersection, is the
+event that A occurred and
+
+517
+00:26:21,040 --> 00:26:22,450
+B occurred.
+
+518
+00:26:22,450 --> 00:26:26,060
+If I get an outcome inside here,
+A has occurred and B has
+
+519
+00:26:26,060 --> 00:26:27,950
+occurred at the same time.
+
+520
+00:26:27,950 --> 00:26:31,150
+So you may find the word "and"
+to be a little more convenient
+
+521
+00:26:31,150 --> 00:26:33,680
+than the word "intersection."
+
+522
+00:26:33,680 --> 00:26:37,360
+And similarly, we have some
+notation for the union of two
+
+523
+00:26:37,360 --> 00:26:42,280
+events, which we
+write this way.
+
+524
+00:26:42,280 --> 00:26:46,250
+The union of two sets, or two
+events, is the collection of
+
+525
+00:26:46,250 --> 00:26:49,370
+all the elements that belong
+either to the first set, or to
+
+526
+00:26:49,370 --> 00:26:51,400
+the second, or to both.
+
+527
+00:26:51,400 --> 00:26:55,220
+When you talk about events, you
+can use the word "or." So
+
+528
+00:26:55,220 --> 00:26:59,990
+this is the event that A
+occurred or B occurred.
+
+529
+00:26:59,990 --> 00:27:03,350
+And this "or" means that it
+could also be that both of
+
+530
+00:27:03,350 --> 00:27:04,600
+them occurred.
+
+531
+00:27:08,890 --> 00:27:09,150
+OK.
+
+532
+00:27:09,150 --> 00:27:11,280
+So now that we have this
+notation, what does
+
+533
+00:27:11,280 --> 00:27:13,835
+the third axiom say?
+
+534
+00:27:13,835 --> 00:27:19,830
+The third axiom says that if we
+have two events, A and B,
+
+535
+00:27:19,830 --> 00:27:23,140
+that have no common elements--
+
+536
+00:27:23,140 --> 00:27:29,330
+so here's A, here's B,
+and perhaps this is
+
+537
+00:27:29,330 --> 00:27:31,140
+our big sample space.
+
+538
+00:27:31,140 --> 00:27:33,470
+The two events have no
+common elements.
+
+539
+00:27:33,470 --> 00:27:36,510
+So the intersection of the two
+events is the empty set.
+
+540
+00:27:36,510 --> 00:27:38,930
+There's nothing in their
+intersection.
+
+541
+00:27:38,930 --> 00:27:43,190
+Then, the total probability of
+A together with B has to be
+
+542
+00:27:43,190 --> 00:27:46,600
+equal to the sum of the
+individual probabilities.
+
+543
+00:27:46,600 --> 00:27:50,510
+So the probability that A occurs
+or B occurs is equal to
+
+544
+00:27:50,510 --> 00:27:52,390
+the probability that
+A occurs plus the
+
+545
+00:27:52,390 --> 00:27:55,040
+probability that B occurs.
+
+546
+00:27:55,040 --> 00:27:58,860
+So think of probability
+as being cream cheese.
+
+547
+00:27:58,860 --> 00:28:03,020
+You have one pound of cream
+cheese, the total probability
+
+548
+00:28:03,020 --> 00:28:05,340
+assigned to the entire
+sample space.
+
+549
+00:28:05,340 --> 00:28:12,780
+And that cream cheese is spread
+out over this set.
+
+550
+00:28:12,780 --> 00:28:16,380
+The probability of A is how much
+cream cheese sits on top
+
+551
+00:28:16,380 --> 00:28:20,320
+of A. Probability of B is how
+much sits on top of B. The
+
+552
+00:28:20,320 --> 00:28:25,370
+probability of A union B is
+the total amount of cream
+
+553
+00:28:25,370 --> 00:28:29,650
+cheese sitting on top of this
+and that, which is obviously
+
+554
+00:28:29,650 --> 00:28:31,880
+the sum of how much is
+sitting here and how
+
+555
+00:28:31,880 --> 00:28:33,220
+much is sitting there.
+
+556
+00:28:33,220 --> 00:28:36,110
+So probabilities behave
+like cream cheese, or
+
+557
+00:28:36,110 --> 00:28:38,450
+they behave like mass.
+
+558
+00:28:38,450 --> 00:28:48,280
+For example, if you think of
+some material object, the mass
+
+559
+00:28:48,280 --> 00:28:51,800
+of this set consisting of two
+pieces is obviously the sum of
+
+560
+00:28:51,800 --> 00:28:53,120
+the two masses.
+
+561
+00:28:53,120 --> 00:28:55,680
+So this property is a
+very intuitive one.
+
+562
+00:28:55,680 --> 00:28:58,282
+It's a pretty natural
+one to have.
+
+563
+00:28:58,282 --> 00:29:00,640
+OK.
+
+564
+00:29:00,640 --> 00:29:03,880
+Are these axioms enough for
+what we want to do?
+
+565
+00:29:03,880 --> 00:29:07,670
+I mentioned a while ago that
+we want probabilities to be
+
+566
+00:29:07,670 --> 00:29:10,110
+numbers between zero and one.
+
+567
+00:29:10,110 --> 00:29:12,400
+Here's an axiom that tells you
+that probabilities are
+
+568
+00:29:12,400 --> 00:29:13,710
+non-negative.
+
+569
+00:29:13,710 --> 00:29:17,280
+Should we have another axiom
+that tells us that
+
+570
+00:29:17,280 --> 00:29:21,670
+probabilities are less
+than or equal to one?
+
+571
+00:29:21,670 --> 00:29:23,150
+It's a desirable property.
+
+572
+00:29:23,150 --> 00:29:26,090
+We would like to have
+it in our hands.
+
+573
+00:29:26,090 --> 00:29:29,030
+OK, why is it not
+in that list?
+
+574
+00:29:29,030 --> 00:29:32,850
+Well, the people who are in the
+axiom making business are
+
+575
+00:29:32,850 --> 00:29:35,060
+mathematicians and
+mathematicians tend to be
+
+576
+00:29:35,060 --> 00:29:36,390
+pretty laconic.
+
+577
+00:29:36,390 --> 00:29:40,020
+You don't say something if
+you don't have to say it.
+
+578
+00:29:40,020 --> 00:29:42,580
+And this is the case here.
+
+579
+00:29:42,580 --> 00:29:46,660
+We don't need that extra axiom
+because we can derive it from
+
+580
+00:29:46,660 --> 00:29:48,440
+the existing axioms.
+
+581
+00:29:48,440 --> 00:29:50,590
+Here's how it goes.
+
+582
+00:29:50,590 --> 00:29:55,180
+One is the probability over
+the entire sample space.
+
+583
+00:29:55,180 --> 00:29:57,450
+Here we're using the
+second axiom.
+
+584
+00:30:00,310 --> 00:30:06,070
+Now the sample space consists
+of A together with the
+
+585
+00:30:06,070 --> 00:30:07,680
+complement of A. OK?
+
+586
+00:30:11,200 --> 00:30:14,470
+When I write the complement of
+A, I mean the complement of A
+
+587
+00:30:14,470 --> 00:30:16,800
+inside of the set omega.
+
+588
+00:30:16,800 --> 00:30:21,700
+So we have omega, here's A,
+here's the complement of A,
+
+589
+00:30:21,700 --> 00:30:24,660
+and the overall set is omega.
+
+590
+00:30:24,660 --> 00:30:25,350
+OK.
+
+591
+00:30:25,350 --> 00:30:27,520
+Now, what's the next step?
+
+592
+00:30:27,520 --> 00:30:28,650
+What should I do next?
+
+593
+00:30:28,650 --> 00:30:31,320
+Which axiom should I use?
+
+594
+00:30:31,320 --> 00:30:35,350
+We use axiom three because a set
+and the complement of that
+
+595
+00:30:35,350 --> 00:30:36,730
+set are disjoint.
+
+596
+00:30:36,730 --> 00:30:38,770
+They don't have any
+common elements.
+
+597
+00:30:38,770 --> 00:30:44,050
+So axiom three applies and
+tells me that this is the
+
+598
+00:30:44,050 --> 00:30:48,150
+probability of A plus the
+probability of A complement.
+
+599
+00:30:48,150 --> 00:30:53,970
+In particular, the probability
+of A is equal to one minus the
+
+600
+00:30:53,970 --> 00:30:58,370
+probability of A complement,
+and this is less
+
+601
+00:30:58,370 --> 00:31:00,540
+than or equal to one.
+
+602
+00:31:00,540 --> 00:31:01,790
+Why?
+
+603
+00:31:03,430 --> 00:31:06,670
+Because probabilities
+are non-negative,
+
+604
+00:31:06,670 --> 00:31:10,020
+by the first axiom.
+
+605
+00:31:10,020 --> 00:31:10,310
+OK.
+
+606
+00:31:10,310 --> 00:31:12,440
+So we got the conclusion
+that we wanted.
+
+607
+00:31:12,440 --> 00:31:16,130
+Probabilities are always less
+than or equal to one, and this
+
+608
+00:31:16,130 --> 00:31:20,230
+is a simple consequence of the
+three axioms that we have.
+
+609
+00:31:20,230 --> 00:31:24,780
+This is a really nice argument
+because it actually uses each
+
+610
+00:31:24,780 --> 00:31:26,560
+one of those axioms.
+
+611
+00:31:26,560 --> 00:31:29,060
+The argument is simple, but you
+have to use all of these
+
+612
+00:31:29,060 --> 00:31:33,050
+three properties to get the
+conclusion that you want.
+
+613
+00:31:33,050 --> 00:31:33,720
+OK.
+
+614
+00:31:33,720 --> 00:31:37,140
+So we can get interesting things
+out of our axioms.
+
+615
+00:31:37,140 --> 00:31:40,050
+Can we get some more
+interesting ones?
+
+616
+00:31:40,050 --> 00:31:44,540
+How about the union
+of three sets?
+
+617
+00:31:44,540 --> 00:31:47,000
+What kind of probability
+should it have?
+
+618
+00:31:47,000 --> 00:31:52,870
+So here's an event consisting
+of three pieces.
+
+619
+00:31:52,870 --> 00:31:56,230
+And I want to say something
+about the probability of A
+
+620
+00:31:56,230 --> 00:32:01,780
+union B union C. What I would
+like to say is that this
+
+621
+00:32:01,780 --> 00:32:05,680
+probability is equal to the sum
+of the three individual
+
+622
+00:32:05,680 --> 00:32:07,140
+probabilities.
+
+623
+00:32:07,140 --> 00:32:08,860
+How can I do it?
+
+624
+00:32:08,860 --> 00:32:11,080
+I have an axiom that
+tells me that I can
+
+625
+00:32:11,080 --> 00:32:12,760
+do it for two events.
+
+626
+00:32:12,760 --> 00:32:15,370
+I don't have an axiom
+for three events.
+
+627
+00:32:15,370 --> 00:32:19,210
+Well, maybe I can manage things
+and still be able to
+
+628
+00:32:19,210 --> 00:32:20,620
+use that axiom.
+
+629
+00:32:20,620 --> 00:32:22,700
+And here's the trick.
+
+630
+00:32:22,700 --> 00:32:28,000
+The union of three sets, you can
+think of it as forming the
+
+631
+00:32:28,000 --> 00:32:32,560
+union of the first two sets and
+then taking the union with
+
+632
+00:32:32,560 --> 00:32:35,670
+the third set.
+
+633
+00:32:35,670 --> 00:32:36,530
+OK?
+
+634
+00:32:36,530 --> 00:32:39,150
+So taking unions, you can
+take the unions in any
+
+635
+00:32:39,150 --> 00:32:40,440
+order that you want.
+
+636
+00:32:40,440 --> 00:32:44,580
+So here we have the
+union of two sets.
+
+637
+00:32:44,580 --> 00:32:49,630
+Now, ABC are disjoint,
+by assumption or
+
+638
+00:32:49,630 --> 00:32:51,780
+that's how I drew it.
+
+639
+00:32:51,780 --> 00:32:55,950
+So if A, B, and C are disjoint,
+then A union B is
+
+640
+00:32:55,950 --> 00:32:59,790
+disjoint from C. So here
+we have the union of
+
+641
+00:32:59,790 --> 00:33:01,400
+two disjoint sets.
+
+642
+00:33:01,400 --> 00:33:05,380
+So by the additivity axiom, the
+probability of that the
+
+643
+00:33:05,380 --> 00:33:08,960
+union is going to be the
+probability of the first set
+
+644
+00:33:08,960 --> 00:33:12,000
+plus the probability
+of the second set.
+
+645
+00:33:12,000 --> 00:33:15,950
+And now I can use the additivity
+axiom once more to
+
+646
+00:33:15,950 --> 00:33:20,330
+write that this is probability
+of A plus probability of B
+
+647
+00:33:20,330 --> 00:33:25,220
+plus probability of C. So by
+using this axiom which was
+
+648
+00:33:25,220 --> 00:33:28,940
+stated for two sets, we can
+actually derive a similar
+
+649
+00:33:28,940 --> 00:33:32,450
+property for the union of
+three disjoint sets.
+
+650
+00:33:32,450 --> 00:33:34,640
+And then you can repeat
+this argument as many
+
+651
+00:33:34,640 --> 00:33:35,940
+times as you want.
+
+652
+00:33:35,940 --> 00:33:39,050
+It's valid for the union of
+ten disjoint sets, for the
+
+653
+00:33:39,050 --> 00:33:42,830
+union of a hundred disjoint
+sets, for the union of any
+
+654
+00:33:42,830 --> 00:33:44,910
+finite number of sets.
+
+655
+00:33:44,910 --> 00:33:53,210
+So if A1 up to An are disjoint,
+then the probability
+
+656
+00:33:53,210 --> 00:33:59,490
+of A1 union An is equal to the
+sum of the probabilities of
+
+657
+00:33:59,490 --> 00:34:01,500
+the individual sets.
+
+658
+00:34:04,180 --> 00:34:05,740
+OK.
+
+659
+00:34:05,740 --> 00:34:08,710
+Special case of this
+is when we're
+
+660
+00:34:08,710 --> 00:34:10,790
+dealing with finite sets.
+
+661
+00:34:10,790 --> 00:34:14,300
+Suppose I have just a finite
+set of outcomes.
+
+662
+00:34:14,300 --> 00:34:17,880
+I put them together in a set
+and I'm interested in the
+
+663
+00:34:17,880 --> 00:34:19,630
+probability of that set.
+
+664
+00:34:19,630 --> 00:34:22,050
+So here's our sample space.
+
+665
+00:34:22,050 --> 00:34:26,840
+There's lots of outcomes, but
+I'm taking a few of these and
+
+666
+00:34:26,840 --> 00:34:30,120
+I form a set out of them.
+
+667
+00:34:30,120 --> 00:34:32,920
+This is a set consisting
+of, in this
+
+668
+00:34:32,920 --> 00:34:34,760
+picture, three elements.
+
+669
+00:34:34,760 --> 00:34:38,260
+In general, it consists
+of k elements.
+
+670
+00:34:38,260 --> 00:34:43,650
+Now, a finite set, I can write
+it as a union of single
+
+671
+00:34:43,650 --> 00:34:44,889
+element sets.
+
+672
+00:34:44,889 --> 00:34:49,080
+So this set here is the union
+of this one element set,
+
+673
+00:34:49,080 --> 00:34:52,800
+together with this one element
+set together with that one
+
+674
+00:34:52,800 --> 00:34:53,980
+element set.
+
+675
+00:34:53,980 --> 00:34:56,770
+So the total probability of this
+set is going to be the
+
+676
+00:34:56,770 --> 00:35:02,510
+sum of the probabilities of
+the one element sets.
+
+677
+00:35:02,510 --> 00:35:08,030
+Now, probability of a one
+element set, you need to use
+
+678
+00:35:08,030 --> 00:35:10,010
+the brackets here because
+probabilities
+
+679
+00:35:10,010 --> 00:35:12,260
+are assigned to sets.
+
+680
+00:35:12,260 --> 00:35:16,190
+But this gets kind of tedious,
+so here one abuses notation a
+
+681
+00:35:16,190 --> 00:35:19,920
+little bit and we get rid of
+those brackets and just write
+
+682
+00:35:19,920 --> 00:35:24,030
+probability of this single,
+individual outcome.
+
+683
+00:35:24,030 --> 00:35:28,510
+In any case, conclusion from
+this exercise is that the
+
+684
+00:35:28,510 --> 00:35:33,410
+total probability of a finite
+collection of possible
+
+685
+00:35:33,410 --> 00:35:37,070
+outcomes, the total probability
+is equal to the
+
+686
+00:35:37,070 --> 00:35:42,190
+sum of the probabilities
+of individual elements.
+
+687
+00:35:42,190 --> 00:35:46,460
+So these are basically the
+axioms of probability theory.
+
+688
+00:35:46,460 --> 00:35:49,970
+Or, well, they're almost
+the axioms.
+
+689
+00:35:49,970 --> 00:35:53,060
+There are some subtleties
+that are involved here.
+
+690
+00:35:53,060 --> 00:35:58,650
+One subtlety is that this axiom
+here doesn't quite do
+
+691
+00:35:58,650 --> 00:36:01,340
+the job for everything
+we would like to do.
+
+692
+00:36:01,340 --> 00:36:03,030
+And we're going to come
+back to this at
+
+693
+00:36:03,030 --> 00:36:05,080
+the end of the lecture.
+
+694
+00:36:05,080 --> 00:36:10,380
+A second subtlety has to
+do with weird sets.
+
+695
+00:36:10,380 --> 00:36:13,570
+We said that an event is a
+subset of the sample space and
+
+696
+00:36:13,570 --> 00:36:16,712
+we assign probabilities
+to events.
+
+697
+00:36:16,712 --> 00:36:19,990
+Does this mean that we are going
+to assign probability to
+
+698
+00:36:19,990 --> 00:36:23,500
+every possible subset
+of the sample space?
+
+699
+00:36:23,500 --> 00:36:26,660
+Ideally, we would
+wish to do that.
+
+700
+00:36:26,660 --> 00:36:29,580
+Unfortunately, this is
+not always possible.
+
+701
+00:36:29,580 --> 00:36:35,010
+If you take a sample space, such
+as the square, the square
+
+702
+00:36:35,010 --> 00:36:38,560
+has nice subsets, those that you
+can describe by cutting it
+
+703
+00:36:38,560 --> 00:36:40,220
+with lines and so on.
+
+704
+00:36:40,220 --> 00:36:45,540
+But it does have some very ugly
+subsets, as well, that
+
+705
+00:36:45,540 --> 00:36:48,870
+are impossible to visualize,
+impossible to imagine, but
+
+706
+00:36:48,870 --> 00:36:50,030
+they do exist.
+
+707
+00:36:50,030 --> 00:36:53,710
+And those very weird sets are
+such that there's no way to
+
+708
+00:36:53,710 --> 00:36:56,750
+assign probabilities to them
+in a way that's consistent
+
+709
+00:36:56,750 --> 00:36:58,630
+with the axioms of
+probability.
+
+710
+00:36:58,630 --> 00:36:59,000
+OK.
+
+711
+00:36:59,000 --> 00:37:02,960
+So this is a very, very fine
+point that you can immediately
+
+712
+00:37:02,960 --> 00:37:05,940
+forget for the rest
+of this class.
+
+713
+00:37:05,940 --> 00:37:09,350
+You will only encounter these
+sets if you end up doing
+
+714
+00:37:09,350 --> 00:37:12,450
+doctoral work on the theoretical
+aspects of
+
+715
+00:37:12,450 --> 00:37:15,910
+probability theory.
+
+716
+00:37:15,910 --> 00:37:19,570
+So it's just a mathematical
+subtlety that some very weird
+
+717
+00:37:19,570 --> 00:37:22,560
+sets do not have probabilities
+assigned to them.
+
+718
+00:37:22,560 --> 00:37:25,110
+But we're not going to encounter
+these sets and they
+
+719
+00:37:25,110 --> 00:37:26,885
+do not show up in any
+applications.
+
+720
+00:37:29,520 --> 00:37:29,840
+OK.
+
+721
+00:37:29,840 --> 00:37:32,410
+So now let's revisit
+our examples.
+
+722
+00:37:32,410 --> 00:37:34,800
+Let's go back to the
+die example.
+
+723
+00:37:34,800 --> 00:37:36,950
+We have our sample space.
+
+724
+00:37:36,950 --> 00:37:40,830
+Now we need to assign
+a probability law.
+
+725
+00:37:40,830 --> 00:37:43,260
+There's lots of possible
+probability laws
+
+726
+00:37:43,260 --> 00:37:44,690
+that you can assign.
+
+727
+00:37:44,690 --> 00:37:49,060
+I'm picking one here,
+arbitrarily, in which I say
+
+728
+00:37:49,060 --> 00:37:51,320
+that every possible outcome
+has the same
+
+729
+00:37:51,320 --> 00:37:55,440
+probability of 1/16.
+
+730
+00:37:55,440 --> 00:37:56,040
+OK.
+
+731
+00:37:56,040 --> 00:37:58,010
+Why do I make this model?
+
+732
+00:37:58,010 --> 00:38:02,340
+Well, empirically, if you have
+well-manufactured dice, they
+
+733
+00:38:02,340 --> 00:38:04,540
+tend to behave that way.
+
+734
+00:38:04,540 --> 00:38:06,870
+We will be coming back
+to this kind of story
+
+735
+00:38:06,870 --> 00:38:08,500
+later in this class.
+
+736
+00:38:08,500 --> 00:38:13,040
+But I'm not saying that this
+is the only probability law
+
+737
+00:38:13,040 --> 00:38:13,720
+that there can be.
+
+738
+00:38:13,720 --> 00:38:17,460
+You might have weird dice in
+which certain outcomes are
+
+739
+00:38:17,460 --> 00:38:19,280
+more likely than others.
+
+740
+00:38:19,280 --> 00:38:21,850
+But to keep things simple, let's
+take every outcome to
+
+741
+00:38:21,850 --> 00:38:24,870
+have the same probability
+of 1/16.
+
+742
+00:38:24,870 --> 00:38:26,790
+OK.
+
+743
+00:38:26,790 --> 00:38:29,340
+Now that we have in our hands
+a sample space and the
+
+744
+00:38:29,340 --> 00:38:31,990
+probability law, we can
+actually solve any
+
+745
+00:38:31,990 --> 00:38:33,250
+problem there is.
+
+746
+00:38:33,250 --> 00:38:36,070
+We can answer any question that
+could be posed to us.
+
+747
+00:38:36,070 --> 00:38:39,320
+For example, what's the
+probability that the outcome,
+
+748
+00:38:39,320 --> 00:38:43,590
+which is this pair, is
+either 1,1 or 1,2.
+
+749
+00:38:43,590 --> 00:38:50,160
+We're talking here about this
+particular event, 1,1 or 1,2.
+
+750
+00:38:50,160 --> 00:38:53,300
+So it's an event consisting
+of these two items.
+
+751
+00:38:53,300 --> 00:38:56,640
+According to what we were just
+discussing, the probability of
+
+752
+00:38:56,640 --> 00:38:59,540
+a finite collection of outcomes
+is the sum of their
+
+753
+00:38:59,540 --> 00:39:01,170
+individual probabilities.
+
+754
+00:39:01,170 --> 00:39:04,190
+Each one of them has probability
+of 1/16, so the
+
+755
+00:39:04,190 --> 00:39:07,720
+probability of this is 2/16.
+
+756
+00:39:07,720 --> 00:39:11,910
+How about the probability of the
+event that x is equal to
+
+757
+00:39:11,910 --> 00:39:14,960
+one. x is the first roll, so
+that's the probability that
+
+758
+00:39:14,960 --> 00:39:18,120
+the first roll is
+equal to one.
+
+759
+00:39:18,120 --> 00:39:22,340
+Notice the syntax that's
+being used here.
+
+760
+00:39:22,340 --> 00:39:26,880
+Probabilities are assigned to
+subsets, to sets, so we think
+
+761
+00:39:26,880 --> 00:39:32,500
+of this as meaning the set of
+all outcomes such that x is
+
+762
+00:39:32,500 --> 00:39:33,660
+equal to one.
+
+763
+00:39:33,660 --> 00:39:35,210
+How do you answer
+this question?
+
+764
+00:39:35,210 --> 00:39:38,370
+You go back to the picture and
+you try to visualize or
+
+765
+00:39:38,370 --> 00:39:40,810
+identify this event
+of interest.
+
+766
+00:39:40,810 --> 00:39:45,570
+x is equal to one corresponds
+to this event here.
+
+767
+00:39:45,570 --> 00:39:48,950
+These are all the outcomes at
+which x is equal to one.
+
+768
+00:39:48,950 --> 00:39:50,100
+There's four outcomes.
+
+769
+00:39:50,100 --> 00:39:54,180
+Each one has probability 1/16,
+so the answer is 4/16.
+
+770
+00:39:56,760 --> 00:39:57,820
+OK.
+
+771
+00:39:57,820 --> 00:40:06,482
+How about the probability
+that x plus y is odd?
+
+772
+00:40:06,482 --> 00:40:07,100
+OK.
+
+773
+00:40:07,100 --> 00:40:09,840
+That will take a little
+bit more work.
+
+774
+00:40:09,840 --> 00:40:12,910
+But you go to the sample space
+and you identify all the
+
+775
+00:40:12,910 --> 00:40:16,010
+outcomes at which the sum
+is an odd number.
+
+776
+00:40:16,010 --> 00:40:20,930
+So that's a place where the sum
+is odd, these are other
+
+777
+00:40:20,930 --> 00:40:27,570
+places, and I guess that
+exhausts all the possible
+
+778
+00:40:27,570 --> 00:40:31,780
+outcomes at which we
+have an odd sum.
+
+779
+00:40:31,780 --> 00:40:32,890
+We count them.
+
+780
+00:40:32,890 --> 00:40:34,030
+How many are there?
+
+781
+00:40:34,030 --> 00:40:35,540
+There's a total of
+eight of them.
+
+782
+00:40:35,540 --> 00:40:40,490
+Each one has probability 1/16,
+total probability is 8/16.
+
+783
+00:40:40,490 --> 00:40:41,620
+And harder question.
+
+784
+00:40:41,620 --> 00:40:44,310
+What is the probability that the
+minimum of the two rolls
+
+785
+00:40:44,310 --> 00:40:45,820
+is equal to 2?
+
+786
+00:40:45,820 --> 00:40:48,710
+This is something that you
+probably couldn't do in your
+
+787
+00:40:48,710 --> 00:40:51,640
+head without the help
+of a diagram.
+
+788
+00:40:51,640 --> 00:40:54,780
+But once you have a diagram,
+things are simple.
+
+789
+00:40:54,780 --> 00:40:55,760
+You ask the question.
+
+790
+00:40:55,760 --> 00:40:59,710
+OK, this is an event, that the
+minimum of the two rolls is
+
+791
+00:40:59,710 --> 00:41:01,140
+equal to two.
+
+792
+00:41:01,140 --> 00:41:03,150
+This can happen in
+several ways.
+
+793
+00:41:03,150 --> 00:41:05,250
+What are the several ways
+that it can happen?
+
+794
+00:41:05,250 --> 00:41:07,980
+Go to the diagram and try
+to identify them.
+
+795
+00:41:07,980 --> 00:41:11,620
+So the minimum is equal to two
+if both of them are two's.
+
+796
+00:41:14,230 --> 00:41:18,780
+Or it could be that x is two and
+y is bigger, or y is two
+
+797
+00:41:18,780 --> 00:41:21,900
+and x is bigger.
+
+798
+00:41:21,900 --> 00:41:23,150
+OK.
+
+799
+00:41:23,150 --> 00:41:29,210
+I guess we rediscover that
+yellow and blue make green, so
+
+800
+00:41:29,210 --> 00:41:31,910
+we see here that there's
+a total of
+
+801
+00:41:31,910 --> 00:41:34,630
+five possible outcomes.
+
+802
+00:41:34,630 --> 00:41:37,645
+The probability of this
+event is 5/16.
+
+803
+00:41:41,250 --> 00:41:47,460
+Simple example, but the
+procedure that we followed in
+
+804
+00:41:47,460 --> 00:41:52,490
+this example actually applies
+to any probability model you
+
+805
+00:41:52,490 --> 00:41:54,240
+might ever encounter.
+
+806
+00:41:54,240 --> 00:41:57,720
+You set up your sample space,
+you make a statement that
+
+807
+00:41:57,720 --> 00:42:00,710
+describes the probability law
+over that sample space, then
+
+808
+00:42:00,710 --> 00:42:03,640
+somebody asks you questions
+about various events.
+
+809
+00:42:03,640 --> 00:42:07,300
+You go to your pictures,
+identify those events, pin
+
+810
+00:42:07,300 --> 00:42:11,410
+them down, and then start kind
+of counting and calculating
+
+811
+00:42:11,410 --> 00:42:14,370
+the total probability for those
+outcomes that you're
+
+812
+00:42:14,370 --> 00:42:16,560
+considering.
+
+813
+00:42:16,560 --> 00:42:20,180
+This example is a special case
+of what is called the discrete
+
+814
+00:42:20,180 --> 00:42:22,780
+uniform law.
+
+815
+00:42:22,780 --> 00:42:26,500
+The model obeys the discrete
+uniform law if all outcomes
+
+816
+00:42:26,500 --> 00:42:28,340
+are equally likely.
+
+817
+00:42:28,340 --> 00:42:30,040
+It doesn't have to
+be that way.
+
+818
+00:42:30,040 --> 00:42:33,290
+That's just one example
+of a probability law.
+
+819
+00:42:33,290 --> 00:42:36,760
+But when things are that way,
+if all outcomes are equally
+
+820
+00:42:36,760 --> 00:42:45,960
+likely and we have N of them,
+and you have a set A that has
+
+821
+00:42:45,960 --> 00:42:51,150
+little n elements, then each
+one of those elements has
+
+822
+00:42:51,150 --> 00:42:54,460
+probability one over
+capital N since all
+
+823
+00:42:54,460 --> 00:42:56,450
+outcomes are equally likely.
+
+824
+00:42:56,450 --> 00:42:58,980
+And for our probabilities to add
+up to one, each one must
+
+825
+00:42:58,980 --> 00:43:02,620
+have this much probability, and
+there's little n elements.
+
+826
+00:43:02,620 --> 00:43:06,120
+That gives you the probability
+of the event of interest.
+
+827
+00:43:06,120 --> 00:43:09,020
+So problems like the one in the
+previous slide and more
+
+828
+00:43:09,020 --> 00:43:11,560
+generally of the type described
+here under discrete
+
+829
+00:43:11,560 --> 00:43:15,270
+uniform law, these problems
+reduce to just counting.
+
+830
+00:43:15,270 --> 00:43:17,500
+How many elements are there
+in my sample space?
+
+831
+00:43:17,500 --> 00:43:21,160
+How many elements are there
+inside the event of interest?
+
+832
+00:43:21,160 --> 00:43:24,520
+Counting is generally simple,
+but for some problems it gets
+
+833
+00:43:24,520 --> 00:43:25,950
+pretty complicated.
+
+834
+00:43:25,950 --> 00:43:28,980
+And in a couple of weeks, we're
+going to have to spend
+
+835
+00:43:28,980 --> 00:43:31,820
+the whole lecture just on the
+subject of how to count
+
+836
+00:43:31,820 --> 00:43:33,280
+systematically.
+
+837
+00:43:33,280 --> 00:43:37,070
+Now the procedure we followed in
+the previous example is the
+
+838
+00:43:37,070 --> 00:43:39,950
+same as the procedure you would
+follow in continuous
+
+839
+00:43:39,950 --> 00:43:41,330
+probability problems.
+
+840
+00:43:41,330 --> 00:43:44,200
+So, going back to our dart
+problem, we get the random
+
+841
+00:43:44,200 --> 00:43:46,550
+point inside the square.
+
+842
+00:43:46,550 --> 00:43:48,030
+That's our sample space.
+
+843
+00:43:48,030 --> 00:43:50,360
+We need to assign a
+probability law.
+
+844
+00:43:50,360 --> 00:43:53,550
+For lack of imagination, I'm
+taking the probability law to
+
+845
+00:43:53,550 --> 00:43:56,280
+be the area of a subset.
+
+846
+00:43:56,280 --> 00:44:00,990
+So if we have two subsets of
+the sample space that have
+
+847
+00:44:00,990 --> 00:44:05,000
+equal areas, then I'm
+postulating that they are
+
+848
+00:44:05,000 --> 00:44:06,560
+equally likely to occur.
+
+849
+00:44:06,560 --> 00:44:08,490
+The probably that they fall
+here is the same as the
+
+850
+00:44:08,490 --> 00:44:11,430
+probability that they
+fall there.
+
+851
+00:44:11,430 --> 00:44:13,670
+The model doesn't have
+to be that way.
+
+852
+00:44:13,670 --> 00:44:16,720
+But if I have sort of complete
+ignorance of which points are
+
+853
+00:44:16,720 --> 00:44:19,310
+more likely than others,
+that might be the
+
+854
+00:44:19,310 --> 00:44:21,430
+reasonable model to use.
+
+855
+00:44:21,430 --> 00:44:24,680
+So equal areas mean equal
+probabilities.
+
+856
+00:44:24,680 --> 00:44:27,470
+If the area is twice as large,
+the probability is going to be
+
+857
+00:44:27,470 --> 00:44:28,830
+twice as big.
+
+858
+00:44:28,830 --> 00:44:32,130
+So this is our model.
+
+859
+00:44:32,130 --> 00:44:34,580
+We can now answer questions.
+
+860
+00:44:34,580 --> 00:44:35,730
+Let's answer the easy one.
+
+861
+00:44:35,730 --> 00:44:38,070
+What's the probability
+that the outcome is
+
+862
+00:44:38,070 --> 00:44:40,660
+exactly this point?
+
+863
+00:44:40,660 --> 00:44:47,500
+That of course is zero because
+a single point has zero area.
+
+864
+00:44:47,500 --> 00:44:50,190
+And since this probability is
+equal to area, that's zero
+
+865
+00:44:50,190 --> 00:44:51,510
+probability.
+
+866
+00:44:51,510 --> 00:44:55,940
+How about the probability that
+the sum of the coordinates of
+
+867
+00:44:55,940 --> 00:45:00,090
+the point that we got is less
+than or equal to 1/2?
+
+868
+00:45:00,090 --> 00:45:01,570
+How do you deal with it?
+
+869
+00:45:01,570 --> 00:45:04,770
+Well, you look at the picture
+again, at your sample space,
+
+870
+00:45:04,770 --> 00:45:08,130
+and try to describe the event
+that you're talking about.
+
+871
+00:45:08,130 --> 00:45:12,210
+The sum being less than 1/2
+corresponds to getting an
+
+872
+00:45:12,210 --> 00:45:16,060
+outcome that's below this line,
+where this line is the
+
+873
+00:45:16,060 --> 00:45:19,600
+line where x plus
+y equals to 1/2.
+
+874
+00:45:19,600 --> 00:45:25,860
+So the intercepts of that line
+with the axis are 1/2 and 1/2.
+
+875
+00:45:25,860 --> 00:45:29,730
+So you describe the event
+visually and then you use your
+
+876
+00:45:29,730 --> 00:45:30,780
+probability law.
+
+877
+00:45:30,780 --> 00:45:33,260
+The probability law that we have
+is that the probability
+
+878
+00:45:33,260 --> 00:45:36,620
+of a set is equal to the
+area of that set.
+
+879
+00:45:36,620 --> 00:45:39,900
+So all we need to find is the
+area of this triangle, which
+
+880
+00:45:39,900 --> 00:45:48,915
+is 1/2 times 1/2 times 1/2,
+half, equals to 1/8.
+
+881
+00:45:48,915 --> 00:45:49,380
+OK.
+
+882
+00:45:49,380 --> 00:45:52,620
+Moral from these two examples is
+that it's always useful to
+
+883
+00:45:52,620 --> 00:45:56,750
+have a picture and work with
+a picture to visualize the
+
+884
+00:45:56,750 --> 00:45:58,750
+events that you're
+talking about.
+
+885
+00:45:58,750 --> 00:46:01,340
+And once you have a probability
+law in your hands,
+
+886
+00:46:01,340 --> 00:46:04,470
+then it's a matter of
+calculation to find the
+
+887
+00:46:04,470 --> 00:46:06,540
+probabilities of an
+event of interest.
+
+888
+00:46:06,540 --> 00:46:09,080
+The calculations we did in these
+two examples, of course,
+
+889
+00:46:09,080 --> 00:46:10,130
+were very simple.
+
+890
+00:46:10,130 --> 00:46:14,510
+Sometimes calculations may be
+a lot harder, but it's a
+
+891
+00:46:14,510 --> 00:46:15,480
+different business.
+
+892
+00:46:15,480 --> 00:46:19,250
+It's a business of calculus, for
+example, or being good in
+
+893
+00:46:19,250 --> 00:46:20,250
+algebra and so on.
+
+894
+00:46:20,250 --> 00:46:24,240
+As far as probability is
+concerned, it's clear what you
+
+895
+00:46:24,240 --> 00:46:27,110
+will be doing, and then maybe
+you're faced with a harder
+
+896
+00:46:27,110 --> 00:46:30,540
+algebraic part to actually carry
+out the calculations.
+
+897
+00:46:30,540 --> 00:46:32,870
+The area of a triangle
+is easy to compute.
+
+898
+00:46:32,870 --> 00:46:36,030
+If I had put down a very
+complicated shape, then you
+
+899
+00:46:36,030 --> 00:46:39,300
+might need to solve a hard
+integration problem to find
+
+900
+00:46:39,300 --> 00:46:42,190
+the area of that shape, but
+that's stuff that belongs to
+
+901
+00:46:42,190 --> 00:46:46,306
+another class that you have
+presumably mastered by now.
+
+902
+00:46:46,306 --> 00:46:47,000
+Good, OK.
+
+903
+00:46:47,000 --> 00:46:49,730
+So now let me spend just a
+couple of minutes to return to
+
+904
+00:46:49,730 --> 00:46:52,170
+a point that I raised before.
+
+905
+00:46:52,170 --> 00:46:56,270
+I was saying that the axiom that
+we had about additivity
+
+906
+00:46:56,270 --> 00:46:58,730
+might not quite be enough.
+
+907
+00:46:58,730 --> 00:47:01,730
+Let's illustrate what I mean
+by the following example.
+
+908
+00:47:01,730 --> 00:47:04,960
+Think of the experiment where
+you keep flipping a coin and
+
+909
+00:47:04,960 --> 00:47:08,120
+you wait until you obtain heads
+for the first time.
+
+910
+00:47:08,120 --> 00:47:11,390
+What's the sample space
+of this experiment?
+
+911
+00:47:11,390 --> 00:47:13,730
+It might happen the first flip,
+it might happen in the
+
+912
+00:47:13,730 --> 00:47:14,700
+tenth flip.
+
+913
+00:47:14,700 --> 00:47:18,490
+Heads for the first time might
+occur in the millionth flip.
+
+914
+00:47:18,490 --> 00:47:21,070
+So the outcome of this
+experiment is going to be an
+
+915
+00:47:21,070 --> 00:47:23,820
+integer and there's no bound
+to that integer.
+
+916
+00:47:23,820 --> 00:47:26,780
+You might have to wait very
+much until that happens.
+
+917
+00:47:26,780 --> 00:47:29,020
+So the natural sample
+space is the set of
+
+918
+00:47:29,020 --> 00:47:30,950
+all possible integers.
+
+919
+00:47:30,950 --> 00:47:35,030
+Somebody tells you some
+information about the
+
+920
+00:47:35,030 --> 00:47:36,250
+probability law.
+
+921
+00:47:36,250 --> 00:47:39,900
+The probability that you have
+to wait for n flips is equal
+
+922
+00:47:39,900 --> 00:47:41,130
+to two to the minus n.
+
+923
+00:47:41,130 --> 00:47:42,850
+Where did this come from?
+
+924
+00:47:42,850 --> 00:47:44,220
+That's a separate story.
+
+925
+00:47:44,220 --> 00:47:45,730
+Where did it come from?
+
+926
+00:47:45,730 --> 00:47:49,840
+Somebody tells this to us, and
+those probabilities are
+
+927
+00:47:49,840 --> 00:47:52,150
+plotted here as a
+function of n.
+
+928
+00:47:52,150 --> 00:47:54,580
+And you're asked to find the
+probability that the outcome
+
+929
+00:47:54,580 --> 00:47:56,660
+is an even number.
+
+930
+00:47:56,660 --> 00:47:59,920
+How do you go about calculating
+that probability?
+
+931
+00:47:59,920 --> 00:48:02,960
+So the probability of being an
+even number is the probability
+
+932
+00:48:02,960 --> 00:48:08,380
+of the subset that consists
+of just the even numbers.
+
+933
+00:48:08,380 --> 00:48:11,810
+So it would be a subset of this
+kind, that includes two,
+
+934
+00:48:11,810 --> 00:48:13,760
+four, and so on.
+
+935
+00:48:13,760 --> 00:48:18,270
+So any reasonable person would
+say, well the probability of
+
+936
+00:48:18,270 --> 00:48:22,170
+obtaining an outcome that's
+either two or four or six and
+
+937
+00:48:22,170 --> 00:48:25,360
+so on is equal to the
+probability of obtaining a
+
+938
+00:48:25,360 --> 00:48:28,370
+two, plus the probability of
+obtaining a four, plus the
+
+939
+00:48:28,370 --> 00:48:31,130
+probability of obtaining
+a six, and so on.
+
+940
+00:48:31,130 --> 00:48:33,640
+These probabilities
+are given to us.
+
+941
+00:48:33,640 --> 00:48:35,990
+So here I have to
+do my algebra.
+
+942
+00:48:35,990 --> 00:48:40,840
+I add this geometric series and
+I get an answer of 1/3.
+
+943
+00:48:40,840 --> 00:48:43,430
+That's what any reasonable
+person would do.
+
+944
+00:48:43,430 --> 00:48:48,290
+But the person who only knows
+the axioms that they posted
+
+945
+00:48:48,290 --> 00:48:51,880
+just a little earlier
+may get stuck.
+
+946
+00:48:51,880 --> 00:48:53,610
+They would get stuck
+at this point.
+
+947
+00:48:53,610 --> 00:48:55,700
+How do we justify this?
+
+948
+00:48:59,000 --> 00:49:04,010
+We had this property for the
+union of disjoint sets and the
+
+949
+00:49:04,010 --> 00:49:07,210
+corresponding property that
+tells us that the total
+
+950
+00:49:07,210 --> 00:49:11,620
+probability of finitely many
+things, outcomes, is the sum
+
+951
+00:49:11,620 --> 00:49:13,740
+of their individual
+probabilities.
+
+952
+00:49:13,740 --> 00:49:17,940
+But here we're using it on
+an infinite collection.
+
+953
+00:49:17,940 --> 00:49:23,180
+The probability of infinitely
+many points is equal to the
+
+954
+00:49:23,180 --> 00:49:26,070
+sum of the probabilities
+of each one of these.
+
+955
+00:49:26,070 --> 00:49:30,190
+To justify this step we need
+to introduce one additional
+
+956
+00:49:30,190 --> 00:49:34,180
+rule, an additional axiom, that
+tells us that this step
+
+957
+00:49:34,180 --> 00:49:36,160
+is actually legitimate.
+
+958
+00:49:36,160 --> 00:49:39,540
+And this is the countable
+additivity axiom, which is a
+
+959
+00:49:39,540 --> 00:49:42,780
+little stronger, or quite
+a bit stronger, than the
+
+960
+00:49:42,780 --> 00:49:45,140
+additivity axiom
+we had before.
+
+961
+00:49:45,140 --> 00:49:49,210
+It tells us that if we have a
+sequence of sets that are
+
+962
+00:49:49,210 --> 00:49:54,190
+disjoint and we want to find
+their total probability, then
+
+963
+00:49:54,190 --> 00:49:58,230
+we are allowed to add their
+individual probabilities.
+
+964
+00:49:58,230 --> 00:50:01,000
+So the picture might
+be such as follows.
+
+965
+00:50:01,000 --> 00:50:07,420
+We have a sequence of sets,
+A1, A2, A3, and so on.
+
+966
+00:50:07,420 --> 00:50:10,110
+I guess in order to fit them
+inside the sample space, the
+
+967
+00:50:10,110 --> 00:50:13,920
+sets need to get smaller
+and smaller perhaps.
+
+968
+00:50:13,920 --> 00:50:15,340
+They are disjoint.
+
+969
+00:50:15,340 --> 00:50:17,330
+We have a sequence
+of such sets.
+
+970
+00:50:17,330 --> 00:50:21,340
+The total probability of falling
+anywhere inside one of
+
+971
+00:50:21,340 --> 00:50:25,740
+those sets is the sum of their
+individual probabilities.
+
+972
+00:50:25,740 --> 00:50:30,150
+A key subtlety that's involved
+here is that we're talking
+
+973
+00:50:30,150 --> 00:50:33,710
+about a sequence of events.
+
+974
+00:50:33,710 --> 00:50:36,560
+By "sequence" we mean that
+these events can
+
+975
+00:50:36,560 --> 00:50:38,450
+be arranged in order.
+
+976
+00:50:38,450 --> 00:50:41,780
+I can tell you the first event,
+the second event, the
+
+977
+00:50:41,780 --> 00:50:43,530
+third event, and so on.
+
+978
+00:50:43,530 --> 00:50:46,320
+So if you have such a collection
+of events that can
+
+979
+00:50:46,320 --> 00:50:50,690
+be ordered as first, second,
+third, and so on, then you can
+
+980
+00:50:50,690 --> 00:50:54,040
+add their probabilities
+to find the
+
+981
+00:50:54,040 --> 00:50:55,790
+probability of their union.
+
+982
+00:50:55,790 --> 00:50:58,230
+So this point is actually a
+little more subtle than you
+
+983
+00:50:58,230 --> 00:51:00,730
+might appreciate at this point,
+and I'm going to return
+
+984
+00:51:00,730 --> 00:51:04,010
+to it at the beginning
+of the next lecture.
+
+985
+00:51:04,010 --> 00:51:07,160
+For now, enjoy the first
+week of classes
+
+986
+00:51:07,160 --> 00:51:09,380
+and have a good weekend.
+
+987
+00:51:09,380 --> 00:51:10,630
+Thank you.

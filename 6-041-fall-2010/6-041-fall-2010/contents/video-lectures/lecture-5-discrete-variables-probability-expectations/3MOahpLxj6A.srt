@@ -1,0 +1,4329 @@
+1
+00:00:00,040 --> 00:00:02,460
+The following content is
+provided under a Creative
+
+2
+00:00:02,460 --> 00:00:03,870
+Commons license.
+
+3
+00:00:03,870 --> 00:00:06,910
+Your support will help MIT
+OpenCourseWare continue to
+
+4
+00:00:06,910 --> 00:00:10,560
+offer high quality educational
+resources for free.
+
+5
+00:00:10,560 --> 00:00:13,460
+To make a donation, or view
+additional materials from
+
+6
+00:00:13,460 --> 00:00:17,390
+hundreds of MIT courses, visit
+MIT OpenCourseWare at
+
+7
+00:00:17,390 --> 00:00:22,620
+ocw.mit.edu,
+
+8
+00:00:22,620 --> 00:00:23,380
+OK.
+
+9
+00:00:23,380 --> 00:00:24,630
+So let us start.
+
+10
+00:00:55,510 --> 00:00:55,890
+All right.
+
+11
+00:00:55,890 --> 00:01:00,230
+So today we're starting a
+new unit in this class.
+
+12
+00:01:00,230 --> 00:01:03,390
+We have covered, so far, the
+basics of probability theory--
+
+13
+00:01:03,390 --> 00:01:06,890
+the main concepts and tools, as
+far as just probabilities
+
+14
+00:01:06,890 --> 00:01:08,150
+are concerned.
+
+15
+00:01:08,150 --> 00:01:11,300
+But if that was all that there
+is in this subject, the
+
+16
+00:01:11,300 --> 00:01:13,060
+subject would not
+be rich enough.
+
+17
+00:01:13,060 --> 00:01:16,070
+What makes probability theory
+a lot more interesting and
+
+18
+00:01:16,070 --> 00:01:19,590
+richer is that we can also talk
+about random variables,
+
+19
+00:01:19,590 --> 00:01:25,230
+which are ways of assigning
+numerical results to the
+
+20
+00:01:25,230 --> 00:01:27,430
+outcomes of an experiment.
+
+21
+00:01:27,430 --> 00:01:32,500
+So we're going to define what
+random variables are, and then
+
+22
+00:01:32,500 --> 00:01:35,560
+we're going to describe them
+using so-called probability
+
+23
+00:01:35,560 --> 00:01:36,410
+mass functions.
+
+24
+00:01:36,410 --> 00:01:39,770
+Basically some numerical values
+are more likely to
+
+25
+00:01:39,770 --> 00:01:43,260
+occur than other numerical
+values, and we capture this by
+
+26
+00:01:43,260 --> 00:01:46,260
+assigning probabilities
+to them the usual way.
+
+27
+00:01:46,260 --> 00:01:49,870
+And we represent these in
+a compact way using the
+
+28
+00:01:49,870 --> 00:01:51,950
+so-called probability
+mass functions.
+
+29
+00:01:51,950 --> 00:01:55,340
+We're going to see a couple of
+examples of random variables,
+
+30
+00:01:55,340 --> 00:01:58,260
+some of which we have already
+seen but with different
+
+31
+00:01:58,260 --> 00:01:59,930
+terminology.
+
+32
+00:01:59,930 --> 00:02:04,950
+And so far, it's going to be
+just a couple of definitions
+
+33
+00:02:04,950 --> 00:02:06,790
+and calculations of
+the type that you
+
+34
+00:02:06,790 --> 00:02:08,810
+already know how to do.
+
+35
+00:02:08,810 --> 00:02:11,370
+But then we're going to
+introduce the one new, big
+
+36
+00:02:11,370 --> 00:02:12,980
+concept of the day.
+
+37
+00:02:12,980 --> 00:02:17,040
+So up to here it's going to be
+mostly an exercise in notation
+
+38
+00:02:17,040 --> 00:02:18,190
+and definitions.
+
+39
+00:02:18,190 --> 00:02:20,850
+But then we got our big concept
+which is the concept
+
+40
+00:02:20,850 --> 00:02:24,190
+of the expected value of a
+random variable, which is some
+
+41
+00:02:24,190 --> 00:02:27,290
+kind of average value of
+the random variable.
+
+42
+00:02:27,290 --> 00:02:30,260
+And then we're going to also
+talk, very briefly, about
+
+43
+00:02:30,260 --> 00:02:33,560
+close distance of the
+expectation, which is the
+
+44
+00:02:33,560 --> 00:02:37,010
+concept of the variance
+of a random variable.
+
+45
+00:02:37,010 --> 00:02:37,910
+OK.
+
+46
+00:02:37,910 --> 00:02:40,455
+So what is a random variable?
+
+47
+00:02:43,860 --> 00:02:47,710
+It's an assignment of a
+numerical value to every
+
+48
+00:02:47,710 --> 00:02:49,950
+possible outcome of
+the experiment.
+
+49
+00:02:49,950 --> 00:02:51,430
+So here's the picture.
+
+50
+00:02:51,430 --> 00:02:54,800
+The sample space is this class,
+and we've got lots of
+
+51
+00:02:54,800 --> 00:02:56,900
+students in here.
+
+52
+00:02:56,900 --> 00:03:00,480
+This is our sample
+space, omega.
+
+53
+00:03:00,480 --> 00:03:04,220
+I'm interested in the height
+of a random student.
+
+54
+00:03:04,220 --> 00:03:08,990
+So I'm going to use a real line
+where I record height,
+
+55
+00:03:08,990 --> 00:03:12,490
+and let's say this is
+height in inches.
+
+56
+00:03:12,490 --> 00:03:16,380
+And the experiment happens,
+I pick a random student.
+
+57
+00:03:16,380 --> 00:03:19,510
+And I go and measure the height
+of that random student,
+
+58
+00:03:19,510 --> 00:03:22,200
+and that gives me a
+specific number.
+
+59
+00:03:22,200 --> 00:03:25,310
+So what's a good number
+in inches?
+
+60
+00:03:25,310 --> 00:03:28,430
+Let's say 60.
+
+61
+00:03:28,430 --> 00:03:28,840
+OK.
+
+62
+00:03:28,840 --> 00:03:33,480
+Or I pick another student, and
+that student has a height of
+
+63
+00:03:33,480 --> 00:03:36,030
+71 inches, and so on.
+
+64
+00:03:36,030 --> 00:03:37,420
+So this is the experiment.
+
+65
+00:03:37,420 --> 00:03:39,020
+These are the outcomes.
+
+66
+00:03:39,020 --> 00:03:43,070
+These are the numerical values
+of the random variable that we
+
+67
+00:03:43,070 --> 00:03:46,340
+call height.
+
+68
+00:03:46,340 --> 00:03:46,690
+OK.
+
+69
+00:03:46,690 --> 00:03:49,770
+So mathematically, what are
+we dealing with here?
+
+70
+00:03:49,770 --> 00:03:54,100
+We're basically dealing with a
+function from the sample space
+
+71
+00:03:54,100 --> 00:03:56,230
+into the real numbers.
+
+72
+00:03:56,230 --> 00:04:01,280
+That function takes as argument,
+an outcome of the
+
+73
+00:04:01,280 --> 00:04:04,720
+experiment, that is a typical
+student, and produces the
+
+74
+00:04:04,720 --> 00:04:07,520
+value of that function, which
+is the height of that
+
+75
+00:04:07,520 --> 00:04:09,100
+particular student.
+
+76
+00:04:09,100 --> 00:04:12,600
+So we think of an abstract
+object that we denote by a
+
+77
+00:04:12,600 --> 00:04:17,480
+capital H, which is the random
+variable called height.
+
+78
+00:04:17,480 --> 00:04:21,279
+And that random variable is
+essentially this particular
+
+79
+00:04:21,279 --> 00:04:25,870
+function that we talked
+about here.
+
+80
+00:04:25,870 --> 00:04:26,490
+OK.
+
+81
+00:04:26,490 --> 00:04:29,190
+So there's a distinction that
+we're making here--
+
+82
+00:04:29,190 --> 00:04:32,170
+H is height in the abstract.
+
+83
+00:04:32,170 --> 00:04:33,570
+It's the function.
+
+84
+00:04:33,570 --> 00:04:36,440
+These numbers here are
+particular numerical values
+
+85
+00:04:36,440 --> 00:04:39,580
+that this function takes when
+you choose one particular
+
+86
+00:04:39,580 --> 00:04:41,400
+outcome of the experiment.
+
+87
+00:04:41,400 --> 00:04:44,910
+Now, when you have a single
+probability experiment, you
+
+88
+00:04:44,910 --> 00:04:47,690
+can have multiple random
+variables.
+
+89
+00:04:47,690 --> 00:04:52,690
+So perhaps, instead of just
+height, I'm also interested in
+
+90
+00:04:52,690 --> 00:04:55,890
+the weight of a typical
+student.
+
+91
+00:04:55,890 --> 00:04:58,680
+And so when the experiment
+happens, I
+
+92
+00:04:58,680 --> 00:05:00,690
+pick that random student--
+
+93
+00:05:00,690 --> 00:05:02,250
+this is the height
+of the student.
+
+94
+00:05:02,250 --> 00:05:05,450
+But that student would also
+have a weight, and I could
+
+95
+00:05:05,450 --> 00:05:06,880
+record it here.
+
+96
+00:05:06,880 --> 00:05:09,570
+And similarly, every student
+is going to have their own
+
+97
+00:05:09,570 --> 00:05:10,910
+particular weight.
+
+98
+00:05:10,910 --> 00:05:13,850
+So the weight function is a
+different function from the
+
+99
+00:05:13,850 --> 00:05:17,330
+sample space to the real
+numbers, and it's a different
+
+100
+00:05:17,330 --> 00:05:18,680
+random variable.
+
+101
+00:05:18,680 --> 00:05:21,840
+So the point I'm making here is
+that a single probabilistic
+
+102
+00:05:21,840 --> 00:05:26,825
+experiment may involve several
+interesting random variables.
+
+103
+00:05:26,825 --> 00:05:30,190
+I may be interested in the
+height of a random student or
+
+104
+00:05:30,190 --> 00:05:31,760
+the weight of the
+random student.
+
+105
+00:05:31,760 --> 00:05:33,300
+These are different
+random variables
+
+106
+00:05:33,300 --> 00:05:35,140
+that could be of interest.
+
+107
+00:05:35,140 --> 00:05:37,580
+I can also do other things.
+
+108
+00:05:37,580 --> 00:05:44,000
+Suppose I define an object such
+as H bar, which is 2.58.
+
+109
+00:05:44,000 --> 00:05:46,420
+What does that correspond to?
+
+110
+00:05:46,420 --> 00:05:50,540
+Well, this is the height
+in centimeters.
+
+111
+00:05:50,540 --> 00:05:55,160
+Now, H bar is a function of H
+itself, but if you were to
+
+112
+00:05:55,160 --> 00:05:57,740
+draw the picture, the picture
+would go this way.
+
+113
+00:05:57,740 --> 00:06:03,100
+60 gets mapped to 150, 71 gets
+mapped to, oh, that's
+
+114
+00:06:03,100 --> 00:06:04,720
+too hard for me.
+
+115
+00:06:04,720 --> 00:06:10,040
+OK, gets mapped to something,
+and so on.
+
+116
+00:06:10,040 --> 00:06:14,220
+So H bar is also a
+random variable.
+
+117
+00:06:14,220 --> 00:06:15,100
+Why?
+
+118
+00:06:15,100 --> 00:06:19,140
+Once I pick a particular
+student, that particular
+
+119
+00:06:19,140 --> 00:06:24,120
+outcome determines completely
+the numerical value of H bar,
+
+120
+00:06:24,120 --> 00:06:29,070
+which is the height of that
+student but measured in
+
+121
+00:06:29,070 --> 00:06:31,080
+centimeters.
+
+122
+00:06:31,080 --> 00:06:33,820
+What we have here is actually
+a random variable, which is
+
+123
+00:06:33,820 --> 00:06:37,860
+defined as a function of another
+random variable.
+
+124
+00:06:37,860 --> 00:06:41,010
+And the point that this example
+is trying to make is
+
+125
+00:06:41,010 --> 00:06:42,640
+that functions of
+random variables
+
+126
+00:06:42,640 --> 00:06:44,630
+are also random variables.
+
+127
+00:06:44,630 --> 00:06:47,390
+The experiment happens, the
+experiment determines a
+
+128
+00:06:47,390 --> 00:06:49,410
+numerical value for
+this object.
+
+129
+00:06:49,410 --> 00:06:51,630
+And once you have the numerical
+value for this
+
+130
+00:06:51,630 --> 00:06:54,180
+object, that determines
+also the numerical
+
+131
+00:06:54,180 --> 00:06:55,900
+value for that object.
+
+132
+00:06:55,900 --> 00:06:59,080
+So given an outcome, the
+numerical value of this
+
+133
+00:06:59,080 --> 00:07:00,840
+particular object
+is determined.
+
+134
+00:07:00,840 --> 00:07:05,730
+So H bar is itself a function
+from the sample space, from
+
+135
+00:07:05,730 --> 00:07:08,340
+outcomes to numerical values.
+
+136
+00:07:08,340 --> 00:07:11,350
+And that makes it a random
+variable according to the
+
+137
+00:07:11,350 --> 00:07:13,920
+formal definition that
+we have here.
+
+138
+00:07:13,920 --> 00:07:18,610
+So the formal definition is that
+the random variable is
+
+139
+00:07:18,610 --> 00:07:22,570
+not random, it's not a variable,
+it's just a function
+
+140
+00:07:22,570 --> 00:07:25,000
+from the sample space
+to the real numbers.
+
+141
+00:07:25,000 --> 00:07:29,220
+That's the abstract, right way
+of thinking about them.
+
+142
+00:07:29,220 --> 00:07:32,000
+Now, random variables can
+be of different types.
+
+143
+00:07:32,000 --> 00:07:34,440
+They can be discrete
+or continuous.
+
+144
+00:07:34,440 --> 00:07:38,490
+Suppose that I measure the
+heights in inches, but I round
+
+145
+00:07:38,490 --> 00:07:40,270
+to the nearest inch.
+
+146
+00:07:40,270 --> 00:07:43,490
+Then the numerical values I'm
+going to get here would be
+
+147
+00:07:43,490 --> 00:07:45,000
+just integers.
+
+148
+00:07:45,000 --> 00:07:47,080
+So that would make
+it an integer
+
+149
+00:07:47,080 --> 00:07:48,520
+valued random variable.
+
+150
+00:07:48,520 --> 00:07:50,870
+And this is a discrete
+random variable.
+
+151
+00:07:50,870 --> 00:07:54,950
+Or maybe I have a scale for
+measuring height which is
+
+152
+00:07:54,950 --> 00:07:58,640
+infinitely precise and records
+your height to an infinite
+
+153
+00:07:58,640 --> 00:08:00,830
+number of digits of precision.
+
+154
+00:08:00,830 --> 00:08:03,390
+In that case, your height
+would be just a
+
+155
+00:08:03,390 --> 00:08:05,430
+general real number.
+
+156
+00:08:05,430 --> 00:08:08,510
+So we would have a random
+variable that takes values in
+
+157
+00:08:08,510 --> 00:08:10,720
+the entire set of
+real numbers.
+
+158
+00:08:10,720 --> 00:08:14,490
+Well, I guess not really
+negative numbers, but the set
+
+159
+00:08:14,490 --> 00:08:16,350
+of non-negative numbers.
+
+160
+00:08:16,350 --> 00:08:19,880
+And that would be a continuous
+random variable.
+
+161
+00:08:19,880 --> 00:08:22,250
+It takes values in
+a continuous set.
+
+162
+00:08:22,250 --> 00:08:25,020
+So we will be talking about both
+discrete and continuous
+
+163
+00:08:25,020 --> 00:08:26,330
+random variables.
+
+164
+00:08:26,330 --> 00:08:28,790
+The first thing we will do
+will be to devote a few
+
+165
+00:08:28,790 --> 00:08:32,030
+lectures on discrete random
+variables, because discrete is
+
+166
+00:08:32,030 --> 00:08:33,380
+always easier.
+
+167
+00:08:33,380 --> 00:08:35,640
+And then we're going to
+repeat everything in
+
+168
+00:08:35,640 --> 00:08:37,710
+the continuous setting.
+
+169
+00:08:37,710 --> 00:08:41,760
+So discrete is easier, and
+it's the right place to
+
+170
+00:08:41,760 --> 00:08:45,140
+understand all the concepts,
+even those who may appear to
+
+171
+00:08:45,140 --> 00:08:47,090
+be elementary.
+
+172
+00:08:47,090 --> 00:08:50,110
+And then you will be set to
+understand what's going on
+
+173
+00:08:50,110 --> 00:08:51,650
+when we go to the
+continuous case.
+
+174
+00:08:51,650 --> 00:08:54,260
+So in the continuous case, you
+get all the complications of
+
+175
+00:08:54,260 --> 00:08:57,840
+calculus and some extra math
+that comes in there.
+
+176
+00:08:57,840 --> 00:09:00,910
+So it's important to have been
+down all the concepts very
+
+177
+00:09:00,910 --> 00:09:04,320
+well in the easy, discrete case
+so that you don't have
+
+178
+00:09:04,320 --> 00:09:06,770
+conceptual hurdles when
+you move on to
+
+179
+00:09:06,770 --> 00:09:08,730
+the continuous case.
+
+180
+00:09:08,730 --> 00:09:13,610
+Now, one important remark that
+may seem trivial but it's
+
+181
+00:09:13,610 --> 00:09:17,920
+actually very important so that
+you don't get tangled up
+
+182
+00:09:17,920 --> 00:09:20,550
+between different types
+of concepts--
+
+183
+00:09:20,550 --> 00:09:23,440
+there's a fundamental
+distinction between the random
+
+184
+00:09:23,440 --> 00:09:26,220
+variable itself, and
+the numerical
+
+185
+00:09:26,220 --> 00:09:29,080
+values that it takes.
+
+186
+00:09:29,080 --> 00:09:31,670
+Abstractly speaking, or
+mathematically speaking, a
+
+187
+00:09:31,670 --> 00:09:38,350
+random variable, x, or H in this
+example, is a function.
+
+188
+00:09:38,350 --> 00:09:39,140
+OK.
+
+189
+00:09:39,140 --> 00:09:43,750
+Maybe if you like programming
+the words "procedure" or
+
+190
+00:09:43,750 --> 00:09:45,820
+"sub-routine" might be better.
+
+191
+00:09:45,820 --> 00:09:48,290
+So what's the sub-routine
+height?
+
+192
+00:09:48,290 --> 00:09:51,470
+Given a student, I take that
+student, force them on the
+
+193
+00:09:51,470 --> 00:09:53,110
+scale and measure them.
+
+194
+00:09:53,110 --> 00:09:56,610
+That's the sub-routine that
+measures heights.
+
+195
+00:09:56,610 --> 00:10:00,270
+It's really a function that
+takes students as input and
+
+196
+00:10:00,270 --> 00:10:02,670
+produces numbers as output.
+
+197
+00:10:02,670 --> 00:10:05,790
+The sub-routine we denoted
+by capital H.
+
+198
+00:10:05,790 --> 00:10:07,450
+That's the random variable.
+
+199
+00:10:07,450 --> 00:10:10,500
+But once you plug in a
+particular student into that
+
+200
+00:10:10,500 --> 00:10:14,460
+sub-routine, you end up getting
+a particular number.
+
+201
+00:10:14,460 --> 00:10:17,610
+This is the numerical output
+of that sub-routine or the
+
+202
+00:10:17,610 --> 00:10:19,900
+numerical value of
+that function.
+
+203
+00:10:19,900 --> 00:10:24,390
+And that numerical value is an
+element of the real numbers.
+
+204
+00:10:24,390 --> 00:10:29,040
+So the numerical value is a
+real number, where this
+
+205
+00:10:29,040 --> 00:10:35,670
+capital X is a function from
+omega to the real numbers.
+
+206
+00:10:35,670 --> 00:10:38,400
+So they are very different
+types of objects.
+
+207
+00:10:38,400 --> 00:10:41,510
+And the way that we keep track
+of what we're talking about at
+
+208
+00:10:41,510 --> 00:10:45,020
+any given time is by using
+capital letters for random
+
+209
+00:10:45,020 --> 00:10:49,150
+variables and lower case
+letters for numbers.
+
+210
+00:10:52,260 --> 00:10:52,700
+OK.
+
+211
+00:10:52,700 --> 00:11:00,520
+So now once we have a random
+variable at hand, that random
+
+212
+00:11:00,520 --> 00:11:04,410
+variable takes on different
+numerical values.
+
+213
+00:11:04,410 --> 00:11:08,980
+And we want to describe to say
+something about the relative
+
+214
+00:11:08,980 --> 00:11:12,760
+likelihoods of the different
+numerical values that the
+
+215
+00:11:12,760 --> 00:11:15,350
+random variable can take.
+
+216
+00:11:15,350 --> 00:11:21,300
+So here's our sample space,
+and here's the real line.
+
+217
+00:11:23,850 --> 00:11:28,900
+And there's a bunch of outcomes
+that gave rise to one
+
+218
+00:11:28,900 --> 00:11:30,940
+particular numerical value.
+
+219
+00:11:30,940 --> 00:11:33,660
+There's another numerical value
+that arises if we have
+
+220
+00:11:33,660 --> 00:11:34,270
+this outcome.
+
+221
+00:11:34,270 --> 00:11:37,620
+There's another numerical value
+that arises if we have
+
+222
+00:11:37,620 --> 00:11:38,390
+this outcome.
+
+223
+00:11:38,390 --> 00:11:40,430
+So our sample space is here.
+
+224
+00:11:40,430 --> 00:11:42,530
+The real numbers are here.
+
+225
+00:11:42,530 --> 00:11:46,600
+And what we want to do is to ask
+the question, how likely
+
+226
+00:11:46,600 --> 00:11:50,000
+is that particular numerical
+value to occur?
+
+227
+00:11:50,000 --> 00:11:53,620
+So what we're essentially asking
+is, how likely is it
+
+228
+00:11:53,620 --> 00:11:57,450
+that we obtain an outcome that
+leads to that particular
+
+229
+00:11:57,450 --> 00:11:59,000
+numerical value?
+
+230
+00:11:59,000 --> 00:12:02,680
+We calculate that overall
+probability of that numerical
+
+231
+00:12:02,680 --> 00:12:07,810
+value and we represent that
+probability using a bar so
+
+232
+00:12:07,810 --> 00:12:13,300
+that we end up generating
+a bar graph.
+
+233
+00:12:13,300 --> 00:12:16,550
+So that could be a possible
+bar graph
+
+234
+00:12:16,550 --> 00:12:19,210
+associated with this picture.
+
+235
+00:12:19,210 --> 00:12:22,860
+The size of this bar is the
+total probability that our
+
+236
+00:12:22,860 --> 00:12:27,590
+random variable took on this
+numerical value, which is just
+
+237
+00:12:27,590 --> 00:12:32,240
+the sum of the probabilities of
+the different outcomes that
+
+238
+00:12:32,240 --> 00:12:34,310
+led to that numerical value.
+
+239
+00:12:34,310 --> 00:12:37,100
+So the thing that we're plotting
+here, the bar graph--
+
+240
+00:12:37,100 --> 00:12:39,370
+we give a name to it.
+
+241
+00:12:39,370 --> 00:12:43,910
+It's a function, which we denote
+by lowercase b, capital
+
+242
+00:12:43,910 --> 00:12:47,690
+X. The capital X indicates which
+random variable we're
+
+243
+00:12:47,690 --> 00:12:48,920
+talking about.
+
+244
+00:12:48,920 --> 00:12:54,670
+And it's a function of little
+x, which is the range of
+
+245
+00:12:54,670 --> 00:12:58,530
+values that our random
+variable is taking.
+
+246
+00:12:58,530 --> 00:13:04,830
+So in mathematical notation, the
+value of the PMF at some
+
+247
+00:13:04,830 --> 00:13:09,220
+particular number, little x,
+is the probability that our
+
+248
+00:13:09,220 --> 00:13:14,060
+random variable takes on the
+numerical value, little x.
+
+249
+00:13:14,060 --> 00:13:17,510
+And if you want to be precise
+about what this means, it's
+
+250
+00:13:17,510 --> 00:13:23,020
+the overall probability of all
+outcomes for which the random
+
+251
+00:13:23,020 --> 00:13:26,770
+variable ends up taking
+that value, little x.
+
+252
+00:13:26,770 --> 00:13:34,110
+So this is the overall
+probability of all omegas that
+
+253
+00:13:34,110 --> 00:13:36,950
+lead to that particular
+numerical
+
+254
+00:13:36,950 --> 00:13:39,260
+value, x, of interest.
+
+255
+00:13:39,260 --> 00:13:44,630
+So what do we know about PMFs?
+
+256
+00:13:44,630 --> 00:13:47,600
+Since there are probabilities,
+all these entries in the bar
+
+257
+00:13:47,600 --> 00:13:49,880
+graph have to be non-negative.
+
+258
+00:13:49,880 --> 00:13:54,610
+Also, if you exhaust all the
+possible values of little x's,
+
+259
+00:13:54,610 --> 00:13:57,840
+you will have exhausted all the
+possible outcomes here.
+
+260
+00:13:57,840 --> 00:14:01,030
+Because every outcome leads
+to some particular x.
+
+261
+00:14:01,030 --> 00:14:03,160
+So the sum of these
+probabilities
+
+262
+00:14:03,160 --> 00:14:04,760
+should be equal to one.
+
+263
+00:14:04,760 --> 00:14:06,890
+This is the second
+relation here.
+
+264
+00:14:06,890 --> 00:14:10,970
+So this relation tell
+us that some little
+
+265
+00:14:10,970 --> 00:14:13,150
+x is going to happen.
+
+266
+00:14:13,150 --> 00:14:15,500
+They happen with different
+probabilities, but when you
+
+267
+00:14:15,500 --> 00:14:19,370
+consider all the possible little
+x's together, one of
+
+268
+00:14:19,370 --> 00:14:21,750
+those little x's is going
+to be realized.
+
+269
+00:14:21,750 --> 00:14:25,640
+Probabilities need
+to add to one.
+
+270
+00:14:25,640 --> 00:14:26,090
+OK.
+
+271
+00:14:26,090 --> 00:14:31,200
+So let's get our first example
+of a non-trivial bar graph.
+
+272
+00:14:31,200 --> 00:14:35,780
+Consider the experiment where
+I start with a coin and I
+
+273
+00:14:35,780 --> 00:14:38,270
+start flipping it
+over and over.
+
+274
+00:14:38,270 --> 00:14:42,670
+And I do this until I obtain
+heads for the first time.
+
+275
+00:14:42,670 --> 00:14:45,610
+So what are possible outcomes
+of this experiment?
+
+276
+00:14:45,610 --> 00:14:48,850
+One possible outcome is that
+I obtain heads at the first
+
+277
+00:14:48,850 --> 00:14:50,930
+toss, and then I stop.
+
+278
+00:14:50,930 --> 00:14:55,040
+In this case, my random variable
+takes the value 1.
+
+279
+00:14:55,040 --> 00:14:59,360
+Or it's possible that I obtain
+tails and then heads.
+
+280
+00:14:59,360 --> 00:15:02,500
+How many tosses did it take
+until heads appeared?
+
+281
+00:15:02,500 --> 00:15:04,390
+This would be x equals to 2.
+
+282
+00:15:04,390 --> 00:15:09,930
+Or more generally, I might
+obtain tails for k minus 1
+
+283
+00:15:09,930 --> 00:15:15,000
+times, and then obtain heads
+at the k-th time, in which
+
+284
+00:15:15,000 --> 00:15:19,930
+case, our random variable takes
+the value, little k.
+
+285
+00:15:19,930 --> 00:15:21,210
+So that's the experiment.
+
+286
+00:15:21,210 --> 00:15:25,350
+So capital X is a well defined
+random variable.
+
+287
+00:15:25,350 --> 00:15:29,070
+It's the number of tosses it
+takes until I see heads for
+
+288
+00:15:29,070 --> 00:15:30,710
+the first time.
+
+289
+00:15:30,710 --> 00:15:32,330
+These are the possible
+outcomes.
+
+290
+00:15:32,330 --> 00:15:34,710
+These are elements of
+our sample space.
+
+291
+00:15:34,710 --> 00:15:38,750
+And these are the values of X
+depending on the outcome.
+
+292
+00:15:38,750 --> 00:15:43,950
+Clearly X is a function
+of the outcome.
+
+293
+00:15:43,950 --> 00:15:47,570
+You tell me the outcome, I'm
+going to tell you what X is.
+
+294
+00:15:47,570 --> 00:15:54,520
+So what we want to do now is to
+calculate the PMF of X. So
+
+295
+00:15:54,520 --> 00:15:59,210
+Px of k is, by definition, the
+probability that our random
+
+296
+00:15:59,210 --> 00:16:02,810
+variable takes the value k.
+
+297
+00:16:02,810 --> 00:16:07,250
+For the random variable to take
+the value of k, the first
+
+298
+00:16:07,250 --> 00:16:09,680
+head appears at toss number k.
+
+299
+00:16:09,680 --> 00:16:13,550
+The only way that this event
+can happen is if we obtain
+
+300
+00:16:13,550 --> 00:16:15,650
+this sequence of events.
+
+301
+00:16:15,650 --> 00:16:19,290
+T's the first k minus
+1 times, tails, and
+
+302
+00:16:19,290 --> 00:16:21,820
+heads at the k-th flip.
+
+303
+00:16:21,820 --> 00:16:25,980
+So this event, that the random
+variable is equal to k, is the
+
+304
+00:16:25,980 --> 00:16:30,590
+same as this event, k minus 1
+tails followed by 1 head.
+
+305
+00:16:30,590 --> 00:16:32,780
+What's the probability
+of that event?
+
+306
+00:16:32,780 --> 00:16:36,450
+We're assuming that the coin
+tosses are independent.
+
+307
+00:16:36,450 --> 00:16:39,190
+So to find the probability
+of this event, we need to
+
+308
+00:16:39,190 --> 00:16:41,860
+multiply the probability of
+tails, times the probability
+
+309
+00:16:41,860 --> 00:16:43,680
+of tails, times the probability
+of tails.
+
+310
+00:16:43,680 --> 00:16:47,370
+We multiply k minus one times,
+times the probability of
+
+311
+00:16:47,370 --> 00:16:50,660
+heads, which puts an
+extra p at the end.
+
+312
+00:16:50,660 --> 00:16:56,470
+And this is the formula for the
+so-called geometric PMF.
+
+313
+00:16:56,470 --> 00:16:58,650
+And why do we call
+it geometric?
+
+314
+00:16:58,650 --> 00:17:04,859
+Because if you go and plot the
+bar graph of this random
+
+315
+00:17:04,859 --> 00:17:10,510
+variable, X, we start
+at 1 with a certain
+
+316
+00:17:10,510 --> 00:17:14,300
+number, which is p.
+
+317
+00:17:14,300 --> 00:17:20,550
+And then at 2 we get p(1-p).
+
+318
+00:17:20,550 --> 00:17:23,640
+At 3 we're going to get
+something smaller, it's p
+
+319
+00:17:23,640 --> 00:17:25,900
+times (1-p)-squared.
+
+320
+00:17:25,900 --> 00:17:29,740
+And the bars keep going down
+at the rate of geometric
+
+321
+00:17:29,740 --> 00:17:30,730
+progression.
+
+322
+00:17:30,730 --> 00:17:34,490
+Each bar is smaller than the
+previous bar, because each
+
+323
+00:17:34,490 --> 00:17:38,380
+time we get an extra factor
+of 1-p involved.
+
+324
+00:17:38,380 --> 00:17:42,480
+So the shape of this
+PMF is the graph
+
+325
+00:17:42,480 --> 00:17:44,300
+of a geometric sequence.
+
+326
+00:17:44,300 --> 00:17:48,330
+For that reason, we say that
+it's the geometric PMF, and we
+
+327
+00:17:48,330 --> 00:17:51,860
+call X also a geometric
+random variable.
+
+328
+00:17:51,860 --> 00:17:55,730
+So the number of coin tosses
+until the first head is a
+
+329
+00:17:55,730 --> 00:17:58,290
+geometric random variable.
+
+330
+00:17:58,290 --> 00:18:00,730
+So this was an example
+of how to compute the
+
+331
+00:18:00,730 --> 00:18:02,630
+PMF of a random variable.
+
+332
+00:18:02,630 --> 00:18:06,510
+This was an easy example,
+because this event could be
+
+333
+00:18:06,510 --> 00:18:09,520
+realized in one and
+only one way.
+
+334
+00:18:09,520 --> 00:18:12,650
+So to find the probability of
+this, we just needed to find
+
+335
+00:18:12,650 --> 00:18:15,510
+the probability of this
+particular outcome.
+
+336
+00:18:15,510 --> 00:18:18,680
+More generally, there's going
+to be many outcomes that can
+
+337
+00:18:18,680 --> 00:18:22,120
+lead to the same numerical
+value.
+
+338
+00:18:22,120 --> 00:18:25,010
+And we need to keep track
+of all of them.
+
+339
+00:18:25,010 --> 00:18:28,030
+For example, in this picture,
+if I want to find this value
+
+340
+00:18:28,030 --> 00:18:31,610
+of the PMF, I need to add up the
+probabilities of all the
+
+341
+00:18:31,610 --> 00:18:34,550
+outcomes that leads
+to that value.
+
+342
+00:18:34,550 --> 00:18:37,070
+So the general procedure
+is exactly what
+
+343
+00:18:37,070 --> 00:18:38,240
+this picture suggests.
+
+344
+00:18:38,240 --> 00:18:43,050
+To find this probability, you go
+and identify which outcomes
+
+345
+00:18:43,050 --> 00:18:47,770
+lead to this numerical value,
+and add their probabilities.
+
+346
+00:18:47,770 --> 00:18:49,590
+So let's do a simple example.
+
+347
+00:18:49,590 --> 00:18:51,820
+I take a tetrahedral die.
+
+348
+00:18:51,820 --> 00:18:53,820
+I toss it twice.
+
+349
+00:18:53,820 --> 00:18:55,850
+And there's lots of random
+variables that you can
+
+350
+00:18:55,850 --> 00:18:57,850
+associate with the
+same experiment.
+
+351
+00:18:57,850 --> 00:19:01,450
+So the outcome of the first
+throw, we can call it F.
+
+352
+00:19:01,450 --> 00:19:05,300
+That's a random variable because
+it's determined once
+
+353
+00:19:05,300 --> 00:19:09,840
+you tell me what happens
+in the experiment.
+
+354
+00:19:09,840 --> 00:19:11,615
+The outcome of the
+second throw is
+
+355
+00:19:11,615 --> 00:19:13,470
+another random variable.
+
+356
+00:19:13,470 --> 00:19:16,890
+The minimum of the two throws
+is also a random variable.
+
+357
+00:19:16,890 --> 00:19:20,580
+Once I do the experiment, this
+random variable takes on a
+
+358
+00:19:20,580 --> 00:19:22,580
+specific numerical value.
+
+359
+00:19:22,580 --> 00:19:26,850
+So suppose I do the experiment
+and I get a 2 and a 3.
+
+360
+00:19:26,850 --> 00:19:29,530
+So this random variable is going
+to take the numerical
+
+361
+00:19:29,530 --> 00:19:30,420
+value of 2.
+
+362
+00:19:30,420 --> 00:19:32,440
+This is going to take the
+numerical value of 3.
+
+363
+00:19:32,440 --> 00:19:35,500
+This is going to take the
+numerical value of 2.
+
+364
+00:19:35,500 --> 00:19:38,830
+And now suppose that I want to
+calculate the PMF of this
+
+365
+00:19:38,830 --> 00:19:40,490
+random variable.
+
+366
+00:19:40,490 --> 00:19:43,311
+What I will need to do is to
+calculate Px(0), Px(1), Px(2),
+
+367
+00:19:43,311 --> 00:19:47,980
+Px(3), and so on.
+
+368
+00:19:47,980 --> 00:19:50,680
+Let's not do the entire
+calculation then, let's just
+
+369
+00:19:50,680 --> 00:19:54,770
+calculate one of the
+entries of the PMF.
+
+370
+00:19:54,770 --> 00:19:56,010
+So Px(2)--
+
+371
+00:19:56,010 --> 00:19:58,870
+that's the probability that the
+minimum of the two throws
+
+372
+00:19:58,870 --> 00:20:00,280
+gives us a 2.
+
+373
+00:20:00,280 --> 00:20:04,080
+And this can happen
+in many ways.
+
+374
+00:20:04,080 --> 00:20:06,390
+There are five ways that
+it can happen.
+
+375
+00:20:06,390 --> 00:20:11,010
+Those are all of the outcomes
+for which the smallest of the
+
+376
+00:20:11,010 --> 00:20:13,780
+two is equal to 2.
+
+377
+00:20:13,780 --> 00:20:18,090
+That's five outcomes assuming
+that the tetrahedral die is
+
+378
+00:20:18,090 --> 00:20:20,920
+fair and the tosses
+are independent.
+
+379
+00:20:20,920 --> 00:20:24,450
+Each one of these outcomes
+has probability of 1/16.
+
+380
+00:20:24,450 --> 00:20:27,185
+There's five of them, so
+we get an answer, 5/16.
+
+381
+00:20:30,490 --> 00:20:33,770
+Conceptually, this is just the
+procedure that you use to
+
+382
+00:20:33,770 --> 00:20:37,280
+calculate PMFs the way that
+you construct this
+
+383
+00:20:37,280 --> 00:20:38,730
+particular bar graph.
+
+384
+00:20:38,730 --> 00:20:41,340
+You consider all the possible
+values of your random
+
+385
+00:20:41,340 --> 00:20:43,860
+variable, and for each one of
+those random variables you
+
+386
+00:20:43,860 --> 00:20:47,090
+find the probability that the
+random variable takes on that
+
+387
+00:20:47,090 --> 00:20:49,710
+value by adding the
+probabilities of all the
+
+388
+00:20:49,710 --> 00:20:51,750
+possible outcomes that
+leads to that
+
+389
+00:20:51,750 --> 00:20:54,100
+particular numerical value.
+
+390
+00:20:54,100 --> 00:20:57,620
+So let's do another, more
+interesting one.
+
+391
+00:20:57,620 --> 00:21:00,270
+So let's revisit the
+coin tossing
+
+392
+00:21:00,270 --> 00:21:02,490
+problem from last time.
+
+393
+00:21:02,490 --> 00:21:11,600
+Let us fix a number n, and we
+decide to flip a coin n
+
+394
+00:21:11,600 --> 00:21:13,080
+consecutive times.
+
+395
+00:21:13,080 --> 00:21:16,100
+Each time the coin tosses
+are independent.
+
+396
+00:21:16,100 --> 00:21:19,300
+And each one of the tosses will
+have a probability, p, of
+
+397
+00:21:19,300 --> 00:21:20,960
+obtaining heads.
+
+398
+00:21:20,960 --> 00:21:23,590
+Let's consider the random
+variable, which is the total
+
+399
+00:21:23,590 --> 00:21:26,325
+number of heads that
+have been obtained.
+
+400
+00:21:26,325 --> 00:21:29,690
+Well, that's something that
+we dealt with last time.
+
+401
+00:21:29,690 --> 00:21:33,380
+We know the probabilities for
+different numbers of heads,
+
+402
+00:21:33,380 --> 00:21:35,530
+but we're just going
+to do the same now
+
+403
+00:21:35,530 --> 00:21:37,960
+using today's notation.
+
+404
+00:21:37,960 --> 00:21:41,610
+So let's, for concreteness,
+n equal to 4.
+
+405
+00:21:41,610 --> 00:21:48,410
+Px is the PMF of that random
+variable, X. Px(2) is meant to
+
+406
+00:21:48,410 --> 00:21:52,130
+be, by definition, it's the
+probability that a random
+
+407
+00:21:52,130 --> 00:21:54,420
+variable takes the value of 2.
+
+408
+00:21:54,420 --> 00:21:57,410
+So this is the probability
+that we have, exactly two
+
+409
+00:21:57,410 --> 00:22:00,080
+heads in our four tosses.
+
+410
+00:22:00,080 --> 00:22:03,910
+The event of exactly two heads
+can happen in multiple ways.
+
+411
+00:22:03,910 --> 00:22:05,740
+And here I've written
+down the different
+
+412
+00:22:05,740 --> 00:22:06,920
+ways that it can happen.
+
+413
+00:22:06,920 --> 00:22:09,230
+It turns out that there's
+exactly six
+
+414
+00:22:09,230 --> 00:22:10,920
+ways that it can happen.
+
+415
+00:22:10,920 --> 00:22:15,010
+And each one of these ways,
+luckily enough, has the same
+
+416
+00:22:15,010 --> 00:22:16,180
+probability--
+
+417
+00:22:16,180 --> 00:22:19,460
+p-squared times (1-p)-squared.
+
+418
+00:22:19,460 --> 00:22:24,690
+So that gives us the value for
+the PMF evaluated at 2.
+
+419
+00:22:24,690 --> 00:22:28,370
+So here we just counted
+explicitly that we have six
+
+420
+00:22:28,370 --> 00:22:31,170
+possible ways that this can
+happen, and this gave rise to
+
+421
+00:22:31,170 --> 00:22:32,900
+this factor of 6.
+
+422
+00:22:32,900 --> 00:22:37,360
+But this factor of 6 turns
+out to be the same as
+
+423
+00:22:37,360 --> 00:22:39,350
+this 4 choose 2.
+
+424
+00:22:39,350 --> 00:22:42,490
+If you remember definition from
+last time, 4 choose 2 is
+
+425
+00:22:42,490 --> 00:22:45,650
+4 factorial divided by 2
+factorial, divided by 2
+
+426
+00:22:45,650 --> 00:22:49,940
+factorial, which is
+indeed equal to 6.
+
+427
+00:22:49,940 --> 00:22:52,370
+And this is the more general
+formula that
+
+428
+00:22:52,370 --> 00:22:53,830
+you would be using.
+
+429
+00:22:53,830 --> 00:22:59,190
+In general, if you have n tosses
+and you're interested
+
+430
+00:22:59,190 --> 00:23:02,540
+in the probability of obtaining
+k heads, the
+
+431
+00:23:02,540 --> 00:23:05,560
+probability of that event is
+given by this formula.
+
+432
+00:23:05,560 --> 00:23:08,710
+So that's the formula that
+we derived last time.
+
+433
+00:23:08,710 --> 00:23:11,230
+Except that last time we didn't
+use this notation.
+
+434
+00:23:11,230 --> 00:23:15,300
+We just said the probability of
+k heads is equal to this.
+
+435
+00:23:15,300 --> 00:23:18,020
+Today we introduce the
+extra notation.
+
+436
+00:23:18,020 --> 00:23:22,470
+And also having that notation,
+we may be tempted to also plot
+
+437
+00:23:22,470 --> 00:23:26,310
+a bar graph for the Px.
+
+438
+00:23:26,310 --> 00:23:29,390
+In this case, for the coin
+tossing problem.
+
+439
+00:23:29,390 --> 00:23:35,090
+And if you plot that bar graph
+as a function of k when n is a
+
+440
+00:23:35,090 --> 00:23:40,850
+fairly large number, what you
+will end up obtaining is a bar
+
+441
+00:23:40,850 --> 00:23:47,525
+graph that has a shape of
+something like this.
+
+442
+00:23:53,840 --> 00:23:58,800
+So certain values of k are more
+likely than others, and
+
+443
+00:23:58,800 --> 00:24:00,790
+the more likely values
+are somewhere in the
+
+444
+00:24:00,790 --> 00:24:02,230
+middle of the range.
+
+445
+00:24:02,230 --> 00:24:03,490
+And extreme values--
+
+446
+00:24:03,490 --> 00:24:07,110
+too few heads or too many
+heads, are unlikely.
+
+447
+00:24:07,110 --> 00:24:09,870
+Now, the miraculous thing is
+that it turns out that this
+
+448
+00:24:09,870 --> 00:24:15,550
+curve gets a pretty definite
+shape, like a so-called bell
+
+449
+00:24:15,550 --> 00:24:18,210
+curve, when n is big.
+
+450
+00:24:20,770 --> 00:24:24,920
+This is a very deep and central
+fact from probability
+
+451
+00:24:24,920 --> 00:24:30,210
+theory that we will get to
+in a couple of months.
+
+452
+00:24:30,210 --> 00:24:33,900
+For now, it just could be
+a curious observation.
+
+453
+00:24:33,900 --> 00:24:38,390
+If you go into MATLAB and put
+this formula in and ask MATLAB
+
+454
+00:24:38,390 --> 00:24:41,540
+to plot it for you, you're going
+to get an interesting
+
+455
+00:24:41,540 --> 00:24:43,140
+shape of this form.
+
+456
+00:24:43,140 --> 00:24:46,700
+And later on we will have to
+sort of understand where this
+
+457
+00:24:46,700 --> 00:24:50,760
+is coming from and whether
+there's a nice, simple formula
+
+458
+00:24:50,760 --> 00:24:54,920
+for the asymptotic
+form that we get.
+
+459
+00:24:54,920 --> 00:24:55,370
+All right.
+
+460
+00:24:55,370 --> 00:25:00,580
+So, so far I've said essentially
+nothing new, just
+
+461
+00:25:00,580 --> 00:25:05,240
+a little bit of notation and
+this little conceptual thing
+
+462
+00:25:05,240 --> 00:25:07,900
+that you have to think of random
+variables as functions
+
+463
+00:25:07,900 --> 00:25:09,060
+in the sample space.
+
+464
+00:25:09,060 --> 00:25:11,620
+So now it's time to introduce
+something new.
+
+465
+00:25:11,620 --> 00:25:14,250
+This is the big concept
+of the day.
+
+466
+00:25:14,250 --> 00:25:17,180
+In some sense it's
+an easy concept.
+
+467
+00:25:17,180 --> 00:25:23,420
+But it's the most central, most
+important concept that we
+
+468
+00:25:23,420 --> 00:25:26,970
+have to deal with random
+variables.
+
+469
+00:25:26,970 --> 00:25:28,790
+It's the concept
+of the expected
+
+470
+00:25:28,790 --> 00:25:30,860
+value of a random variable.
+
+471
+00:25:30,860 --> 00:25:34,570
+So the expected value is meant
+to be, let's speak loosely,
+
+472
+00:25:34,570 --> 00:25:38,100
+something like an average,
+where you interpret
+
+473
+00:25:38,100 --> 00:25:41,520
+probabilities as something
+like frequencies.
+
+474
+00:25:41,520 --> 00:25:46,490
+So you play a certain game and
+your rewards are going to be--
+
+475
+00:25:49,660 --> 00:25:52,010
+use my standard numbers--
+
+476
+00:25:52,010 --> 00:25:54,530
+your rewards are going
+to be one dollar
+
+477
+00:25:54,530 --> 00:25:58,040
+with probability 1/6.
+
+478
+00:25:58,040 --> 00:26:04,711
+It's going to be 2 dollars with
+probability 1/2, and four
+
+479
+00:26:04,711 --> 00:26:08,670
+dollars with probability 1/3.
+
+480
+00:26:08,670 --> 00:26:11,920
+So this is a plot of the PMF
+of some random variable.
+
+481
+00:26:11,920 --> 00:26:15,270
+If you play that game and you
+get so many dollars with this
+
+482
+00:26:15,270 --> 00:26:18,520
+probability, and so on, how much
+do you expect to get on
+
+483
+00:26:18,520 --> 00:26:21,670
+the average if you play the
+game a zillion times?
+
+484
+00:26:21,670 --> 00:26:23,420
+Well, you can think
+as follows--
+
+485
+00:26:23,420 --> 00:26:27,990
+one sixth of the time I'm
+going to get one dollar.
+
+486
+00:26:27,990 --> 00:26:31,620
+One half of the time that
+outcome is going to happen and
+
+487
+00:26:31,620 --> 00:26:34,140
+I'm going to get two dollars.
+
+488
+00:26:34,140 --> 00:26:37,920
+And one third of the time the
+other outcome happens, and I'm
+
+489
+00:26:37,920 --> 00:26:40,690
+going to get four dollars.
+
+490
+00:26:40,690 --> 00:26:45,230
+And you evaluate that number
+and it turns out to be 2.5.
+
+491
+00:26:45,230 --> 00:26:45,490
+OK.
+
+492
+00:26:45,490 --> 00:26:50,410
+So that's a reasonable way of
+calculating the average payoff
+
+493
+00:26:50,410 --> 00:26:52,550
+if you think of these
+probabilities as the
+
+494
+00:26:52,550 --> 00:26:56,440
+frequencies with which you
+obtain the different payoffs.
+
+495
+00:26:56,440 --> 00:26:59,430
+And loosely speaking, it doesn't
+hurt to think of
+
+496
+00:26:59,430 --> 00:27:02,430
+probabilities as frequencies
+when you try to make sense of
+
+497
+00:27:02,430 --> 00:27:04,990
+various things.
+
+498
+00:27:04,990 --> 00:27:06,480
+So what did we do here?
+
+499
+00:27:06,480 --> 00:27:11,710
+We took the probabilities of the
+different outcomes, of the
+
+500
+00:27:11,710 --> 00:27:15,370
+different numerical values, and
+multiplied them with the
+
+501
+00:27:15,370 --> 00:27:17,610
+corresponding numerical value.
+
+502
+00:27:17,610 --> 00:27:19,910
+Similarly here, we have
+a probability and the
+
+503
+00:27:19,910 --> 00:27:24,890
+corresponding numerical value
+and we added up over all x's.
+
+504
+00:27:24,890 --> 00:27:26,430
+So that's what we did.
+
+505
+00:27:26,430 --> 00:27:29,750
+It looks like an interesting
+quantity to deal with.
+
+506
+00:27:29,750 --> 00:27:32,800
+So we're going to give a name to
+it, and we're going to call
+
+507
+00:27:32,800 --> 00:27:35,740
+it the expected value of
+a random variable.
+
+508
+00:27:35,740 --> 00:27:39,610
+So this formula just captures
+the calculation that we did.
+
+509
+00:27:39,610 --> 00:27:43,520
+How do we interpret the
+expected value?
+
+510
+00:27:43,520 --> 00:27:46,490
+So the one interpretation
+is the one that I
+
+511
+00:27:46,490 --> 00:27:48,110
+used in this example.
+
+512
+00:27:48,110 --> 00:27:52,290
+You can think of it as the
+average that you get over a
+
+513
+00:27:52,290 --> 00:27:56,200
+large number of repetitions
+of an experiment where you
+
+514
+00:27:56,200 --> 00:27:59,330
+interpret the probabilities as
+the frequencies with which the
+
+515
+00:27:59,330 --> 00:28:02,090
+different numerical
+values can happen.
+
+516
+00:28:02,090 --> 00:28:04,870
+There's another interpretation
+that's a little more visual
+
+517
+00:28:04,870 --> 00:28:07,550
+and that's kind of insightful,
+if you remember your freshman
+
+518
+00:28:07,550 --> 00:28:10,860
+physics, this kind of formula
+gives you the center of
+
+519
+00:28:10,860 --> 00:28:14,390
+gravity of an object
+of this kind.
+
+520
+00:28:14,390 --> 00:28:17,290
+If you take that picture
+literally and think of this as
+
+521
+00:28:17,290 --> 00:28:20,700
+a mass of one sixth sitting
+here, and the mass of one half
+
+522
+00:28:20,700 --> 00:28:24,000
+sitting here, and one third
+sitting there, and you ask me
+
+523
+00:28:24,000 --> 00:28:26,920
+what's the center of gravity
+of that structure.
+
+524
+00:28:26,920 --> 00:28:29,320
+This is the formula that gives
+you the center of gravity.
+
+525
+00:28:29,320 --> 00:28:30,900
+Now what's the center
+of gravity?
+
+526
+00:28:30,900 --> 00:28:34,960
+It's the place where if you put
+your pen right underneath,
+
+527
+00:28:34,960 --> 00:28:38,050
+that diagram will stay in place
+and will not fall on one
+
+528
+00:28:38,050 --> 00:28:40,440
+side and will not fall
+on the other side.
+
+529
+00:28:40,440 --> 00:28:44,950
+So in this thing, by picture,
+since the 4 is a little more
+
+530
+00:28:44,950 --> 00:28:47,880
+to the right and a little
+heavier, the center of gravity
+
+531
+00:28:47,880 --> 00:28:50,200
+should be somewhere
+around here.
+
+532
+00:28:50,200 --> 00:28:52,290
+And that's what for
+the math gave us.
+
+533
+00:28:52,290 --> 00:28:54,740
+It turns out to be
+two and a half.
+
+534
+00:28:54,740 --> 00:28:56,920
+Once you have this
+interpretation about centers
+
+535
+00:28:56,920 --> 00:28:58,890
+of gravity, sometimes
+you can calculate
+
+536
+00:28:58,890 --> 00:29:01,090
+expectations pretty fast.
+
+537
+00:29:01,090 --> 00:29:04,410
+So here's our new
+random variable.
+
+538
+00:29:04,410 --> 00:29:07,840
+It's the uniform random variable
+in which each one of
+
+539
+00:29:07,840 --> 00:29:10,420
+the numerical values
+is equally likely.
+
+540
+00:29:10,420 --> 00:29:13,980
+Here there's a total of n plus
+1 possible numerical values.
+
+541
+00:29:13,980 --> 00:29:17,600
+So each one of them has
+probability 1 over (n + 1).
+
+542
+00:29:17,600 --> 00:29:20,650
+Let's calculate the expected
+value of this random variable.
+
+543
+00:29:20,650 --> 00:29:24,620
+We can take the formula
+literally and consider all
+
+544
+00:29:24,620 --> 00:29:28,920
+possible outcomes, or all
+possible numerical values, and
+
+545
+00:29:28,920 --> 00:29:32,330
+weigh them by their
+corresponding probability, and
+
+546
+00:29:32,330 --> 00:29:35,170
+do this calculation and
+obtain an answer.
+
+547
+00:29:35,170 --> 00:29:38,520
+But I gave you the intuition
+of centers of gravity.
+
+548
+00:29:38,520 --> 00:29:41,990
+Can you use that intuition
+to guess the answer?
+
+549
+00:29:41,990 --> 00:29:46,680
+What's the center of gravity
+infrastructure of this kind?
+
+550
+00:29:46,680 --> 00:29:47,860
+We have symmetry.
+
+551
+00:29:47,860 --> 00:29:50,710
+So it should be in the middle.
+
+552
+00:29:50,710 --> 00:29:51,970
+And what's the middle?
+
+553
+00:29:51,970 --> 00:29:54,850
+It's the average of the
+two end points.
+
+554
+00:29:54,850 --> 00:29:57,850
+So without having to do the
+algebra, you know that's the
+
+555
+00:29:57,850 --> 00:30:01,200
+answer is going to
+be n over 2.
+
+556
+00:30:01,200 --> 00:30:05,850
+So this is a moral that you
+should keep whenever you have
+
+557
+00:30:05,850 --> 00:30:11,460
+PMF, which is symmetric around
+a certain point.
+
+558
+00:30:11,460 --> 00:30:15,350
+That certain point is going
+to be the expected value
+
+559
+00:30:15,350 --> 00:30:17,460
+associated with this
+particular PMF.
+
+560
+00:30:21,920 --> 00:30:22,380
+OK.
+
+561
+00:30:22,380 --> 00:30:29,610
+So having defined the expected
+value, what is there that's
+
+562
+00:30:29,610 --> 00:30:31,810
+left for us to do?
+
+563
+00:30:31,810 --> 00:30:37,290
+Well, we want to investigate how
+it behaves, what kind of
+
+564
+00:30:37,290 --> 00:30:43,390
+properties does it have, and
+also how do you calculate
+
+565
+00:30:43,390 --> 00:30:48,040
+expected values of complicated
+random variables.
+
+566
+00:30:48,040 --> 00:30:52,130
+So the first complication that
+we're going to start with is
+
+567
+00:30:52,130 --> 00:30:54,985
+the case where we deal with a
+function of a random variable.
+
+568
+00:30:59,002 --> 00:30:59,680
+OK.
+
+569
+00:30:59,680 --> 00:31:05,890
+So let me redraw this same
+picture as before.
+
+570
+00:31:05,890 --> 00:31:07,090
+We have omega.
+
+571
+00:31:07,090 --> 00:31:09,580
+This is our sample space.
+
+572
+00:31:09,580 --> 00:31:12,310
+This is the real line.
+
+573
+00:31:12,310 --> 00:31:17,370
+And we have a random variable
+that gives rise to various
+
+574
+00:31:17,370 --> 00:31:24,400
+values for X. So the random
+variable is capital X, and
+
+575
+00:31:24,400 --> 00:31:28,690
+every outcome leads to a
+particular numerical value x
+
+576
+00:31:28,690 --> 00:31:33,030
+for our random variable X. So
+capital X is really the
+
+577
+00:31:33,030 --> 00:31:37,930
+function that maps these points
+into the real line.
+
+578
+00:31:37,930 --> 00:31:42,710
+And then I consider a function
+of this random variable, call
+
+579
+00:31:42,710 --> 00:31:47,080
+it capital Y, and it's
+a function of my
+
+580
+00:31:47,080 --> 00:31:49,980
+previous random variable.
+
+581
+00:31:49,980 --> 00:31:54,190
+And this new random variable Y
+takes numerical values that
+
+582
+00:31:54,190 --> 00:31:58,140
+are completely determined once
+I know the numerical value of
+
+583
+00:31:58,140 --> 00:32:03,090
+capital X. And perhaps you get
+a diagram of this kind.
+
+584
+00:32:08,520 --> 00:32:10,970
+So X is a random variable.
+
+585
+00:32:10,970 --> 00:32:14,506
+Once you have an outcome, this
+determines the value of x.
+
+586
+00:32:14,506 --> 00:32:16,760
+Y is also a random variable.
+
+587
+00:32:16,760 --> 00:32:19,200
+Once you have the outcome,
+that determines
+
+588
+00:32:19,200 --> 00:32:21,230
+the value of y.
+
+589
+00:32:21,230 --> 00:32:26,630
+Y is completely determined once
+you know X. We have a
+
+590
+00:32:26,630 --> 00:32:31,560
+formula for how to calculate
+the expected value of X.
+
+591
+00:32:31,560 --> 00:32:34,380
+Suppose that you're interested
+in calculating the expected
+
+592
+00:32:34,380 --> 00:32:39,910
+value of Y. How would
+you go about it?
+
+593
+00:32:39,910 --> 00:32:40,710
+OK.
+
+594
+00:32:40,710 --> 00:32:43,580
+The only thing you have in your
+hands is the definition,
+
+595
+00:32:43,580 --> 00:32:47,750
+so you could start by just
+using the definition.
+
+596
+00:32:47,750 --> 00:32:50,150
+And what does this entail?
+
+597
+00:32:50,150 --> 00:32:55,330
+It entails for every particular
+value of y, collect
+
+598
+00:32:55,330 --> 00:32:59,160
+all the outcomes that leads
+to that value of y.
+
+599
+00:32:59,160 --> 00:33:01,010
+Find their probability.
+
+600
+00:33:01,010 --> 00:33:02,280
+Do the same here.
+
+601
+00:33:02,280 --> 00:33:04,550
+For that value, collect
+those outcomes.
+
+602
+00:33:04,550 --> 00:33:07,700
+Find their probability
+and weight by y.
+
+603
+00:33:07,700 --> 00:33:13,050
+So this formula does the
+addition over this line.
+
+604
+00:33:13,050 --> 00:33:17,060
+We consider the different
+outcomes and add things up.
+
+605
+00:33:17,060 --> 00:33:20,290
+There's an alternative way of
+doing the same accounting
+
+606
+00:33:20,290 --> 00:33:23,930
+where instead of doing the
+addition over those numbers,
+
+607
+00:33:23,930 --> 00:33:26,540
+we do the addition up here.
+
+608
+00:33:26,540 --> 00:33:30,250
+We consider the different
+possible values of x, and we
+
+609
+00:33:30,250 --> 00:33:31,500
+think as follows--
+
+610
+00:33:34,500 --> 00:33:38,900
+for each possible value of x,
+that value is going to occur
+
+611
+00:33:38,900 --> 00:33:41,310
+with this probability.
+
+612
+00:33:41,310 --> 00:33:45,890
+And if that value has occurred,
+this is how much I'm
+
+613
+00:33:45,890 --> 00:33:47,840
+getting, the g of x.
+
+614
+00:33:47,840 --> 00:33:52,990
+So I'm considering the
+probability of this outcome.
+
+615
+00:33:52,990 --> 00:33:56,050
+And in that case, y
+takes this value.
+
+616
+00:33:56,050 --> 00:34:00,240
+Then I'm considering the
+probabilities of this outcome.
+
+617
+00:34:00,240 --> 00:34:04,650
+And in that case, g of x
+takes again that value.
+
+618
+00:34:04,650 --> 00:34:08,100
+Then I consider this particular
+x, it happens with
+
+619
+00:34:08,100 --> 00:34:11,280
+this much probability, and in
+that case, g of x takes that
+
+620
+00:34:11,280 --> 00:34:14,300
+value, and similarly here.
+
+621
+00:34:14,300 --> 00:34:18,170
+We end up doing exactly the same
+arithmetic, it's only a
+
+622
+00:34:18,170 --> 00:34:21,760
+question whether we bundle
+things together.
+
+623
+00:34:21,760 --> 00:34:25,790
+That is, if we calculate the
+probability of this, then
+
+624
+00:34:25,790 --> 00:34:28,239
+we're bundling these
+two cases together.
+
+625
+00:34:28,239 --> 00:34:32,110
+Whereas if we do the addition
+up here, we do a separate
+
+626
+00:34:32,110 --> 00:34:32,949
+calculation--
+
+627
+00:34:32,949 --> 00:34:35,639
+this probability times this
+number, and then this
+
+628
+00:34:35,639 --> 00:34:37,989
+probability times that number.
+
+629
+00:34:37,989 --> 00:34:41,420
+So it's just a simple
+rearrangement of the way that
+
+630
+00:34:41,420 --> 00:34:45,330
+we do the calculations, but it
+does make a big difference in
+
+631
+00:34:45,330 --> 00:34:49,010
+practice if you actually want
+to calculate expectations.
+
+632
+00:34:49,010 --> 00:34:52,389
+So the second procedure that I
+mentioned, where you do the
+
+633
+00:34:52,389 --> 00:34:56,790
+addition by running
+over the x-axis
+
+634
+00:34:56,790 --> 00:34:59,710
+corresponds to this formula.
+
+635
+00:34:59,710 --> 00:35:05,830
+Consider all possibilities for x
+and when that x happens, how
+
+636
+00:35:05,830 --> 00:35:07,530
+much money are you getting?
+
+637
+00:35:07,530 --> 00:35:10,850
+That gives you the average money
+that you are getting.
+
+638
+00:35:10,850 --> 00:35:11,270
+All right.
+
+639
+00:35:11,270 --> 00:35:14,840
+So I kind of hand waved and
+argued that it's just a
+
+640
+00:35:14,840 --> 00:35:17,690
+different way of accounting, of
+course one needs to prove
+
+641
+00:35:17,690 --> 00:35:19,060
+this formula.
+
+642
+00:35:19,060 --> 00:35:20,950
+And fortunately it
+can be proved.
+
+643
+00:35:20,950 --> 00:35:23,470
+You're going to see that
+in recitation.
+
+644
+00:35:23,470 --> 00:35:25,710
+Most people, once they're a
+little comfortable with the
+
+645
+00:35:25,710 --> 00:35:28,570
+concepts of probability,
+actually believe that this is
+
+646
+00:35:28,570 --> 00:35:30,130
+true by definition.
+
+647
+00:35:30,130 --> 00:35:31,860
+In fact it's not true
+by definition.
+
+648
+00:35:31,860 --> 00:35:34,610
+It's called the law of the
+unconscious statistician.
+
+649
+00:35:34,610 --> 00:35:37,930
+It's something that you always
+do, but it's something that
+
+650
+00:35:37,930 --> 00:35:40,750
+does require justification.
+
+651
+00:35:40,750 --> 00:35:41,100
+All right.
+
+652
+00:35:41,100 --> 00:35:44,160
+So this gives us basically a
+shortcut for calculating
+
+653
+00:35:44,160 --> 00:35:47,770
+expected values of functions of
+a random variable without
+
+654
+00:35:47,770 --> 00:35:51,990
+having to find the PMF
+of that function.
+
+655
+00:35:51,990 --> 00:35:54,470
+We can work with the PMF of
+the original function.
+
+656
+00:35:57,140 --> 00:35:57,430
+All right.
+
+657
+00:35:57,430 --> 00:36:00,940
+So we're going to use this
+property over and over.
+
+658
+00:36:00,940 --> 00:36:06,570
+Before we start using it, one
+general word of caution--
+
+659
+00:36:06,570 --> 00:36:10,640
+the average of a function of a
+random variable, in general,
+
+660
+00:36:10,640 --> 00:36:16,400
+is not the same as the function
+of the average.
+
+661
+00:36:16,400 --> 00:36:20,820
+So these two operations of
+taking averages and taking
+
+662
+00:36:20,820 --> 00:36:23,180
+functions do not commute.
+
+663
+00:36:23,180 --> 00:36:28,130
+What this inequality tells you
+is that, in general, you can
+
+664
+00:36:28,130 --> 00:36:30,280
+not reason on the average.
+
+665
+00:36:34,420 --> 00:36:38,600
+So we're going to see instances
+where this property
+
+666
+00:36:38,600 --> 00:36:39,610
+is not true.
+
+667
+00:36:39,610 --> 00:36:41,080
+You're going to see
+lots of them.
+
+668
+00:36:41,080 --> 00:36:43,920
+Let me just throw it here that
+it's something that's not true
+
+669
+00:36:43,920 --> 00:36:47,710
+in general, but we will be
+interested in the exceptions
+
+670
+00:36:47,710 --> 00:36:51,480
+where a relation like
+this is true.
+
+671
+00:36:51,480 --> 00:36:53,360
+But these will be
+the exceptions.
+
+672
+00:36:53,360 --> 00:36:56,960
+So in general, expectations
+are average,
+
+673
+00:36:56,960 --> 00:36:58,850
+something like averages.
+
+674
+00:36:58,850 --> 00:37:02,400
+But the function of an average
+is not the same as the average
+
+675
+00:37:02,400 --> 00:37:05,070
+of the function.
+
+676
+00:37:05,070 --> 00:37:05,440
+OK.
+
+677
+00:37:05,440 --> 00:37:09,530
+So now let's go to properties
+of expectations.
+
+678
+00:37:09,530 --> 00:37:15,170
+Suppose that alpha is a real
+number, and I ask you, what's
+
+679
+00:37:15,170 --> 00:37:17,740
+the expected value of
+that real number?
+
+680
+00:37:17,740 --> 00:37:21,010
+So for example, if I write
+down this expression--
+
+681
+00:37:21,010 --> 00:37:23,070
+expected value of 2.
+
+682
+00:37:23,070 --> 00:37:25,930
+What is this?
+
+683
+00:37:25,930 --> 00:37:29,470
+Well, we defined random
+variables and we defined
+
+684
+00:37:29,470 --> 00:37:31,860
+expectations of random
+variables.
+
+685
+00:37:31,860 --> 00:37:35,870
+So for this to make syntactic
+sense, this thing inside here
+
+686
+00:37:35,870 --> 00:37:37,670
+should be a random variable.
+
+687
+00:37:37,670 --> 00:37:39,260
+Is 2 --
+
+688
+00:37:39,260 --> 00:37:41,140
+the number 2 --- is it
+a random variable?
+
+689
+00:37:44,740 --> 00:37:48,420
+In some sense, yes.
+
+690
+00:37:48,420 --> 00:37:55,750
+It's the random variable that
+takes, always, the value of 2.
+
+691
+00:37:55,750 --> 00:37:59,220
+So suppose that you have some
+experiment and that experiment
+
+692
+00:37:59,220 --> 00:38:02,580
+always outputs 2 whenever
+it happens.
+
+693
+00:38:02,580 --> 00:38:05,880
+Then you can say, yes, it's
+a random experiment but it
+
+694
+00:38:05,880 --> 00:38:06,960
+always gives me 2.
+
+695
+00:38:06,960 --> 00:38:08,600
+The value of the random
+variable is
+
+696
+00:38:08,600 --> 00:38:10,460
+always 2 no matter what.
+
+697
+00:38:10,460 --> 00:38:13,200
+It's kind of a degenerate random
+variable that doesn't
+
+698
+00:38:13,200 --> 00:38:17,230
+have any real randomness in it,
+but it's still useful to
+
+699
+00:38:17,230 --> 00:38:20,130
+think of it as a special case.
+
+700
+00:38:20,130 --> 00:38:23,000
+So it corresponds to a function
+from the sample space
+
+701
+00:38:23,000 --> 00:38:26,750
+to the real line that takes
+only one value.
+
+702
+00:38:26,750 --> 00:38:30,390
+No matter what the outcome is,
+it always gives me a 2.
+
+703
+00:38:30,390 --> 00:38:30,770
+OK.
+
+704
+00:38:30,770 --> 00:38:34,390
+If you have a random variable
+that always gives you a 2,
+
+705
+00:38:34,390 --> 00:38:37,980
+what is the expected
+value going to be?
+
+706
+00:38:37,980 --> 00:38:40,530
+The only entry that shows
+up in this summation
+
+707
+00:38:40,530 --> 00:38:43,000
+is that number 2.
+
+708
+00:38:43,000 --> 00:38:46,270
+The probability of a 2 is equal
+to 1, and the value of
+
+709
+00:38:46,270 --> 00:38:48,330
+that random variable
+is equal to 2.
+
+710
+00:38:48,330 --> 00:38:51,030
+So it's the number itself.
+
+711
+00:38:51,030 --> 00:38:53,910
+So the average value in an
+experiment that always gives
+
+712
+00:38:53,910 --> 00:38:56,580
+you 2's is 2.
+
+713
+00:38:56,580 --> 00:38:57,100
+All right.
+
+714
+00:38:57,100 --> 00:38:59,450
+So that's nice and simple.
+
+715
+00:38:59,450 --> 00:39:04,890
+Now let's go to our experiment
+where age was
+
+716
+00:39:04,890 --> 00:39:07,310
+your height in inches.
+
+717
+00:39:07,310 --> 00:39:11,160
+And I know your height in
+inches, but I'm interested in
+
+718
+00:39:11,160 --> 00:39:15,880
+your height measured
+in centimeters.
+
+719
+00:39:15,880 --> 00:39:19,040
+How is that going
+to be related to
+
+720
+00:39:19,040 --> 00:39:22,675
+your height in inches?
+
+721
+00:39:22,675 --> 00:39:27,440
+Well, if you take your height
+in inches and convert it to
+
+722
+00:39:27,440 --> 00:39:30,690
+centimeters, I have another
+random variable, which is
+
+723
+00:39:30,690 --> 00:39:34,280
+always, no matter what, two and
+a half times bigger than
+
+724
+00:39:34,280 --> 00:39:36,570
+the random variable
+I started with.
+
+725
+00:39:36,570 --> 00:39:40,470
+If you take some quantity and
+always multiplied by two and a
+
+726
+00:39:40,470 --> 00:39:43,610
+half what happens to the average
+of that quantity?
+
+727
+00:39:43,610 --> 00:39:46,990
+It also gets multiplied
+by two and a half.
+
+728
+00:39:46,990 --> 00:39:52,030
+So you get a relation like
+this, which says that the
+
+729
+00:39:52,030 --> 00:39:56,480
+average height of a student
+measured in centimeters is two
+
+730
+00:39:56,480 --> 00:39:58,660
+and a half times the
+average height of a
+
+731
+00:39:58,660 --> 00:40:01,660
+student measured in inches.
+
+732
+00:40:01,660 --> 00:40:03,730
+So that makes perfect
+intuitive sense.
+
+733
+00:40:03,730 --> 00:40:07,490
+If you generalize it, it gives
+us this relation, that if you
+
+734
+00:40:07,490 --> 00:40:13,790
+have a number, you can pull it
+outside the expectation and
+
+735
+00:40:13,790 --> 00:40:16,210
+you get the right result.
+
+736
+00:40:16,210 --> 00:40:20,440
+So this is a case where you
+can reason on the average.
+
+737
+00:40:20,440 --> 00:40:23,150
+If you take a number, such as
+height, and multiply it by a
+
+738
+00:40:23,150 --> 00:40:25,500
+certain number, you can
+reason on the average.
+
+739
+00:40:25,500 --> 00:40:27,650
+I multiply the numbers
+by two, the averages
+
+740
+00:40:27,650 --> 00:40:29,630
+will go up by two.
+
+741
+00:40:29,630 --> 00:40:33,750
+So this is an exception to this
+cautionary statement that
+
+742
+00:40:33,750 --> 00:40:35,460
+I had up there.
+
+743
+00:40:35,460 --> 00:40:39,860
+How do we prove that
+this fact is true?
+
+744
+00:40:39,860 --> 00:40:44,360
+Well, we can use the expected
+value rule here, which tells
+
+745
+00:40:44,360 --> 00:40:52,690
+us that the expected value of
+alpha X, this is our g of X,
+
+746
+00:40:52,690 --> 00:40:59,720
+essentially, is going to be
+the sum over all x's of my
+
+747
+00:40:59,720 --> 00:41:04,900
+function, g of X, times the
+probability of the x's.
+
+748
+00:41:04,900 --> 00:41:11,270
+In our particular case, g of X
+is alpha times X. And we have
+
+749
+00:41:11,270 --> 00:41:12,450
+those probabilities.
+
+750
+00:41:12,450 --> 00:41:15,600
+And the alpha goes outside
+the summation.
+
+751
+00:41:15,600 --> 00:41:23,100
+So we get alpha, sum over x's,
+x Px of x, which is alpha
+
+752
+00:41:23,100 --> 00:41:26,740
+times the expected value of X.
+
+753
+00:41:26,740 --> 00:41:30,580
+So that's how you prove this
+relation formally using this
+
+754
+00:41:30,580 --> 00:41:32,490
+rule up here.
+
+755
+00:41:32,490 --> 00:41:35,810
+And the next formula that
+I have here also gets
+
+756
+00:41:35,810 --> 00:41:37,310
+proved the same way.
+
+757
+00:41:37,310 --> 00:41:41,110
+What does this formula
+tell you?
+
+758
+00:41:41,110 --> 00:41:46,560
+If I take everybody's height
+in centimeters--
+
+759
+00:41:46,560 --> 00:41:49,030
+we already multiplied
+by alpha--
+
+760
+00:41:49,030 --> 00:41:52,800
+and the gods give everyone
+a bonus of ten extra
+
+761
+00:41:52,800 --> 00:41:54,670
+centimeters.
+
+762
+00:41:54,670 --> 00:41:57,720
+What's going to happen to the
+average height of the class?
+
+763
+00:41:57,720 --> 00:42:02,800
+Well, it will just go up by
+an extra ten centimeters.
+
+764
+00:42:02,800 --> 00:42:08,040
+So this expectation is going to
+be giving you the bonus of
+
+765
+00:42:08,040 --> 00:42:15,710
+beta just adds a beta to the
+average height in centimeters,
+
+766
+00:42:15,710 --> 00:42:20,740
+which we also know to be alpha
+times the expected
+
+767
+00:42:20,740 --> 00:42:24,430
+value of X, plus beta.
+
+768
+00:42:24,430 --> 00:42:29,390
+So this is a linearity property
+of expectations.
+
+769
+00:42:29,390 --> 00:42:34,140
+If you take a linear function
+of a single random variable,
+
+770
+00:42:34,140 --> 00:42:38,390
+the expected value of that
+linear function is the linear
+
+771
+00:42:38,390 --> 00:42:41,140
+function of the expected
+value.
+
+772
+00:42:41,140 --> 00:42:44,100
+So this is our big exception to
+this cautionary note, that
+
+773
+00:42:44,100 --> 00:42:48,710
+we have equal if g is linear.
+
+774
+00:42:55,840 --> 00:42:57,090
+OK.
+
+775
+00:42:59,790 --> 00:43:00,790
+All right.
+
+776
+00:43:00,790 --> 00:43:05,850
+So let's get to the last
+concept of the day.
+
+777
+00:43:05,850 --> 00:43:07,470
+What kind of functions
+of random
+
+778
+00:43:07,470 --> 00:43:11,010
+variables may be of interest?
+
+779
+00:43:11,010 --> 00:43:15,660
+One possibility might be the
+average value of X-squared.
+
+780
+00:43:18,780 --> 00:43:20,150
+Why is it interesting?
+
+781
+00:43:20,150 --> 00:43:21,760
+Well, why not.
+
+782
+00:43:21,760 --> 00:43:24,290
+It's the simplest function
+that you can think of.
+
+783
+00:43:27,560 --> 00:43:30,800
+So if you want to calculate
+the expected value of
+
+784
+00:43:30,800 --> 00:43:35,260
+X-squared, you would use this
+general rule for how you can
+
+785
+00:43:35,260 --> 00:43:39,470
+calculate expected values of
+functions of random variables.
+
+786
+00:43:39,470 --> 00:43:41,340
+You consider all the
+possible x's.
+
+787
+00:43:41,340 --> 00:43:45,550
+For each x, you see what's the
+probability that it occurs.
+
+788
+00:43:45,550 --> 00:43:49,790
+And if that x occurs, you
+consider and see how big
+
+789
+00:43:49,790 --> 00:43:52,090
+x-squared is.
+
+790
+00:43:52,090 --> 00:43:54,810
+Now, the more interesting
+quantity, a more interesting
+
+791
+00:43:54,810 --> 00:43:58,580
+expectation that you can
+calculate has to do not with
+
+792
+00:43:58,580 --> 00:44:03,570
+x-squared, but with the distance
+of x from the mean
+
+793
+00:44:03,570 --> 00:44:05,710
+and then squared.
+
+794
+00:44:05,710 --> 00:44:10,800
+So let's try to parse what
+we've got up here.
+
+795
+00:44:10,800 --> 00:44:14,970
+Let's look just at the
+quantity inside here.
+
+796
+00:44:14,970 --> 00:44:16,610
+What kind of quantity is it?
+
+797
+00:44:19,190 --> 00:44:21,030
+It's a random variable.
+
+798
+00:44:21,030 --> 00:44:22,370
+Why?
+
+799
+00:44:22,370 --> 00:44:26,540
+X is random, the random
+variable, expected value of X
+
+800
+00:44:26,540 --> 00:44:28,090
+is a number.
+
+801
+00:44:28,090 --> 00:44:30,800
+Subtract a number from a random
+variable, you get
+
+802
+00:44:30,800 --> 00:44:32,460
+another random variable.
+
+803
+00:44:32,460 --> 00:44:35,630
+Take a random variable and
+square it, you get another
+
+804
+00:44:35,630 --> 00:44:36,810
+random variable.
+
+805
+00:44:36,810 --> 00:44:40,590
+So the thing inside here is a
+legitimate random variable.
+
+806
+00:44:40,590 --> 00:44:44,950
+What kind of random
+variable is it?
+
+807
+00:44:44,950 --> 00:44:47,720
+So suppose that we have our
+experiment and we have
+
+808
+00:44:47,720 --> 00:44:49,452
+different x's that can happen.
+
+809
+00:44:52,310 --> 00:44:56,090
+And the mean of X in this
+picture might be somewhere
+
+810
+00:44:56,090 --> 00:44:57,340
+around here.
+
+811
+00:45:00,500 --> 00:45:02,570
+I do the experiment.
+
+812
+00:45:02,570 --> 00:45:05,350
+I obtain some numerical
+value of x.
+
+813
+00:45:05,350 --> 00:45:09,610
+Let's say I obtain this
+numerical value.
+
+814
+00:45:09,610 --> 00:45:13,810
+I look at the distance from
+the mean, which is this
+
+815
+00:45:13,810 --> 00:45:18,460
+length, and I take the
+square of that.
+
+816
+00:45:18,460 --> 00:45:22,730
+Each time that I do the
+experiment, I go and record my
+
+817
+00:45:22,730 --> 00:45:25,780
+distance from the mean
+and square it.
+
+818
+00:45:25,780 --> 00:45:29,490
+So I give more emphasis
+to big distances.
+
+819
+00:45:29,490 --> 00:45:33,370
+And then I take the average over
+all possible outcomes,
+
+820
+00:45:33,370 --> 00:45:35,520
+all possible numerical values.
+
+821
+00:45:35,520 --> 00:45:39,510
+So I'm trying to compute
+the average squared
+
+822
+00:45:39,510 --> 00:45:42,980
+distance from the mean.
+
+823
+00:45:42,980 --> 00:45:47,770
+This corresponds to
+this formula here.
+
+824
+00:45:47,770 --> 00:45:51,110
+So the picture that I drew
+corresponds to that.
+
+825
+00:45:51,110 --> 00:45:55,920
+For every possible numerical
+value of x, that numerical
+
+826
+00:45:55,920 --> 00:45:59,010
+value corresponds to a certain
+distance from the mean
+
+827
+00:45:59,010 --> 00:46:03,580
+squared, and I weight according
+to how likely is
+
+828
+00:46:03,580 --> 00:46:07,360
+that particular value
+of x to arise.
+
+829
+00:46:07,360 --> 00:46:10,840
+So this measures the
+average squared
+
+830
+00:46:10,840 --> 00:46:13,280
+distance from the mean.
+
+831
+00:46:13,280 --> 00:46:17,180
+Now, because of that expected
+value rule, of course, this
+
+832
+00:46:17,180 --> 00:46:20,010
+thing is the same as
+that expectation.
+
+833
+00:46:20,010 --> 00:46:23,880
+It's the average value of the
+random variable, which is the
+
+834
+00:46:23,880 --> 00:46:26,300
+squared distance
+from the mean.
+
+835
+00:46:26,300 --> 00:46:29,820
+With this probability, the
+random variable takes on this
+
+836
+00:46:29,820 --> 00:46:33,050
+numerical value, and the squared
+distance from the mean
+
+837
+00:46:33,050 --> 00:46:37,200
+ends up taking that particular
+numerical value.
+
+838
+00:46:37,200 --> 00:46:37,680
+OK.
+
+839
+00:46:37,680 --> 00:46:40,560
+So why is the variance
+interesting?
+
+840
+00:46:40,560 --> 00:46:45,380
+It tells us how far away from
+the mean we expect to be on
+
+841
+00:46:45,380 --> 00:46:46,900
+the average.
+
+842
+00:46:46,900 --> 00:46:49,550
+Well, actually we're not
+counting distances from the
+
+843
+00:46:49,550 --> 00:46:51,630
+mean, it's distances squared.
+
+844
+00:46:51,630 --> 00:46:56,500
+So it gives more emphasis to the
+kind of outliers in here.
+
+845
+00:46:56,500 --> 00:46:59,090
+But it's a measure of
+how spread out the
+
+846
+00:46:59,090 --> 00:47:01,180
+distribution is.
+
+847
+00:47:01,180 --> 00:47:05,240
+A big variance means that those
+bars go far to the left
+
+848
+00:47:05,240 --> 00:47:07,010
+and to the right, typically.
+
+849
+00:47:07,010 --> 00:47:10,230
+Where as a small variance would
+mean that all those bars
+
+850
+00:47:10,230 --> 00:47:13,850
+are tightly concentrated
+around the mean value.
+
+851
+00:47:13,850 --> 00:47:16,190
+It's the average squared
+deviation.
+
+852
+00:47:16,190 --> 00:47:18,970
+Small variance means that
+we generally have small
+
+853
+00:47:18,970 --> 00:47:19,580
+deviations.
+
+854
+00:47:19,580 --> 00:47:22,500
+Large variances mean that
+we generally have large
+
+855
+00:47:22,500 --> 00:47:24,210
+deviations.
+
+856
+00:47:24,210 --> 00:47:27,310
+Now as a practical matter, when
+you want to calculate the
+
+857
+00:47:27,310 --> 00:47:31,140
+variance, there's a handy
+formula which I'm not proving
+
+858
+00:47:31,140 --> 00:47:33,110
+but you will see it
+in recitation.
+
+859
+00:47:33,110 --> 00:47:36,270
+It's just two lines
+of algebra.
+
+860
+00:47:36,270 --> 00:47:40,680
+And it allows us to calculate it
+in a somewhat simpler way.
+
+861
+00:47:40,680 --> 00:47:43,110
+We need to calculate the
+expected value of the random
+
+862
+00:47:43,110 --> 00:47:45,210
+variable and the expected value
+of the squares of the
+
+863
+00:47:45,210 --> 00:47:47,580
+random variable, and
+these two are going
+
+864
+00:47:47,580 --> 00:47:49,710
+to give us the variance.
+
+865
+00:47:49,710 --> 00:47:53,970
+So to summarize what we did
+up here, the variance, by
+
+866
+00:47:53,970 --> 00:47:57,370
+definition, is given
+by this formula.
+
+867
+00:47:57,370 --> 00:48:01,470
+It's the expected value of
+the squared deviation.
+
+868
+00:48:01,470 --> 00:48:06,380
+But we have the equivalent
+formula, which comes from
+
+869
+00:48:06,380 --> 00:48:13,960
+application of the expected
+value rule, to the function g
+
+870
+00:48:13,960 --> 00:48:18,690
+of X, equals to x minus the
+(expected value of X)-squared.
+
+871
+00:48:25,640 --> 00:48:26,330
+OK.
+
+872
+00:48:26,330 --> 00:48:27,460
+So this is the definition.
+
+873
+00:48:27,460 --> 00:48:31,170
+This comes from the expected
+value rule.
+
+874
+00:48:31,170 --> 00:48:35,010
+What are some properties
+of the variance?
+
+875
+00:48:35,010 --> 00:48:38,650
+Of course variances are
+always non-negative.
+
+876
+00:48:38,650 --> 00:48:40,880
+Why is it always non-negative?
+
+877
+00:48:40,880 --> 00:48:43,650
+Well, you look at the definition
+and your just
+
+878
+00:48:43,650 --> 00:48:45,660
+adding up non-negative things.
+
+879
+00:48:45,660 --> 00:48:47,630
+We're adding squared
+deviations.
+
+880
+00:48:47,630 --> 00:48:50,100
+So when you add non-negative
+things, you get something
+
+881
+00:48:50,100 --> 00:48:51,400
+non-negative.
+
+882
+00:48:51,400 --> 00:48:55,800
+The next question is, how do
+things scale if you take a
+
+883
+00:48:55,800 --> 00:48:59,880
+linear function of a
+random variable?
+
+884
+00:48:59,880 --> 00:49:02,350
+Let's think about the
+effects of beta.
+
+885
+00:49:02,350 --> 00:49:06,200
+If I take a random variable and
+add the constant to it,
+
+886
+00:49:06,200 --> 00:49:09,820
+how does this affect the amount
+of spread that we have?
+
+887
+00:49:09,820 --> 00:49:10,950
+It doesn't affect--
+
+888
+00:49:10,950 --> 00:49:14,610
+whatever the spread of this
+thing is, if I add the
+
+889
+00:49:14,610 --> 00:49:18,840
+constant beta, it just moves
+this diagram here, but the
+
+890
+00:49:18,840 --> 00:49:21,930
+spread doesn't grow
+or get reduced.
+
+891
+00:49:21,930 --> 00:49:24,470
+The thing is that when I'm
+adding a constant to a random
+
+892
+00:49:24,470 --> 00:49:28,160
+variable, all the x's that are
+going to appear are further to
+
+893
+00:49:28,160 --> 00:49:32,890
+the right, but the expected
+value also moves to the right.
+
+894
+00:49:32,890 --> 00:49:35,960
+And since we're only interested
+in distances from
+
+895
+00:49:35,960 --> 00:49:39,500
+the mean, these distances
+do not get affected.
+
+896
+00:49:39,500 --> 00:49:42,180
+x gets increased by something.
+
+897
+00:49:42,180 --> 00:49:44,390
+The mean gets increased by
+that same something.
+
+898
+00:49:44,390 --> 00:49:46,180
+The difference stays the same.
+
+899
+00:49:46,180 --> 00:49:49,350
+So adding a constant to a random
+variable doesn't do
+
+900
+00:49:49,350 --> 00:49:51,050
+anything to it's variance.
+
+901
+00:49:51,050 --> 00:49:54,940
+But if I multiply a random
+variable by a constant alpha,
+
+902
+00:49:54,940 --> 00:49:58,730
+what is that going to
+do to its variance?
+
+903
+00:49:58,730 --> 00:50:04,720
+Because we have a square here,
+when I multiply my random
+
+904
+00:50:04,720 --> 00:50:08,430
+variable by a constant, this x
+gets multiplied by a constant,
+
+905
+00:50:08,430 --> 00:50:12,310
+the mean gets multiplied by a
+constant, the square gets
+
+906
+00:50:12,310 --> 00:50:15,650
+multiplied by the square
+of that constant.
+
+907
+00:50:15,650 --> 00:50:18,960
+And because of that reason, we
+get this square of alpha
+
+908
+00:50:18,960 --> 00:50:20,210
+showing up here.
+
+909
+00:50:20,210 --> 00:50:22,870
+So that's how variances
+transform under linear
+
+910
+00:50:22,870 --> 00:50:23,650
+transformations.
+
+911
+00:50:23,650 --> 00:50:26,180
+You multiply your random
+variable by constant, the
+
+912
+00:50:26,180 --> 00:50:30,540
+variance goes up by the square
+of that same constant.
+
+913
+00:50:30,540 --> 00:50:31,290
+OK.
+
+914
+00:50:31,290 --> 00:50:32,950
+That's it for today.
+
+915
+00:50:32,950 --> 00:50:34,200
+See you on Wednesday.
